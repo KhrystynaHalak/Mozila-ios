@@ -1,4 +1,4 @@
-package gmail.pages;
+package mozilla.pages;
 
 public class HomePage {
 }
