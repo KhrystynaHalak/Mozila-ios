@@ -22,7 +22,7 @@ public class BasePage {
         PageFactory.initElements(Driver.getInstance().getDriver(), this);
     }
 
-    public void waitElementToClick(WebElement webElement){
+    public void waitElementToClick(WebElement webElement) {
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 

@@ -25,7 +25,7 @@ public class Driver {
         protected IOSDriver initialValue() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             if (driver == null) {
-                capabilities.setCapability("app", "");
+                capabilities.setCapability("app", "/Users/khrystyna/Library/Developer/Xcode/DerivedData/Client-brfxltyitivdwtbpzpvcqlitwmyw/Build/Products/Fennec-iphonesimulator/Client.app");
                 capabilities.setCapability("platformName", "IOS");
                 capabilities.setCapability("platformVersion", "11.4");
                 capabilities.setCapability("deviceName", "iPhone X");
