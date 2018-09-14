@@ -14,8 +14,8 @@ public class HomePage {
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.TopSites']")
     private WebElement TopSitesBtn;
 
-    @FindBy(id = "HomePanels.Bookmarks")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.Bookmarks']")
+    @FindBy(id = "HomePanels.BookmarksPage")
+    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.BookmarksPage']")
     private WebElement FauvoritesBtn;
 
     @FindBy(id = "HomePanels.History")
