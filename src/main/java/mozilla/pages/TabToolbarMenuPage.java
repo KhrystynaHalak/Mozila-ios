@@ -53,47 +53,47 @@ public class TabToolbarMenuPage {
 
     //Actions
 
-    public void SyncBtnClick() {
+    public void syncBtnClick() {
         SyncBtn.click();
     }
 
-    public void TopSitesBtnClick() {
+    public void topSitesBtnClick() {
         TopSitesBtn.click();
     }
 
-    public void BookmarksBtnClick() {
+    public void bookmarksBtnClick() {
         BookmarksBtn.click();
     }
 
-    public void ReadingListBtnClick() {
+    public void readingListBtnClick() {
         ReadingListBtn.click();
     }
 
-    public void HistoryBtnClick() {
+    public void historyBtnClick() {
         HistoryBtn.click();
     }
 
-    public void DownloadsBtnClick() {
+    public void downloadsBtnClick() {
         DownloadsBtn.click();
     }
 
-    public void TrackProtectionBtnClick() {
+    public void trackProtectionBtnClick() {
         TrackProtectionBtn.click();
     }
 
-    public void HideImgBtnClick() {
+    public void hideImgBtnClick() {
         HideImgBtn.click();
     }
 
-    public void NightModeBtnClick() {
+    public void nightModeBtnClick() {
         NightModeBtn.click();
     }
 
-    public void SettingsBtnClick() {
+    public void settingsBtnClick() {
         SettingsBtn.click();
     }
 
-    public void CloseBtnClick() {
+    public void closeBtnClick() {
         CloseBtn.click();
     }
 

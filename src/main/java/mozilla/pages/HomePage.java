@@ -45,39 +45,39 @@ public class HomePage {
 
     //Actions
 
-    public void EnterURL(String URL) {
+    public void enterURL(String URL) {
         URLField.sendKeys(URL);
     }
 
-    public void TopSitesBtnClick() {
+    public void topSitesBtnClick() {
         TopSitesBtn.click();
     }
 
-    public void FauvoritesBtnClick() {
+    public void fauvoritesBtnClick() {
         FauvoritesBtn.click();
     }
 
-    public void HistoryBtnClick() {
+    public void historyBtnClick() {
         HistoryBtn.click();
     }
 
-    public void ReadingListBtnClick() {
+    public void readingListBtnClick() {
         ReadingListBtn.click();
     }
 
-    public void DownloadsBtnClick() {
+    public void downloadsBtnClick() {
         DownloadsBtn.click();
     }
 
-    public void MoveForwardBtnClick() {
+    public void moveForwardBtnClick() {
         MoveForwardBtn.click();
     }
 
-    public void TabsBtnClick() {
+    public void tabsBtnClick() {
         TabsBtn.click();
     }
 
-    public void TabToolbarBtnClick() {
+    public void tabToolbarBtnClick() {
         TabToolbarBtn.click();
     }
 
