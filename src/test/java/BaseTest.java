@@ -1,8 +1,9 @@
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
 import org.apache.log4j.Logger;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
