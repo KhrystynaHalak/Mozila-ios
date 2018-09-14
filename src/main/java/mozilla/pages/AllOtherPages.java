@@ -3,7 +3,7 @@ package mozilla.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AllOtherPages {
+public class AllOtherPages extends HomePage{
 
     //Elements
 
