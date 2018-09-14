@@ -22,5 +22,5 @@ target/
 .idea/
 / out/
 out/
-/ .gradle/
+/.gradle/
 .gradle/
