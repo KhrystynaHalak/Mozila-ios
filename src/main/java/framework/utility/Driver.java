@@ -1,13 +1,13 @@
 package framework.utility;
-
 import io.appium.java_client.ios.IOSDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.apache.log4j.helpers.ThreadLocalMap;
 
-import java.util.logging.Logger;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Driver {
 
     private IOSDriver driver;
+
     final String APP_URL = "D:\\ProjectToTestTwo\\ApiDemos.apk";
     final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
     final int TIME_OUT = 15;
@@ -19,6 +19,7 @@ public class Driver {
     public static Driver getInstance() {
         return instance;
     }
+
 
     private ThreadLocal<IOSDriver> threadLocal = new ThreadLocal<IOSDriver>() {
         @Override

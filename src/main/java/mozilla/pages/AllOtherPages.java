@@ -7,6 +7,9 @@ public class AllOtherPages {
 
     //Elements
 
+    @FindBy(id = "TabLocationView.pageOptionsButton")
+    public WebElement threeDotsBtn;
+
     @FindBy(id = "action_share")
     public WebElement ShareActionBtn;
 
@@ -31,37 +34,41 @@ public class AllOtherPages {
     @FindBy(id = "ProtonMenu.close")
     public WebElement CloseBtn;
 
+
     //Actions
 
-    public void SharePageWithBtnClick(){
+    public void threeDotsBtnClick(){
+        threeDotsBtn.click();
+    }
+    public void sharePageWithBtnClick(){
         ShareActionBtn.click();
     }
 
-    public void BookmarkThisPageBtnClick(){
+    public void bookmarkThisPageBtnClick(){
         BookmarkThisPageBtn.click();
     }
 
-    public void SendToDeviceBtnClick(){
+    public void sendToDeviceBtnClick(){
         SendToDeviceBtn.click();
     }
 
-    public void CopyAdressBtnClick(){
+    public void copyAdressBtnClick(){
         CopyAdressBtn.click();
     }
 
-    public void FindInPageBtnClick(){
+    public void findInPageBtnClick(){
         FindInPageBtn.click();
     }
 
-    public void RequestDesktopSiteBtnClick(){
+    public void requestDesktopSiteBtnClick(){
         RequestDesktopSiteBtn.click();
     }
 
-    public void PinToTopSitesBtnClick(){
+    public void pinToTopSitesBtnClick(){
         PinToTopSitesBtn.click();
     }
 
-    public void CloseBtnClick() {
+    public void closeBtnClick() {
         CloseBtn.click();
     }
 
