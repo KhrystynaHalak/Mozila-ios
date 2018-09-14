@@ -4,6 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class TabToolbarMenuPage {
+
+    //Elements
+
     @FindBy(id = "menu-sync")
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-sync']")
     private WebElement SyncBtn;
@@ -48,6 +51,7 @@ public class TabToolbarMenuPage {
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='PhotonMenu.close']")
     private WebElement CloseBtn;
 
+    //Actions
 
     public void SyncBtnClick() {
         SyncBtn.click();

@@ -40,6 +40,7 @@ public class AllOtherPages {
     public void threeDotsBtnClick(){
         threeDotsBtn.click();
     }
+
     public void sharePageWithBtnClick(){
         ShareActionBtn.click();
     }

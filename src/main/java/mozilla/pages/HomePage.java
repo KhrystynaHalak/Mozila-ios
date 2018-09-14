@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
 
+    //Elements
 
     @FindBy(id = "url")
     //@FindBy(xpath = "//XCUIElementTypeTextField[@name='url']")
@@ -41,6 +42,8 @@ public class HomePage {
     @FindBy(id = "TabToolbar.menuButton")
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.menuButton]")
     private WebElement TabToolbarBtn;
+
+    //Actions
 
     public void EnterURL(String URL) {
         URLField.sendKeys(URL);
