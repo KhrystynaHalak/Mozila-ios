@@ -1,7 +1,7 @@
 import mozilla.pages.HistoryPage;
 import mozilla.pages.HomePage;
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class HistoryTest extends BaseTest {
 

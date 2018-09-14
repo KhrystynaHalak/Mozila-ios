@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cca68195-02ca-4db4-b3b4-76eaaba3bcec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mozilla/pages/HistoryPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/HistoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utility/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utility/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HistoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HistoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +20,13 @@
     <session id="161572039">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1145" />
+          <entry key="java" value="1201" />
           <entry key="txt" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1145" />
+          <entry key="JAVA" value="1201" />
           <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
@@ -48,7 +44,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/utility/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
@@ -87,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/HistoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="323">
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -177,7 +173,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -288,7 +284,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536933170521" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536933309106" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.097751714" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -305,7 +301,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.HistoryTest.deleteHistoryItem">
     <configuration name="HistoryTest.deleteItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mozilla-ios_test" />
       <option name="PACKAGE_NAME" value="" />
@@ -316,8 +312,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HistoryTest.deleteHistoryItem" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Mozilla-ios_test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HistoryTest" />
+      <option name="METHOD_NAME" value="deleteHistoryItem" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.HistoryTest.deleteItem" />
+      <item itemvalue="TestNG.HistoryTest.deleteHistoryItem" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.HistoryTest.deleteHistoryItem" />
         <item itemvalue="JUnit.HistoryTest.deleteItem" />
       </list>
     </recent_temporary>
@@ -554,16 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/HistoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mozilla/pages/BookmarksPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -579,6 +582,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#634#1353#0" expanded="true" />
             <element signature="e#1352#1353#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/HistoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
