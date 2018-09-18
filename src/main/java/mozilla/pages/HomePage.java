@@ -14,8 +14,8 @@ public class HomePage {
 
     //Elements
 
-    //@FindBy(id = "url")
-    @FindBy(xpath = "//*[@name='url']")
+    @FindBy(id = "url")
+    //@FindBy(xpath = "//*[@name='url']")
     private WebElement URLField;
 
     //@FindBy(id = "HomePanels.TopSites")
@@ -23,19 +23,19 @@ public class HomePage {
     private WebElement TopSitesBtn;
 
     //@FindBy(id = "HomePanels.BookmarksPage")
-    @FindBy(xpath = "//*[@name='HomePanels.BookmarksPage']")
+    @FindBy(xpath = "//*[@name='HomePanels.Bookmarks']")
     private WebElement FauvoritesBtn;
 
-    //@FindBy(id = "HomePanels.History")
-    @FindBy(xpath = "//*[@name='HomePanels.History']")
+    @FindBy(id = "HomePanels.History")
+    //@FindBy(xpath = "//*[@name='HomePanels.History']")
     private WebElement HistoryBtn;
 
     //@FindBy(id = "HomePanels.ReadingList")
     @FindBy(xpath = "//*[@name='HomePanels.ReadingList']")
     private WebElement ReadingListBtn;
 
-    //@FindBy(id = "HomePanels.Downloads")
-    @FindBy(xpath = "//*[@name='HomePanels.Downloads']")
+    @FindBy(id = "HomePanels.Downloads")
+    //@FindBy(xpath = "//*[@name='HomePanels.Downloads']")
     private WebElement DownloadsBtn;
 
     //@FindBy(id = "TabToolbar.forwardButton")
@@ -46,8 +46,8 @@ public class HomePage {
     @FindBy(xpath = "//*[@name='TabToolbar.tabsButton']")
     private WebElement TabsBtn;
 
-    //@FindBy(id = "TabToolbar.menuButton")
-    @FindBy(xpath = "//*[@name='TabToolbar.menuButton]")
+    @FindBy(id = "TabToolbar.menuButton")
+    //@FindBy(xpath = "//*[@name='TabToolbar.menuButton']")
     private WebElement TabToolbarBtn;
 
     //Actions
