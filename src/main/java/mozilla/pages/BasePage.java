@@ -1,4 +1,4 @@
-package mozilla.pages;
+/*package mozilla.pages;
 
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
@@ -45,3 +45,4 @@ public class BasePage {
     }
 
 }
+*/

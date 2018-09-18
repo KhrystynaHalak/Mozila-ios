@@ -1,54 +1,61 @@
 package mozilla.pages;
 
+import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class TabToolbarMenuPage {
 
+    // Init Page
+    public TabToolbarMenuPage(IOSDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
+
     //Elements
 
-    @FindBy(id = "menu-sync")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-sync']")
+    //@FindBy(id = "menu-sync")
+    @FindBy(xpath = "//*[@name='menu-sync']")
     private WebElement SyncBtn;
 
-    @FindBy(id = "menu-panel-TopSites")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-TopSites']")
+    //@FindBy(id = "menu-panel-TopSites")
+    @FindBy(xpath = "//*[@name='menu-panel-TopSites']")
     private WebElement TopSitesBtn;
 
-    @FindBy(id = "menu-panel-BookmarksPage")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-BookmarksPage']")
+    //@FindBy(id = "menu-panel-BookmarksPage")
+    @FindBy(xpath = "//*[@name='menu-panel-BookmarksPage']")
     private WebElement BookmarksBtn;
 
-    @FindBy(id = "menu-panel-ReadingList")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-ReadingList']")
+    //@FindBy(id = "menu-panel-ReadingList")
+    @FindBy(xpath = "//[@name='menu-panel-ReadingList']")
     private WebElement ReadingListBtn;
 
-    @FindBy(id = "menu-panel-History")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-History']")
+    //@FindBy(id = "menu-panel-History")
+    @FindBy(xpath = "//*[@name='menu-panel-History']")
     private WebElement HistoryBtn;
 
-    @FindBy(id = "menu-panel-Downloads")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-Downloads']")
+    //@FindBy(id = "menu-panel-Downloads")
+    @FindBy(xpath = "//*[@name='menu-panel-Downloads']")
     private WebElement DownloadsBtn;
 
-    @FindBy(id = "menu-TrackingProtection")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-TrackingProtection']")
+    //@FindBy(id = "menu-TrackingProtection")
+    @FindBy(xpath = "//*[@name='menu-TrackingProtection']")
     private WebElement TrackProtectionBtn;
 
-    @FindBy(id = "menu-NoImageMode")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NoImageMode']")
+    //@FindBy(id = "menu-NoImageMode")
+    @FindBy(xpath = "//*[@name='menu-NoImageMode']")
     private WebElement HideImgBtn;
 
-    @FindBy(id = "menu-NightMode")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NightMode']")
+    //@FindBy(id = "menu-NightMode")
+    @FindBy(xpath = "//*[@name='menu-NightMode']")
     private WebElement NightModeBtn;
 
-    @FindBy(id = "Settings")
-    //@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Settings']")
+    //@FindBy(id = "Settings")
+    @FindBy(xpath = "//*[@name='Settings']")
     private WebElement SettingsBtn;
 
-    @FindBy(id = "PhotonMenu.close")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='PhotonMenu.close']")
+    //@FindBy(id = "PhotonMenu.close")
+    @FindBy(xpath = "//*[@name='PhotonMenu.close']")
     private WebElement CloseBtn;
 
     //Actions

@@ -1,37 +1,43 @@
 package mozilla.pages;
 
+import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AllOtherPages extends HomePage{
+public class AllOtherPages extends HomePage {
+
+    // Init Page
+    public AllOtherPages(IOSDriver driver) {
+        super(driver);
+    }
 
     //Elements
 
-    @FindBy(id = "TabLocationView.pageOptionsButton")
+    @FindBy(xpath = "//*[@name='TabLocationView.pageOptionsButton']")
     public WebElement threeDotsBtn;
 
-    @FindBy(id = "action_share")
+    @FindBy(xpath = "//*[@name='action_share']")
     public WebElement ShareActionBtn;
 
-    @FindBy(id = "menu-Bookmark")
+    @FindBy(xpath = "//*[@name='Bookmark This Page']")
     public WebElement BookmarkThisPageBtn;
 
-    @FindBy(id = "menu-Send-to-Device")
+    @FindBy(xpath = "//*[@name='Send to Device']")
     public WebElement SendToDeviceBtn;
 
-    @FindBy(id = "menu-Copy-Link")
+    @FindBy(xpath = "//*[@name='Copy Address']")
     public WebElement CopyAdressBtn;
 
-    @FindBy(id = "menu-FindInPage")
+    @FindBy(xpath = "//*[@name='Find in Page']")
     public WebElement FindInPageBtn;
 
-    @FindBy(id = "menu-RequestDesktopSite")
+    @FindBy(xpath = "//*[@name='Request Desktop Site']")
     public WebElement RequestDesktopSiteBtn;
 
-    @FindBy(id = "action_pln")
+    @FindBy(xpath = "//*[@name='Pin to Top Sites']")
     public WebElement PinToTopSitesBtn;
 
-    @FindBy(id = "ProtonMenu.close")
+    @FindBy(xpath = "//*[@name='PhotonMenu.close']")
     public WebElement CloseBtn;
 
 
