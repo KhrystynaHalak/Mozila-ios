@@ -1,25 +1,25 @@
-import framework.utility.Driver;
-import mozilla.pages.AllOtherPages;
-import mozilla.pages.BookmarksPage;
-import mozilla.pages.HomePage;
-import mozilla.pages.TabToolbarMenuPage;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import framework.utility.TestRunner;
 
-import java.awt.print.Book;
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.By;
 
-public class BookmarkTest extends BaseTest{
-
-        HomePage homePage = new HomePage();
-        TabToolbarMenuPage tabToolbarMenuPage = new TabToolbarMenuPage();
-        BookmarksPage bookmarksPage = new BookmarksPage();
-        AllOtherPages allOtherPages = new AllOtherPages();
+public class BookmarkTest extends TestRunner {
 
     @Test
-    public void Test1() {
+    public void Basic() {
+        //driver.findElement(By.xpath("//*[@name='HomePanels.Downloads']")).click();
+        //driver.findElement(By.xpath("//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]/XCUIElementTypeButton[5]")).click();
 
-        homePage.enterURL("rp5.ua");
-        String expected = "Choose a city";
+/*
+        homePage.downloadsBtnClick();
+        homePage.fauvoritesBtnClick();
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.closeBtnClick();
+*/
+        homePage.clickOnURL();
+        homePage.enterURL("https://www.apple.com");
+        String expected = "Apple";
         allOtherPages.threeDotsBtnClick();
         allOtherPages.bookmarkThisPageBtnClick();
         allOtherPages.tabToolbarBtnClick();
@@ -28,7 +28,5 @@ public class BookmarkTest extends BaseTest{
         Assert.assertTrue(actual.contains(expected));
 
     }
-
-
 
 }
