@@ -9,6 +9,6 @@ public abstract class BaseBO {
     /*public void mf(){
         logger.info("jjj");
     }
-}
-*/
+}*/
+
 

@@ -1,22 +1,25 @@
-import framework.utility.TestRunner;
+import framework.utility.Driver;
+import mozilla.pages.AllOtherPages;
+import mozilla.pages.BookmarksPage;
+import mozilla.pages.HomePage;
+import mozilla.pages.TabToolbarMenuPage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.openqa.selenium.By;
+import java.awt.print.Book;
 
-public class BookmarkTest extends TestRunner {
+public class BookmarkTest extends BaseTest{
+
+        HomePage homePage = new HomePage();
+        TabToolbarMenuPage tabToolbarMenuPage = new TabToolbarMenuPage();
+        BookmarksPage bookmarksPage = new BookmarksPage();
+        AllOtherPages allOtherPages = new AllOtherPages();
 
     @Test
-    public void Basic() {
+    public void Test1() {
 
-        homePage.downloadsBtnClick();
-        homePage.fauvoritesBtnClick();
-        homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.closeBtnClick();
-
-        homePage.clickOnURL();
-        homePage.enterURL("https://www.apple.com");
-        String expected = "Apple";
+        homePage.enterURL("rp5.ua");
+        String expected = "Choose a city";
         allOtherPages.threeDotsBtnClick();
         allOtherPages.bookmarkThisPageBtnClick();
         allOtherPages.tabToolbarBtnClick();
@@ -25,5 +28,7 @@ public class BookmarkTest extends TestRunner {
         Assert.assertTrue(actual.contains(expected));
 
     }
+
+
 
 }

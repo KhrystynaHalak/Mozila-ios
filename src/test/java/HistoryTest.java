@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 
 public class HistoryTest extends BaseTest {
 
-    HomePage homePage;
-    HistoryPage historyPage;
+    private HomePage homePage;
+    private HistoryPage historyPage;
 
     public void setUp() {
         homePage = new HomePage();
@@ -16,9 +16,10 @@ public class HistoryTest extends BaseTest {
     @Test
     public void deleteHistoryItem() {
 
-        homePage.EnterURL("https://github.com/");
-        homePage.EnterURL("https://www.google.com.ua/");
-        homePage.HistoryBtnClick();
+        setUp();
+        homePage.enterURL("https://github.com/");
+        homePage.enterURL("https://www.google.com.ua/");
+        homePage.historyBtnClick();
         int previousItemsCount = historyPage.ItemInHistoryList.size();
 
         historyPage.removeHistoryItem();
@@ -30,12 +31,16 @@ public class HistoryTest extends BaseTest {
 
     @Test
     public void addHistoryItem() {
-        homePage.EnterURL("https://github.com/");
-        homePage.EnterURL("https://www.google.com.ua/");
-        homePage.HistoryBtnClick();
+        setUp();
+        homePage = new HomePage();
+        homePage.historyBtnClick();
+
+        homePage.enterURL("https://github.com/");
+        homePage.enterURL("https://www.google.com.ua/");
+        homePage.historyBtnClick();
 
         int previousItemsCount = historyPage.ItemInHistoryList.size();
-        homePage.EnterURL("https://stackoverflow.com/");
+        homePage.enterURL("https://stackoverflow.com/");
 
         int currentItemsCount = historyPage.ItemInHistoryList.size();
         Assert.assertEquals(currentItemsCount - 1, previousItemsCount);

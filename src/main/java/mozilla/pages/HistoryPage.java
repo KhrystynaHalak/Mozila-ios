@@ -8,16 +8,16 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class HistoryPage {
+public class HistoryPage extends BasePage{
 
     TouchAction touchAction;
 
     //Elements
 
-    @FindBy(id = "Recently Closed")
+    @FindBy(xpath = "//*[@name=\"HistoryPanel.recentlyClosedCell\"]")
     public WebElement RecentlyClosedLabel;
 
-    @FindBy(id = "Synced Devices")
+    @FindBy(xpath = "//*[@name=\"HistoryPanel.syncedDevicesCell\"]")
     public WebElement SyncedDevicesLabel;
 
     @FindBy(tagName = "XCUIElementTypeCell")
@@ -35,7 +35,7 @@ public class HistoryPage {
 
     public void removeHistoryItem() {
         touchAction = new TouchAction(Driver.getInstance().getDriver());
-        touchAction.press(ItemInHistoryList.get(0)).moveTo(357, 205).perform();
+        //touchAction.press(ItemInHistoryList.get(0)).moveTo(357, 205).perform();
     }
 
 
