@@ -18,6 +18,9 @@ test-output/
 target/
 *.log
 *.exe
+/.idea/
 .idea/
+/ out/
 out/
+/.gradle/
 .gradle/

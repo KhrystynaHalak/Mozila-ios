@@ -1,10 +1,9 @@
 package framework.utility;
+
 import io.appium.java_client.ios.IOSDriver;
 import mozilla.pages.BookmarksPage;
 import mozilla.pages.HomePage;
 import mozilla.pages.TabToolbarMenuPage;
-import org.apache.log4j.helpers.ThreadLocalMap;
-
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
