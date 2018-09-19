@@ -1,14 +1,13 @@
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
-import mozilla.pages.HistoryPage;
-import mozilla.pages.HomePage;
-//import org.apache.log4j.Logger;
+import mozilla.pages.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+//import org.apache.log4j.Logger;
 
 public class BaseTest {
 
@@ -17,19 +16,29 @@ public class BaseTest {
 
     protected HomePage homePage;
     protected HistoryPage historyPage;
+    protected AllOtherPages allOtherPages;
+    protected TabToolbarMenuPage tabToolbarMenuPage;
+    protected BookmarksPage bookmarksPage;
+    protected NavigationButtons navigationButtons;
+    protected TabsPage tabsPage;
 
     @BeforeClass
     public void beforeClass() {
 
+        homePage = new HomePage();
+        historyPage = new HistoryPage();
+        allOtherPages = new AllOtherPages();
+        tabToolbarMenuPage = new TabToolbarMenuPage();
+        navigationButtons = new NavigationButtons();
+        tabsPage = new TabsPage();
+
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);
 
-        homePage = new HomePage();
-        historyPage = new HistoryPage();
     }
 
     @AfterClass
-    public void afterClass() throws IOException{
+    public void afterClass() throws IOException {
         Driver.getInstance().removeDriver();
     }
 }

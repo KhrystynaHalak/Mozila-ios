@@ -1,24 +1,38 @@
-import framework.utility.Driver;
-import mozilla.pages.AllOtherPages;
-import mozilla.pages.BookmarksPage;
-import mozilla.pages.HomePage;
-import mozilla.pages.TabToolbarMenuPage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.awt.print.Book;
 
-public class BookmarkTest extends BaseTest{
-
-        HomePage homePage = new HomePage();
-        TabToolbarMenuPage tabToolbarMenuPage = new TabToolbarMenuPage();
-        BookmarksPage bookmarksPage = new BookmarksPage();
-        AllOtherPages allOtherPages = new AllOtherPages();
+public class BookmarkTest extends BaseTest {
 
     @Test
-    public void Test1() {
+    public void Test1() throws InterruptedException {
 
+        homePage.downloadsBtnClick();
+        homePage.fauvoritesBtnClick();
+        homePage.historyBtnClick();
+        homePage.readingListBtnClick();
+        homePage.topSitesBtnClick();
         homePage.enterURL("rp5.ua");
+        allOtherPages.keyBoardGoBtnClick();
+        navigationButtons.moveBackBtnClick();
+        navigationButtons.moveForwardBtnClick();
+        navigationButtons.refreshBtnClick();
+        navigationButtons.tabsBtnClick();
+        tabsPage.privateBrowsingBtn();
+        tabsPage.addNewTabBtnClick();
+        homePage.enterURL("github.com");
+        allOtherPages.keyBoardGoBtnClick();
+        navigationButtons.tabsBtnClick();
+        tabsPage.privateBrowsingBtn();
+        tabsPage.deleteTabBtnClick();
+        tabsPage.closeAllTabsBtn();
+        navigationButtons.tabsBtnClick();
+        tabsPage.privateBrowsingBtn();
+        tabsPage.deleteTabBtnClick();
+        tabsPage.closeAllTabsBtn();
+
+/*
+        homePage.enterURL("rp5.ua");
+        allOtherPages.keyBoardGoBtnClick();
         String expected = "Choose a city";
         allOtherPages.threeDotsBtnClick();
         allOtherPages.bookmarkThisPageBtnClick();
@@ -26,9 +40,6 @@ public class BookmarkTest extends BaseTest{
         tabToolbarMenuPage.bookmarksBtnClick();
         String actual = bookmarksPage.getBookmarkName();
         Assert.assertTrue(actual.contains(expected));
-
+*/
     }
-
-
-
 }

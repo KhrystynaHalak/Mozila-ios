@@ -1,4 +1,5 @@
 package framework.utility;
+
 import io.appium.java_client.ios.IOSDriver;
 //import org.apache.log4j.helpers.ThreadLocalMap;
 
@@ -15,7 +16,8 @@ public class Driver {
     final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
     final int TIME_OUT = 15;
 
-    private Driver() { }
+    private Driver() {
+    }
 
     private static Driver instance = new Driver();
 
@@ -26,7 +28,7 @@ public class Driver {
 
     private ThreadLocal<IOSDriver> threadLocal = new ThreadLocal<IOSDriver>() {
         @Override
-        protected IOSDriver initialValue(){
+        protected IOSDriver initialValue() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             if (driver == null) {
 
@@ -49,15 +51,16 @@ public class Driver {
         }
     };
 
-    public IOSDriver getDriver() {return threadLocal.get(); }
+    public IOSDriver getDriver() {
+        return threadLocal.get();
+    }
 
-    public void removeDriver(){
+    public void removeDriver() {
         driver = threadLocal.get();
-        try{
+        try {
             //driver.manage().deleteAllCookies();
             driver.quit();
-        }
-        finally {
+        } finally {
             threadLocal.remove();
         }
     }

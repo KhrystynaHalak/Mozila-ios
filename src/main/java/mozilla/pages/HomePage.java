@@ -1,13 +1,10 @@
 package mozilla.pages;
 
 import framework.utility.Driver;
-import org.openqa.selenium.WebDriver;
+import io.appium.java_client.ios.IOSDriver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.LinkedHashMap;
-import java.util.concurrent.TimeUnit;
 
 public class HomePage extends BasePage{
 
@@ -15,48 +12,56 @@ public class HomePage extends BasePage{
 
 
     @FindBy(id = "url")
-    //@FindBy(xpath = "//*[@name='url']")
-    //@FindBy(xpath = "//XCUIElementTypeApplication[@name=\"Fennec (khrystyna)\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther")
-    public WebElement URLField;
+    private WebElement URLField;
 
-    @FindBy(xpath = "//*[@name='HomePanels.TopSites']")
+    @FindBy(id = "HomePanels.TopSites")
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.TopSites']")
     private WebElement TopSitesBtn;
 
-    @FindBy(xpath = "//*[@name='HomePanels.BookmarksPage']")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.BookmarksPage']")
+    @FindBy(id = "HomePanels.Bookmarks")
+    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.Bookmarks']")
     private WebElement FauvoritesBtn;
 
-    //@FindBy(id = "HomePanels.History")
-    @FindBy(xpath = "//*[@name='HomePanels.History']")
+    @FindBy(id = "HomePanels.History")
+    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.History']")
     private WebElement HistoryBtn;
 
-    @FindBy(xpath = "//*[@name='HomePanels.ReadingList']")
-    //@FindBy(xpath = "/*[@name='HomePanels.ReadingList']")
+    @FindBy(id = "HomePanels.ReadingList")
+    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.ReadingList']")
     private WebElement ReadingListBtn;
 
-    @FindBy(xpath = "//*[@name='HomePanels.Downloads']")
+    @FindBy(id = "HomePanels.Downloads")
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.Downloads']")
     private WebElement DownloadsBtn;
 
-    @FindBy(xpath = "//*[@name='TabToolbar.forwardButton']")
+    @FindBy(id = "TabToolbar.forwardButton")
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.forwardButton']")
     private WebElement MoveForwardBtn;
 
-    @FindBy(xpath = "//*[@name='TabToolbar.tabsButton']")
+    @FindBy(id = "TabToolbar.tabsButton")
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.tabsButton']")
     private WebElement TabsBtn;
 
-    //@FindBy(xpath = "//*[@name='TabToolbar.menuButton]")
     @FindBy(id = "TabToolbar.menuButton")
+    //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.menuButton]")
     private WebElement TabToolbarBtn;
 
     //Actions
 
     public void enterURL(String URL) {
-        //URLField.click();
-
         URLField.sendKeys(URL);
+    }
+
+    public void cleanURL(){
+        URLField.clear();
+    }
+
+    public void pressGobutton(){
+        IOSDriver iosDriver= Driver.getInstance().getDriver();
+        iosDriver.context("NATIVE_APP");
+        iosDriver.getKeyboard().sendKeys(Keys.ENTER);
+        //Driver.getInstance().getDriver().hideKeyboard("PRESS_KEY", "Done");
+        iosDriver.context("NATIVE_APP_INSTRUMENTED");
     }
 
     public void topSitesBtnClick() {

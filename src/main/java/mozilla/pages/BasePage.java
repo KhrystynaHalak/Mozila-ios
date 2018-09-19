@@ -2,8 +2,6 @@ package mozilla.pages;
 
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
-//import org.apache.log4j.Logger;
-import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +9,8 @@ import org.openqa.selenium.support.ui.*;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+
+//import org.apache.log4j.Logger;
 
 
 public class BasePage {
