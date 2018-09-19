@@ -3,7 +3,7 @@ package mozilla.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class TabToolbarMenuPage {
+public class TabToolbarMenuPage extends BasePage{
 
     //Elements
 
@@ -21,12 +21,12 @@ public class TabToolbarMenuPage {
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-BookmarksPage']")
     private WebElement BookmarksBtn;
 
-    @FindBy(xpath = "//[@name='menu-panel-ReadingList']")
+    @FindBy(xpath = "//*[@name='menu-panel-ReadingList']")
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-ReadingList']")
     private WebElement ReadingListBtn;
 
-    //@FindBy(xpath = "//*[@name='menu-panel-History']")
-    @FindBy(xpath = "//*[@class='XCUIElementTypeCell' and @name='menu-panel-History']")
+    @FindBy(xpath = "//*[@name='menu-panel-History']")
+    //@FindBy(xpath = "//*[@class='XCUIElementTypeCell' and @name='menu-panel-History']")
     private WebElement HistoryBtn;
 
     @FindBy(xpath = "//*[@name='menu-panel-Downloads']")
@@ -71,8 +71,7 @@ public class TabToolbarMenuPage {
         ReadingListBtn.click();
     }
 
-    public void historyBtnClick() { HistoryBtn.click();
-    }
+    public void historyBtnClick() { HistoryBtn.click(); }
 
     public void downloadsBtnClick() {
         DownloadsBtn.click();
