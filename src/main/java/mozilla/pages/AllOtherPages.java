@@ -12,6 +12,8 @@ public class AllOtherPages extends HomePage {
     }
 
     //Elements
+    @FindBy(xpath = "//*[@name='Go']")
+    public WebElement KeyBoardGoBtn;
 
     @FindBy(xpath = "//*[@name='TabLocationView.pageOptionsButton']")
     public WebElement threeDotsBtn;
@@ -42,6 +44,7 @@ public class AllOtherPages extends HomePage {
 
 
     //Actions
+    public void keyBoardGoBtnClick() {KeyBoardGoBtn.click();}
 
     public void threeDotsBtnClick(){
         threeDotsBtn.click();

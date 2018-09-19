@@ -1,3 +1,4 @@
+import mozilla.pages.AllOtherPages;
 import mozilla.pages.HistoryPage;
 import mozilla.pages.HomePage;
 import org.testng.Assert;
@@ -7,10 +8,12 @@ public class HistoryTest extends BaseTest {
 
     private HomePage homePage;
     private HistoryPage historyPage;
+    private AllOtherPages allOtherPages;
 
     public void setUp() {
         homePage = new HomePage();
         historyPage = new HistoryPage();
+        allOtherPages = new AllOtherPages();
     }
 
     @Test
@@ -18,7 +21,10 @@ public class HistoryTest extends BaseTest {
 
         setUp();
         homePage.enterURL("https://github.com/");
+        allOtherPages.keyBoardGoBtnClick();
         homePage.enterURL("https://www.google.com.ua/");
+        allOtherPages.keyBoardGoBtnClick();
+        homePage.tabToolbarBtnClick();
         homePage.historyBtnClick();
         int previousItemsCount = historyPage.ItemInHistoryList.size();
 

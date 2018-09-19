@@ -13,8 +13,9 @@ public class HomePage extends BasePage{
 
     //Elements
 
-    //@FindBy(id = "url")
-    @FindBy(xpath = "//*[@name='url']")
+
+    @FindBy(id = "url")
+    //@FindBy(xpath = "//*[@name='url']")
     //@FindBy(xpath = "//XCUIElementTypeApplication[@name=\"Fennec (khrystyna)\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther")
     public WebElement URLField;
 
@@ -46,8 +47,8 @@ public class HomePage extends BasePage{
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.tabsButton']")
     private WebElement TabsBtn;
 
-    @FindBy(xpath = "//*[@name='TabToolbar.menuButton]")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.menuButton]")
+    //@FindBy(xpath = "//*[@name='TabToolbar.menuButton]")
+    @FindBy(xpath = "TabToolbar.menuButton")
     private WebElement TabToolbarBtn;
 
     //Actions
