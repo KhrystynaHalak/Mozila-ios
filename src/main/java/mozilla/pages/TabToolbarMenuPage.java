@@ -25,8 +25,8 @@ public class TabToolbarMenuPage {
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-ReadingList']")
     private WebElement ReadingListBtn;
 
-    @FindBy(xpath = "//*[@name='menu-panel-History']")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-History']")
+    //@FindBy(xpath = "//*[@name='menu-panel-History']")
+    @FindBy(xpath = "//*[@class='XCUIElementTypeCell' and @name='menu-panel-History']")
     private WebElement HistoryBtn;
 
     @FindBy(xpath = "//*[@name='menu-panel-Downloads']")
@@ -71,8 +71,7 @@ public class TabToolbarMenuPage {
         ReadingListBtn.click();
     }
 
-    public void historyBtnClick() {
-        HistoryBtn.click();
+    public void historyBtnClick() { HistoryBtn.click();
     }
 
     public void downloadsBtnClick() {

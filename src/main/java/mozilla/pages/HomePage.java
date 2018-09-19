@@ -48,7 +48,7 @@ public class HomePage extends BasePage{
     private WebElement TabsBtn;
 
     //@FindBy(xpath = "//*[@name='TabToolbar.menuButton]")
-    @FindBy(xpath = "TabToolbar.menuButton")
+    @FindBy(id = "TabToolbar.menuButton")
     private WebElement TabToolbarBtn;
 
     //Actions
