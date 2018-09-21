@@ -24,9 +24,9 @@ public class BaseTest {
     protected NavigationButtons navigationButtons;
     protected TabsPage tabsPage;
     protected SettingsPage settingsPage;
+    protected ShareWithPage shareWithPage;
     protected SyncPage syncPage;
     protected ReadingListPage readingListPage;
-    protected ShareWithPage shareWithPage;
 
     @BeforeClass
     public void beforeClass() {
