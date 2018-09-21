@@ -36,6 +36,12 @@ public class AllOtherPages extends HomePage {
     @FindBy(id = "ProtonMenu.close")
     private WebElement CloseBtn;
 
+    @FindBy(xpath = "//*[@name=\"TabLocationView.readerModeButton\"]")
+    private WebElement BookingListBtn;
+
+    @FindBy(id = "ReaderModeBarView.listStatusButton")
+    private WebElement AddToBookingListBtn;
+
 
     //Actions
     public void keyBoardGoBtnClick() {
@@ -78,8 +84,8 @@ public class AllOtherPages extends HomePage {
         CloseBtn.click();
     }
 
+    public void markAsBookingListItem() {BookingListBtn.click();}
 
-
-
+    public void addToBookingListClick() {AddToBookingListBtn.click();}
 
 }

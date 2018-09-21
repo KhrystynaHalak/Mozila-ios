@@ -23,6 +23,7 @@ public class BaseTest {
     protected TabsPage tabsPage;
     protected SettingsPage settingsPage;
     protected SyncPage syncPage;
+    protected ReadingListPage readingListPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -36,14 +37,17 @@ public class BaseTest {
         tabsPage = new TabsPage();
         settingsPage = new SettingsPage();
         syncPage = new SyncPage();
+        readingListPage = new ReadingListPage();
 
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);
+        driver.resetApp();
 
     }
 
     @AfterClass
     public void afterClass() throws IOException {
+        //Driver.getInstance().getDriver().resetApp();
         Driver.getInstance().removeDriver();
     }
 }
