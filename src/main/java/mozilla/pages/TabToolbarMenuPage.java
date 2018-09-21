@@ -15,8 +15,8 @@ public class TabToolbarMenuPage extends BasePage {
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-TopSites']")
     private WebElement TopSitesBtn;
 
-    //@FindBy(id = "menu-panel-BookmarksPage")
-    @FindBy(xpath = "//*[@name='Bookmarks']")
+    @FindBy(id = "menu-panel-Bookmarks")
+    //@FindBy(xpath = "//*[@name='Bookmarks']")
     private WebElement BookmarksBtn;
 
     @FindBy(id = "menu-panel-ReadingList")

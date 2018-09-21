@@ -1,7 +1,10 @@
 package mozilla.pages;
 
 import framework.utility.Driver;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +16,8 @@ import java.util.List;
 public class BookmarksPage extends BasePage {
 
     private IOSDriver driver = Driver.getInstance().getDriver();
+    TouchAction touchAction;
+
 
     //Elements
 
@@ -33,4 +38,15 @@ public class BookmarksPage extends BasePage {
         }
         return bookmarksNamesList;
     }
-}
+
+    public void removeBookmarkItem(int num) {
+
+            String XPATH = "//XCUIElementTypeTable[@name='Bookmarks List']/XCUIElementTypeCell[" + num + "]";
+            int xOffset = driver.findElement(By.xpath(XPATH)).getLocation().getX();
+            int yOffset = driver.findElement(By.xpath(XPATH)).getLocation().getY();
+            touchAction = new TouchAction(Driver.getInstance().getDriver());
+            touchAction.longPress(PointOption.point(310, yOffset)).waitAction().moveTo(PointOption.point(xOffset, yOffset)).release().perform();
+        }
+    }
+
+
