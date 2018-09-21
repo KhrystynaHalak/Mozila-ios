@@ -1,3 +1,5 @@
+package mozilla;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
