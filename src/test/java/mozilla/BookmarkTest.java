@@ -1,3 +1,5 @@
+package mozilla;
+
 import org.testng.annotations.Test;
 
 public class BookmarkTest extends BaseTest {
@@ -22,7 +24,6 @@ public class BookmarkTest extends BaseTest {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.syncBtnClick();
         syncPage.doneLeftUpCornerBtnClick();
-
         homePage.downloadsBtnClick();
         homePage.fauvoritesBtnClick();
         homePage.historyBtnClick();

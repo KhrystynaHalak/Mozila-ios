@@ -20,6 +20,9 @@ public class BookmarksPage extends BasePage {
     private List<WebElement> bookmarksList;
 
 
+    @FindBy(id = "Bookmarks List")
+    private List<WebElement> bookmarksList;
+
     //Actions
 
     public List<String> getBookmarksNamesList() {

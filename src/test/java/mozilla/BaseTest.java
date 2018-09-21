@@ -1,6 +1,10 @@
+package mozilla;
+
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
 import mozilla.pages.*;
+import mozilla.pages.HomePage;
+import mozilla.pages.ShareWithPage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -26,7 +30,6 @@ public class BaseTest {
 
     @BeforeClass
     public void beforeClass() {
-
         homePage = new HomePage();
         historyPage = new HistoryPage();
         allOtherPages = new AllOtherPages();
@@ -34,7 +37,7 @@ public class BaseTest {
         bookmarksPage = new BookmarksPage();
         navigationButtons = new NavigationButtons();
         tabsPage = new TabsPage();
-        settingsPage = new SettingsPage();
+        shareWithPage = new ShareWithPage();
         syncPage = new SyncPage();
 
         IOSDriver driver = Driver.getInstance().getDriver();
