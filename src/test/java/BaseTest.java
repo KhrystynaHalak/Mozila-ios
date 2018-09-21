@@ -31,6 +31,7 @@ public class BaseTest {
         historyPage = new HistoryPage();
         allOtherPages = new AllOtherPages();
         tabToolbarMenuPage = new TabToolbarMenuPage();
+        bookmarksPage = new BookmarksPage();
         navigationButtons = new NavigationButtons();
         tabsPage = new TabsPage();
         settingsPage = new SettingsPage();

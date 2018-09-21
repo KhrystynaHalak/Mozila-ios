@@ -2,6 +2,7 @@ package mozilla.pages;
 
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -43,5 +44,6 @@ public class BasePage {
         //log.info("Title of current page: " + title);
         return title;
     }
+
 
 }
