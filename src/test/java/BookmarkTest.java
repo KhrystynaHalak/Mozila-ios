@@ -6,6 +6,32 @@ public class BookmarkTest extends BaseTest {
     @Test
     public void Test1() throws InterruptedException {
 
+
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.topSitesBtnClick();
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.downloadsBtnClick();
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.historyBtnClick();
+        homePage.tabToolbarBtnClick();
+        //tabToolbarMenuPage.bookmarksBtnClick();
+        //homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.readingListBtnClick();
+        homePage.tabToolbarBtnClick();
+        //tabToolbarMenuPage.settingsBtnClick();
+        //settingsPage.doneLeftUpCornerBtnClick();
+        //homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.syncBtnClick();
+        syncPage.doneLeftUpCornerBtnClick();
+
+
+
+
+
+
+
+
+        /*
         homePage.downloadsBtnClick();
         homePage.fauvoritesBtnClick();
         homePage.historyBtnClick();
@@ -29,6 +55,7 @@ public class BookmarkTest extends BaseTest {
         tabsPage.privateBrowsingBtn();
         tabsPage.deleteTabBtnClick();
         tabsPage.closeAllTabsBtn();
+*/
 
 /*
         homePage.enterURL("rp5.ua");

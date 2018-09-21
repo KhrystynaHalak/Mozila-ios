@@ -21,6 +21,8 @@ public class BaseTest {
     protected BookmarksPage bookmarksPage;
     protected NavigationButtons navigationButtons;
     protected TabsPage tabsPage;
+    protected SettingsPage settingsPage;
+    protected SyncPage syncPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -31,6 +33,8 @@ public class BaseTest {
         tabToolbarMenuPage = new TabToolbarMenuPage();
         navigationButtons = new NavigationButtons();
         tabsPage = new TabsPage();
+        settingsPage = new SettingsPage();
+        syncPage = new SyncPage();
 
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);
