@@ -1,29 +1,23 @@
 package framework.utility;
+
 import io.appium.java_client.ios.IOSDriver;
-import mozilla.pages.BookmarksPage;
-import mozilla.pages.HomePage;
-import mozilla.pages.TabToolbarMenuPage;
 //import org.apache.log4j.helpers.ThreadLocalMap;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
     private IOSDriver driver;
 
     final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
-    final String appAdress = "/Users/khrystyna/Library/Developer/Xcode/DerivedData/Client-brfxltyitivdwtbpzpvcqlitwmyw/Build/Products/Fennec-iphonesimulator/Client.app";
     final int TIME_OUT = 15;
 
-    protected HomePage homePage;
-    protected TabToolbarMenuPage tabToolbarMenuPage;
-    protected BookmarksPage bookmarksPage;
-
-
-    private Driver() { }
+    private Driver() {
+    }
 
     private static Driver instance = new Driver();
 
@@ -34,17 +28,20 @@ public class Driver {
 
     private ThreadLocal<IOSDriver> threadLocal = new ThreadLocal<IOSDriver>() {
         @Override
-        protected IOSDriver initialValue(){
+        protected IOSDriver initialValue() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             if (driver == null) {
 
-                capabilities.setCapability("app", appAdress);
+                capabilities.setCapability("app", "/Users/andrew/Library/Developer/Xcode/DerivedData/Client-dgszbkjkkopxrcclmheybhbwfngb/Build/Products/Fennec-iphonesimulator/Client.app");
                 capabilities.setCapability("platformName", "IOS");
                 capabilities.setCapability("platformVersion", "11.4");
                 capabilities.setCapability("deviceName", "iPhone SE");
                 capabilities.setCapability("noReset", true);
+                capabilities.setCapability("automationName", "appium");
+
                 try {
                     driver = new IOSDriver(new URL(APPIUM_URL), capabilities);
+                    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
@@ -52,19 +49,19 @@ public class Driver {
             }
             return driver;
         }
-
     };
 
-    public IOSDriver getDriver() {return threadLocal.get(); }
+    public IOSDriver getDriver() {
+        return threadLocal.get();
+    }
 
-    public void removeDriver(){
+    public void removeDriver() {
         driver = threadLocal.get();
-        try{
+        try {
+            //driver.manage().deleteAllCookies();
             driver.quit();
-        }
-        finally {
+        } finally {
             threadLocal.remove();
         }
     }
-
 }
