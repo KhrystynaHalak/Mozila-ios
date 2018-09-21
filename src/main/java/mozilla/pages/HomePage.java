@@ -34,10 +34,6 @@ public class HomePage extends BasePage{
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.Downloads']")
     private WebElement DownloadsBtn;
 
-    @FindBy(id = "TabToolbar.forwardButton")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.forwardButton']")
-    private WebElement MoveForwardBtn;
-
     @FindBy(id = "TabToolbar.tabsButton")
     //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.tabsButton']")
     private WebElement TabsBtn;
@@ -82,10 +78,6 @@ public class HomePage extends BasePage{
 
     public void downloadsBtnClick() {
         DownloadsBtn.click();
-    }
-
-    public void moveForwardBtnClick() {
-        MoveForwardBtn.click();
     }
 
     public void tabsBtnClick() {

@@ -15,8 +15,8 @@ public class TabToolbarMenuPage extends BasePage {
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-TopSites']")
     private WebElement TopSitesBtn;
 
-    @FindBy(id = "menu-panel-BookmarksPage")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-BookmarksPage']")
+    //@FindBy(id = "menu-panel-BookmarksPage")
+    @FindBy(xpath = "//*[@name='Bookmarks']")
     private WebElement BookmarksBtn;
 
     @FindBy(id = "menu-panel-ReadingList")
@@ -35,13 +35,22 @@ public class TabToolbarMenuPage extends BasePage {
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-TrackingProtection']")
     private WebElement TrackProtectionBtn;
 
+    @FindBy(xpath = "//XCUIElementTypeCell[@name='menu-TrackingProtection']/XCUIElementTypeImage")
+    private WebElement TrackProtectionRDBtn;
+
     @FindBy(id = "menu-NoImageMode")
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NoImageMode']")
     private WebElement HideImgBtn;
 
+    @FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NoImageMode']/XCUIElementTypeImage")
+    private WebElement HideImgRDBtn;
+
     @FindBy(id = "menu-NightMode")
     //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NightMode']")
     private WebElement NightModeBtn;
+
+    @FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NightMode']/XCUIElementTypeImage")
+    private WebElement NightModeRDBtn;
 
     @FindBy(id = "Settings")
     //@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Settings']")
@@ -91,6 +100,62 @@ public class TabToolbarMenuPage extends BasePage {
 
     public void settingsBtnClick() {
         SettingsBtn.click();
+    }
+
+    public void enableTrackingProtection() {
+        if (TrackProtectionRDBtn.getAttribute("name").equals("enabled")) {
+            return;
+        }
+        else TrackProtectionBtn.click();
+    }
+
+    public void disableTrackingProtection() {
+        if(TrackProtectionRDBtn.getAttribute("name").equals("disabled")) {
+            return;
+        }
+        else TrackProtectionBtn.click();
+    }
+
+    public String getTrackingProtectionStatus() {
+        return TrackProtectionRDBtn.getAttribute("name");
+    }
+
+    public void enableHideImg() {
+        if (HideImgRDBtn.getAttribute("name").equals("enabled")) {
+            return;
+        }
+        else HideImgBtn.click();
+    }
+
+    public void disableHideImg() {
+        if(HideImgRDBtn.getAttribute("name").equals("disabled")) {
+            return;
+        }
+        else HideImgBtn.click();
+    }
+
+    public String getHideImgStatus() {
+
+        return HideImgRDBtn.getAttribute("name");
+    }
+
+    public void enableNightMode() {
+        if (NightModeRDBtn.getAttribute("name").equals("enabled")) {
+            return;
+        }
+        else NightModeBtn.click();
+    }
+
+    public void disableNightMode() {
+        if(NightModeRDBtn.getAttribute("name").equals("disabled")) {
+            return;
+        }
+        else NightModeBtn.click();
+    }
+
+    public String getNightModeStatus() {
+
+        return NightModeRDBtn.getAttribute("name");
     }
 
     public void closeBtnClick() {
