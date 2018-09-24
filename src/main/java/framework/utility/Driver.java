@@ -14,7 +14,7 @@ public class Driver {
     private IOSDriver driver;
 
     final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
-    final int TIME_OUT = 50;
+    final int TIME_OUT = 15;
 
     private Driver() {
     }
@@ -31,7 +31,8 @@ public class Driver {
         protected IOSDriver initialValue() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             if (driver == null) {
-                capabilities.setCapability("app", "/Users/ostap/Desktop/Project/Client.app");
+
+                capabilities.setCapability("app", "/Users/andrew/Library/Developer/Xcode/DerivedData/Client-dgszbkjkkopxrcclmheybhbwfngb/Build/Products/Fennec-iphonesimulator/Client.app");
                 capabilities.setCapability("platformName", "IOS");
                 capabilities.setCapability("platformVersion", "11.4");
                 capabilities.setCapability("deviceName", "iPhone SE");
