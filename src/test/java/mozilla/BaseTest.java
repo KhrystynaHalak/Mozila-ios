@@ -27,6 +27,7 @@ public class BaseTest {
     protected SyncPage syncPage;
     protected ReadingListPage readingListPage;
     protected ShareWithPage shareWithPage;
+    protected ThreeDotsPage threeDotsPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -40,6 +41,7 @@ public class BaseTest {
         shareWithPage = new ShareWithPage();
         syncPage = new SyncPage();
         readingListPage = new ReadingListPage();
+        threeDotsPage = new ThreeDotsPage();
 
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);

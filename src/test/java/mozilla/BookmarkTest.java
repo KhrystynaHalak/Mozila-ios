@@ -14,17 +14,20 @@ public class BookmarkTest extends BaseTest {
         int startingValue = bookmarksPage.getBookmarksNamesList().size();
         System.out.println(bookmarksPage.getBookmarksNamesList());
         homePage.enterURL("ex.ua");
+        //homePage.pressGobutton();
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
-        allOtherPages.bookmarkThisPageBtnClick();
+        threeDotsPage.bookmarkThisPageBtnClick();
         homePage.enterURL("github.com");
+        //homePage.pressGobutton();
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
-        allOtherPages.bookmarkThisPageBtnClick();
+        threeDotsPage.bookmarkThisPageBtnClick();
         homePage.enterURL("olx.ua");
+        //homePage.pressGobutton();
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
-        allOtherPages.bookmarkThisPageBtnClick();
+        threeDotsPage.bookmarkThisPageBtnClick();
         allOtherPages.tabToolbarBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
         int actual = bookmarksPage.getBookmarksNamesList().size();
@@ -44,7 +47,7 @@ public class BookmarkTest extends BaseTest {
         allOtherPages.keyBoardGoBtnClick();
         String expected = "Apple";
         allOtherPages.threeDotsBtnClick();
-        allOtherPages.bookmarkThisPageBtnClick();
+        threeDotsPage.bookmarkThisPageBtnClick();
         allOtherPages.tabToolbarBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
         String actual = bookmarksPage.getBookmarksNamesList().get(0);
@@ -52,6 +55,34 @@ public class BookmarkTest extends BaseTest {
         Assert.assertEquals(actual, expected);
     }
 
+    @Test
+    public void Test3() {
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.bookmarksBtnClick();
+        int bookmarksQty = bookmarksPage.getBookmarksNamesList().size();
+        for (int i = 0; i <= bookmarksQty; i++) {
+            bookmarksPage.removeBookmarkItem(1);
+        }
+        int actual = bookmarksPage.getBookmarksNamesList().size();
+        Assert.assertTrue(actual < bookmarksQty);
+        Assert.assertEquals(actual, 0);
+        homePage.enterURL("exist.ua");
+        homePage.pressGobutton();
+        allOtherPages.threeDotsBtnClick();
+        threeDotsPage.bookmarkThisPageBtnClick();
+        homePage.enterURL("ebay.com");
+        homePage.pressGobutton();
+        allOtherPages.threeDotsBtnClick();
+        threeDotsPage.bookmarkThisPageBtnClick();
+        actual = bookmarksPage.getBookmarksNamesList().size();
+        Assert.assertEquals(actual, 2);
+        for (int i = 0; i <= bookmarksQty; i++) {
+            bookmarksPage.removeBookmarkItem(1);
+        }
+        actual = bookmarksPage.getBookmarksNamesList().size();
+        Assert.assertEquals(actual, 0);
+
+    }
         /*
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.topSitesBtnClick();
