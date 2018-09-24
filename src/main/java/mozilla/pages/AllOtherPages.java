@@ -1,5 +1,6 @@
 package mozilla.pages;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,6 +19,9 @@ public class AllOtherPages extends HomePage {
     @FindBy(id = "menu-Bookmark")
     private WebElement BookmarkThisPageBtn;
 
+    @FindBy(id = "menu-Bookmark-Remove")
+    private WebElement UnBookmarkPageBtn;
+
     @FindBy(id = "menu-Send-to-Device")
     private WebElement SendToDeviceBtn;
 
@@ -33,7 +37,7 @@ public class AllOtherPages extends HomePage {
     @FindBy(id = "action_pln")
     private WebElement PinToTopSitesBtn;
 
-    @FindBy(id = "ProtonMenu.close")
+    @FindBy(id = "PhotonMenu.close")
     private WebElement CloseBtn;
 
     @FindBy(xpath = "//*[@name=\"TabLocationView.readerModeButton\"]")
@@ -57,7 +61,16 @@ public class AllOtherPages extends HomePage {
     }
 
     public void bookmarkThisPageBtnClick() {
-        BookmarkThisPageBtn.click();
+        try {
+            BookmarkThisPageBtn.click();
+        }
+        catch (NoSuchElementException e) { closeBtnClick();}
+    }
+
+    public void unBookmarkPageBtnClick() {
+        if (UnBookmarkPageBtn.isDisplayed()) {
+            UnBookmarkPageBtn.click();
+        } else closeBtnClick();
     }
 
     public void sendToDeviceBtnClick() {
