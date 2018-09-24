@@ -88,4 +88,11 @@ public class HomePage extends BasePage {
         TabToolbarBtn.click();
     }
 
+    public String getMainSiteAdress() {
+
+        String fullURL = URLField.getText();
+        String[] arrSplitOne = fullURL.split("/");
+        String[] arrSplitTwo = arrSplitOne[0].split("[.]");
+        return arrSplitTwo[1];
+    }
 }

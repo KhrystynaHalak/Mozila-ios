@@ -7,19 +7,19 @@ public class ReadingListTests extends BaseTest{
 
     @Test
 
-    public void addToReadingListTest (){
+    public void addToReadingListTest () {
 
         homePage.enterURL("https://www.goodnet.org/articles/how-to-make-healthy-eating-choices-while-traveling");
         allOtherPages.keyBoardGoBtnClick();
+        String url1 = homePage.getMainSiteAdress();
+
         allOtherPages.markAsBookingListItem();
         allOtherPages.addToBookingListClick();
 
-
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.readingListBtnClick();
-        int actualReadingListItemCount = 1;
-        int expectedReadingListItemCount = readingListPage.readingListItemsCount();
-        Assert.assertEquals(expectedReadingListItemCount, actualReadingListItemCount);
+
+        Assert.assertTrue(readingListPage.getreadingListItem(url1));
 
     }
 
