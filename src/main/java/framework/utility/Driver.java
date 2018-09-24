@@ -14,8 +14,7 @@ public class Driver {
     private IOSDriver driver;
 
     final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
-    final int TIME_OUT = 15;
-    final String appAdress = "/Users/khrystyna/Library/Developer/Xcode/DerivedData/Client-brfxltyitivdwtbpzpvcqlitwmyw/Build/Products/Fennec-iphonesimulator/Client.app";
+    final int TIME_OUT = 50;
 
     private Driver() {
     }
@@ -32,8 +31,7 @@ public class Driver {
         protected IOSDriver initialValue() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             if (driver == null) {
-
-                capabilities.setCapability("app", appAdress);
+                capabilities.setCapability("app", "/Users/ostap/Desktop/Project/Client.app");
                 capabilities.setCapability("platformName", "IOS");
                 capabilities.setCapability("platformVersion", "11.4");
                 capabilities.setCapability("deviceName", "iPhone SE");
@@ -42,11 +40,10 @@ public class Driver {
 
                 try {
                     driver = new IOSDriver(new URL(APPIUM_URL), capabilities);
-                    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+                    driver.manage().timeouts().implicitlyWait(TIME_OUT, TimeUnit.SECONDS);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-
             }
             return driver;
         }
@@ -59,7 +56,6 @@ public class Driver {
     public void removeDriver() {
         driver = threadLocal.get();
         try {
-            //driver.manage().deleteAllCookies();
             driver.quit();
         } finally {
             threadLocal.remove();
