@@ -34,6 +34,6 @@ public class ThreeDotsBtnTest extends BaseTest {
         allOtherPages.bookmarkThisPageBtnClick();
         navigationButtons.toolbarMenuBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
-        List<WebElement> list = bookmarksPage.getBookmarksList();
+        //List<WebElement> list = bookmarksPage.getBookmarksList();
     }
 }
