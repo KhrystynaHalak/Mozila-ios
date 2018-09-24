@@ -3,8 +3,6 @@ package mozilla;
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
 import mozilla.pages.*;
-import mozilla.pages.HomePage;
-import mozilla.pages.ShareWithPage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
