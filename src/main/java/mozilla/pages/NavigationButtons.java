@@ -18,6 +18,9 @@ public class NavigationButtons extends BasePage {
     @FindBy(id = "TabToolbar.tabsButton")
     private WebElement TabsBtn;
 
+    @FindBy(id = "TabToolbar.menuButton")
+    private WebElement toolbarMenu;
+
     //Actions
     public void moveBackBtnClick() {
         MoveBackBtn.click();
@@ -33,6 +36,10 @@ public class NavigationButtons extends BasePage {
 
     public void tabsBtnClick() {
         TabsBtn.click();
+    }
+
+    public void toolbarMenuBtnClick() {
+        toolbarMenu.click();
     }
 
 }
