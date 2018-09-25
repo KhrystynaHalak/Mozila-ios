@@ -29,6 +29,7 @@ public class BaseTest {
     protected ReadingListPage readingListPage;
     protected SignInPage signInPage;
     protected FirefoxAccountPage firefoxAccountPage;
+    protected ThreeDotsPage threeDotsPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -45,7 +46,7 @@ public class BaseTest {
         signInPage = new SignInPage();
         settingsPage = new SettingsPage();
         firefoxAccountPage = new FirefoxAccountPage();
-
+        threeDotsPage = new ThreeDotsPage();
 
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);

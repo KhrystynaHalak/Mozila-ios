@@ -27,7 +27,7 @@ public class ReadingListPage extends BasePage{
     //private List<WebElement> ReadingListItem;
 
     @FindBy(id = "MarkAsUnread")
-    private WebElement UnreadBtn;
+    private List<WebElement> UnreadBtn;
 
     @FindBy(id = "MarkAsRead")
     public List<WebElement> ReadBtn;
@@ -44,7 +44,7 @@ public class ReadingListPage extends BasePage{
     }
 
     public void unreadBtnClick() {
-        UnreadBtn.click();
+        UnreadBtn.get(0).click();
     }
 
     public void readBtnClick(){
@@ -60,5 +60,9 @@ public class ReadingListPage extends BasePage{
 
     public Integer readBtnsCount(){
         return ReadBtn.size();
+    }
+
+    public Integer readingItemsCount() {
+        return ReadBtn.size() + UnreadBtn.size();
     }
 }

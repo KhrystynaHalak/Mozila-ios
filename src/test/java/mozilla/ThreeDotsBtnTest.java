@@ -15,7 +15,7 @@ public class ThreeDotsBtnTest extends BaseTest {
         homePage.enterURL("https://www.google.com.ua/");
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
-        allOtherPages.sharePageWithBtnClick();
+        threeDotsPage.sharePageWithBtnClick();
         assertTrue(shareWithPage.getPage().isDisplayed());
         assertTrue(shareWithPage.getRemindersBtn().isDisplayed());
         assertTrue(shareWithPage.getMoreBtn().isDisplayed());
@@ -33,7 +33,7 @@ public class ThreeDotsBtnTest extends BaseTest {
         homePage.enterURL("https://www.google.com.ua/");
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
-        allOtherPages.bookmarkThisPageBtnClick();
+        threeDotsPage.bookmarkThisPageBtnClick();
         navigationButtons.toolbarMenuBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
         for(Map.Entry<String, WebElement> entry: bookmarksPage.getBookmarksElementsWithXpath().entrySet()) {
