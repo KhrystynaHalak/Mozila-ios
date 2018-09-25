@@ -25,14 +25,12 @@ public class Driver {
         return instance;
     }
 
-
     private ThreadLocal<IOSDriver> threadLocal = new ThreadLocal<IOSDriver>() {
         @Override
         protected IOSDriver initialValue() {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             if (driver == null) {
-
-                capabilities.setCapability("app", "/Users/andrew/Library/Developer/Xcode/DerivedData/Client-dgszbkjkkopxrcclmheybhbwfngb/Build/Products/Fennec-iphonesimulator/Client.app");
+                capabilities.setCapability("app", "/Users/ostap/Desktop/Project/Client.app");
                 capabilities.setCapability("platformName", "IOS");
                 capabilities.setCapability("platformVersion", "11.4");
                 capabilities.setCapability("deviceName", "iPhone SE");
