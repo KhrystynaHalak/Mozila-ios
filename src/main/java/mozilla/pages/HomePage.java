@@ -15,31 +15,24 @@ public class HomePage extends BasePage {
     private WebElement URLField;
 
     @FindBy(id = "HomePanels.TopSites")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.TopSites']")
     private WebElement TopSitesBtn;
 
     @FindBy(id = "HomePanels.Bookmarks")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.Bookmarks']")
     private WebElement FauvoritesBtn;
 
     @FindBy(id = "HomePanels.History")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.History']")
     private WebElement HistoryBtn;
 
     @FindBy(id = "HomePanels.ReadingList")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.ReadingList']")
     private WebElement ReadingListBtn;
 
     @FindBy(id = "HomePanels.Downloads")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='HomePanels.Downloads']")
     private WebElement DownloadsBtn;
 
     @FindBy(id = "TabToolbar.tabsButton")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.tabsButton']")
     private WebElement TabsBtn;
 
     @FindBy(id = "TabToolbar.menuButton")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='TabToolbar.menuButton]")
     private WebElement TabToolbarBtn;
 
     //Actions
