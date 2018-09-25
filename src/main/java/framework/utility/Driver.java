@@ -26,7 +26,6 @@ public class Driver {
         return instance;
     }
 
-
     private ThreadLocal<IOSDriver> threadLocal = new ThreadLocal<IOSDriver>() {
         @Override
         protected IOSDriver initialValue() {

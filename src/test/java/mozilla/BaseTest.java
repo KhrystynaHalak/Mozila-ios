@@ -27,6 +27,8 @@ public class BaseTest {
     protected ShareWithPage shareWithPage;
     protected SyncPage syncPage;
     protected ReadingListPage readingListPage;
+    protected SignInPage signInPage;
+    protected FirefoxAccountPage firefoxAccountPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -40,6 +42,10 @@ public class BaseTest {
         shareWithPage = new ShareWithPage();
         syncPage = new SyncPage();
         readingListPage = new ReadingListPage();
+        signInPage = new SignInPage();
+        settingsPage = new SettingsPage();
+        firefoxAccountPage = new FirefoxAccountPage();
+
 
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);
