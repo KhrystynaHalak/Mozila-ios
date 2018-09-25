@@ -1,8 +1,9 @@
 package mozilla;
-import org.testng.Assert;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import java.util.List;
+
 
 public class BookmarkTest extends BaseTest {
 
@@ -11,48 +12,66 @@ public class BookmarkTest extends BaseTest {
 
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
-        int startingValue = bookmarksPage.getBookmarksNamesList().size();
-        System.out.println(bookmarksPage.getBookmarksNamesList());
+        int initialValue = bookmarksPage.getBookmarksNamesList().size();
+        List<String> initialListOfBookmarks = bookmarksPage.getBookmarksNamesList();
+        System.out.println(initialListOfBookmarks);
         homePage.enterURL("ex.ua");
         //homePage.pressGobutton();
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
         threeDotsPage.bookmarkThisPageBtnClick();
+        String currentBookmarkName = "This Connection is Untrusted";
+        if (initialListOfBookmarks.contains(currentBookmarkName)) {
+            initialValue -= 1;
+        }
         homePage.enterURL("github.com");
         //homePage.pressGobutton();
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
         threeDotsPage.bookmarkThisPageBtnClick();
-        homePage.enterURL("olx.ua");
+        currentBookmarkName = "The world’s leading software development platform · GitHub";
+        if (initialListOfBookmarks.contains(currentBookmarkName)) {
+            initialValue -= 1;
+        }
+        homePage.enterURL("youtube.com");
         //homePage.pressGobutton();
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
         threeDotsPage.bookmarkThisPageBtnClick();
+        currentBookmarkName = "Home - YouTube";
+        if (initialListOfBookmarks.contains(currentBookmarkName)) {
+            initialValue -= 1;
+        }
         allOtherPages.tabToolbarBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
         int actual = bookmarksPage.getBookmarksNamesList().size();
         System.out.println(bookmarksPage.getBookmarksNamesList());
-        Assert.assertEquals(actual, 3 + startingValue);
-        bookmarksPage.removeBookmarkItem(3);
-        bookmarksPage.removeBookmarkItem(2);
-        bookmarksPage.removeBookmarkItem(1);
-        actual = bookmarksPage.getBookmarksNamesList().size();
-        Assert.assertEquals(actual, 0 + startingValue);
+        Assert.assertEquals(actual, initialValue + 3);
 
     }
 
     @Test
     public void Test2() {
-        homePage.enterURL("apple.com");
-        allOtherPages.keyBoardGoBtnClick();
-        String expected = "Apple";
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.bookmarkThisPageBtnClick();
+        String expectedBookmarkName = "Apple";
         allOtherPages.tabToolbarBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
-        String actual = bookmarksPage.getBookmarksNamesList().get(0);
+        int initialSize = bookmarksPage.getBookmarksNamesList().size();
+        int bookmarkPosition = 0;
+        if (bookmarksPage.getBookmarksNamesList().contains(expectedBookmarkName)) {
+            bookmarkPosition = bookmarksPage.getBookmarksNamesList().indexOf(expectedBookmarkName);
+        }
+        else {
+            homePage.enterURL("apple.com");
+            allOtherPages.keyBoardGoBtnClick();
+            allOtherPages.threeDotsBtnClick();
+            threeDotsPage.bookmarkThisPageBtnClick();
+            bookmarkPosition = initialSize;
+        }
+        allOtherPages.tabToolbarBtnClick();
+        tabToolbarMenuPage.bookmarksBtnClick();
+        String actualBookmarkName = bookmarksPage.getBookmarksNamesList().get(bookmarkPosition);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(actualBookmarkName, expectedBookmarkName);
     }
 
     @Test
@@ -60,26 +79,12 @@ public class BookmarkTest extends BaseTest {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
         int bookmarksQty = bookmarksPage.getBookmarksNamesList().size();
-        for (int i = 0; i <= bookmarksQty; i++) {
-            bookmarksPage.removeBookmarkItem(1);
+        if (bookmarksQty > 0) {
+            for (int i = 0; i < bookmarksQty; i++) {
+                bookmarksPage.removeBookmarkItem(1);
+            }
         }
         int actual = bookmarksPage.getBookmarksNamesList().size();
-        Assert.assertTrue(actual < bookmarksQty);
-        Assert.assertEquals(actual, 0);
-        homePage.enterURL("exist.ua");
-        homePage.pressGobutton();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.bookmarkThisPageBtnClick();
-        homePage.enterURL("ebay.com");
-        homePage.pressGobutton();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.bookmarkThisPageBtnClick();
-        actual = bookmarksPage.getBookmarksNamesList().size();
-        Assert.assertEquals(actual, 2);
-        for (int i = 0; i <= bookmarksQty; i++) {
-            bookmarksPage.removeBookmarkItem(1);
-        }
-        actual = bookmarksPage.getBookmarksNamesList().size();
         Assert.assertEquals(actual, 0);
 
     }
