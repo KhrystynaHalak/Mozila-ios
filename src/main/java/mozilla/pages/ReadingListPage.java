@@ -1,6 +1,8 @@
 package mozilla.pages;
 
 import framework.utility.Driver;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +16,8 @@ import java.util.List;
 public class ReadingListPage extends BasePage{
 
     HomePage homePage = new HomePage();
-    WebDriverWait wait = new WebDriverWait(Driver.getInstance().getDriver(), 20);
+    TouchAction touchAction;
+
 
     //Elements
 
@@ -32,8 +35,6 @@ public class ReadingListPage extends BasePage{
 
     //Actions
 
-
-
     public boolean getreadingListItem(String siteAdress) {
         boolean elementIsPresent = false;
         if(Driver.getInstance().getDriver().findElement(By.xpath("//*[contains(@name, '" + siteAdress + ".org')]")).isEnabled()) {
@@ -42,18 +43,19 @@ public class ReadingListPage extends BasePage{
         return elementIsPresent;
     }
 
-    /*public Integer readingListItemsCount() {
-        return ReadingListItem().size();
-    }*/
-
     public void unreadBtnClick() {
         UnreadBtn.click();
     }
 
     public void readBtnClick(){
 
-        wait.until(ExpectedConditions.elementToBeClickable(ReadBtn.get(0)));
-        ReadBtn.get(0).click();
+        //WebDriverWait wait = new WebDriverWait(Driver.getInstance().getDriver(), 60);
+
+        //WebElement el = wait.until(ExpectedConditions.elementToBeClickable(By.id("MarkAsRead")));
+        //el.click();
+
+        touchAction = new TouchAction(Driver.getInstance().getDriver());
+        touchAction.tap(PointOption.point(16, 145)).perform();
     }
 
     public Integer readBtnsCount(){

@@ -101,6 +101,4 @@ public class AllOtherPages extends HomePage {
 
     public void addToBookingListClick() {AddToBookingListBtn.click();}
 
-
-
 }

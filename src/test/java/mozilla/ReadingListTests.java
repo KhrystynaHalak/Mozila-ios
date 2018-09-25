@@ -36,13 +36,15 @@ public class ReadingListTests extends BaseTest{
         int previousReadBtnsCount = readingListPage.readBtnsCount();
 
         readingListPage.readBtnClick();
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.readingListBtnClick();
         int currentReadBtnsCount = readingListPage.readBtnsCount();
 
         try {
             Assert.assertEquals(currentReadBtnsCount, previousReadBtnsCount - 1);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
     }
