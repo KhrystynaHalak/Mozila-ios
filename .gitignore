@@ -22,3 +22,4 @@ target/
 out/
 .gradle/
 build/
+src/test/java/resources/Client.app

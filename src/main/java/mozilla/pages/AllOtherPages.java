@@ -1,6 +1,5 @@
 package mozilla.pages;
 
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -12,8 +11,6 @@ public class AllOtherPages extends HomePage {
 
     @FindBy(id = "TabLocationView.pageOptionsButton")
     private WebElement threeDotsBtn;
-
-
 
     @FindBy(xpath = "//*[@name=\"TabLocationView.readerModeButton\"]")
     private WebElement BookingListBtn;
@@ -30,8 +27,6 @@ public class AllOtherPages extends HomePage {
     public void threeDotsBtnClick() {
         threeDotsBtn.click();
     }
-
-
 
     public void markAsBookingListItem() {BookingListBtn.click();}
 
