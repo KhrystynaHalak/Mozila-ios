@@ -3,6 +3,7 @@ package framework.utility;
 import io.appium.java_client.ios.IOSDriver;
 //import org.apache.log4j.helpers.ThreadLocalMap;
 
+import mozilla.pages.SyncPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -11,20 +12,22 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import static framework.utility.Properties.*;
+
 public class Driver {
 
     private static Logger logger = LogManager.getLogger(Driver.class);
 
     private IOSDriver driver;
 
-    private static final String APPIUM_URL = Properties.getProperty("appium.url");
-    private static final int TIME_OUT = Integer.valueOf(Properties.getProperty("timeout"));
-    private static final String APP_ADDRESS = Properties.getProperty("app.address");
-    private static final String PLATFORM_NAME = Properties.getProperty("platform.name");
-    private static final String PLATFORM_VERSION = Properties.getProperty("platform.version");
-    private static final String DEVICE_NAME = Properties.getProperty("device.name");
-    private static final boolean NO_RESET = Boolean.valueOf(Properties.getProperty("noreset"));
-    private static final String AUTOMATION_NAME = Properties.getProperty("automation.name");
+    private static final String APPIUM_URL = getProperty("appium.url");
+    private static final int TIME_OUT = Integer.valueOf(getProperty("timeout"));
+    private static final String APP_ADDRESS = getProperty("app.address").replace("{user.dir}", System.getProperty("user.dir"));
+    private static final String PLATFORM_NAME = getProperty("platform.name");
+    private static final String PLATFORM_VERSION = getProperty("platform.version");
+    private static final String DEVICE_NAME = getProperty("device.name");
+    private static final boolean NO_RESET = Boolean.valueOf(getProperty("noreset"));
+    private static final String AUTOMATION_NAME = getProperty("automation.name");
 
 
     private Driver() {

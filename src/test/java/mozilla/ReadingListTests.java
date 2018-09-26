@@ -52,7 +52,7 @@ public class ReadingListTests extends BaseTest{
         }
 
     }
-
+/*
     @Test
     public void addSeveralReadingListItems() {
         homePage.tabToolbarBtnClick();
@@ -82,7 +82,7 @@ public class ReadingListTests extends BaseTest{
 
     }
 
-
+*/
 
 
 }
