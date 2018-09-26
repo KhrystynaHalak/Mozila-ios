@@ -15,7 +15,9 @@ public class Driver {
 
     final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
     final int TIME_OUT = 50;
-    final String appAdress = "/Users/andrew/Library/Developer/Xcode/DerivedData/Client-dgszbkjkkopxrcclmheybhbwfngb/Build/Products/Fennec-iphonesimulator/Client.app";
+    String cwd = System.getProperty("user.dir");
+    final String appAdress = cwd + "/src/test/resources/Client.app";
+
 
     private Driver() {
     }
