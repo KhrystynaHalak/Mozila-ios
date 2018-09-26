@@ -15,7 +15,6 @@ public class AllOtherPages extends HomePage {
     private WebElement threeDotsBtn;
 
 
-
     @FindBy(xpath = "//*[@name=\"TabLocationView.readerModeButton\"]")
     private WebElement BookingListBtn;
 
@@ -35,23 +34,25 @@ public class AllOtherPages extends HomePage {
         threeDotsBtn.click();
     }
 
-    public void markAsBookingListItem() {BookingListBtn.click();}
+    public void markAsBookingListItem() {
+        BookingListBtn.click();
+    }
 
     public void addToBookingListClick() {
         try {
             if (AddToBookingListBtn.isDisplayed()) {
                 AddToBookingListBtn.click();
             }
-        }
-        catch (NoSuchElementException | StaleElementReferenceException e) {
+        } catch (NoSuchElementException | StaleElementReferenceException e) {
             System.out.println("Add to booking list button is not present, script continues to execute");
         }
     }
 
     public Integer addToBookingListCount() {
-        int addCounter = 0;
 
-       return AddToBookingListBtn.isDisplayed()? addCounter++ : addCounter;
+        int addCounter = 0;
+        return AddToBookingListBtn.isDisplayed() ? addCounter++ : addCounter;
+
     }
 
 }
