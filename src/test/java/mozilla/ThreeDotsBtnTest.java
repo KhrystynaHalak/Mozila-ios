@@ -1,9 +1,10 @@
 package mozilla;
 
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.List;
+import java.util.Map;
 
 import static org.testng.Assert.assertTrue;
 
@@ -27,13 +28,20 @@ public class ThreeDotsBtnTest extends BaseTest {
     }
 
     @Test
-    public void addBookmarkTest() {
+    public void addAndRemoveBookmarkTest() {
+        boolean success = false;
         homePage.enterURL("https://www.google.com.ua/");
         allOtherPages.keyBoardGoBtnClick();
         allOtherPages.threeDotsBtnClick();
         threeDotsPage.bookmarkThisPageBtnClick();
         navigationButtons.toolbarMenuBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
-        //List<WebElement> list = bookmarksPage.getBookmarksList();
+        for(Map.Entry<String, WebElement> entry: bookmarksPage.getBookmarksElementsWithXpath().entrySet()) {
+           if(entry.getValue().getAttribute("name").equals("Google")) {
+               bookmarksPage.deleteElementByXpath(entry.getKey());
+               success = true;
+           }
+        }
+        Assert.assertTrue(success);
     }
 }

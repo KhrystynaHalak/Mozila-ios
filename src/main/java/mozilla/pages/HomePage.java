@@ -2,7 +2,6 @@ package mozilla.pages;
 
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
-import mozilla.pages.BasePage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -83,9 +82,15 @@ public class HomePage extends BasePage {
 
     public String getMainSiteAdress() {
 
-        String fullURL = URLField.getText();
-        String[] arrSplitOne = fullURL.split("/");
-        String[] arrSplitTwo = arrSplitOne[0].split("[.]");
-        return arrSplitTwo[1];
+        try {
+            String fullURL = URLField.getText();
+            String[] arrSplitOne = fullURL.split("/");
+            String[] arrSplitTwo = arrSplitOne[0].split("[.]");
+            return arrSplitTwo[1];
+        }
+        catch (Exception e) {
+            return null;
+        }
+
     }
 }

@@ -24,9 +24,11 @@ public class BaseTest {
     protected NavigationButtons navigationButtons;
     protected TabsPage tabsPage;
     protected SettingsPage settingsPage;
+    protected ShareWithPage shareWithPage;
     protected SyncPage syncPage;
     protected ReadingListPage readingListPage;
-    protected ShareWithPage shareWithPage;
+    protected SignInPage signInPage;
+    protected FirefoxAccountPage firefoxAccountPage;
     protected ThreeDotsPage threeDotsPage;
 
     @BeforeClass
@@ -41,6 +43,9 @@ public class BaseTest {
         shareWithPage = new ShareWithPage();
         syncPage = new SyncPage();
         readingListPage = new ReadingListPage();
+        signInPage = new SignInPage();
+        settingsPage = new SettingsPage();
+        firefoxAccountPage = new FirefoxAccountPage();
         threeDotsPage = new ThreeDotsPage();
 
         IOSDriver driver = Driver.getInstance().getDriver();
