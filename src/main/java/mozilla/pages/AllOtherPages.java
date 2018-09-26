@@ -1,5 +1,7 @@
 package mozilla.pages;
 
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,9 +17,11 @@ public class AllOtherPages extends HomePage {
     @FindBy(xpath = "//*[@name=\"TabLocationView.readerModeButton\"]")
     private WebElement BookingListBtn;
 
-    @FindBy(id = "ReaderModeBarView.listStatusButton")
+    @FindBy(xpath = "//*[@label = 'Add to Reading List']")
     private WebElement AddToBookingListBtn;
 
+    @FindBy(xpath = "//*[@label = 'Remove from Reading List']")
+    private WebElement DeleteFromReadingListBtn;
 
     //Actions
     public void keyBoardGoBtnClick() {
@@ -30,6 +34,21 @@ public class AllOtherPages extends HomePage {
 
     public void markAsBookingListItem() {BookingListBtn.click();}
 
-    public void addToBookingListClick() {AddToBookingListBtn.click();}
+    public void addToBookingListClick() {
+        try {
+            if (AddToBookingListBtn.isDisplayed()) {
+                AddToBookingListBtn.click();
+            }
+        }
+        catch (NoSuchElementException | StaleElementReferenceException e) {
+            System.out.println("Add to booking list button is not present, script continues to execute");
+        }
+    }
+
+    public Integer addToBookingListCount() {
+        int addCounter = 0;
+
+       return AddToBookingListBtn.isDisplayed()? addCounter++ : addCounter;
+    }
 
 }
