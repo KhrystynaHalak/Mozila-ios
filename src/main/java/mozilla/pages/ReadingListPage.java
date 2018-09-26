@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class ReadingListPage extends BasePage{
+public class ReadingListPage extends BasePage {
 
     HomePage homePage = new HomePage();
     TouchAction touchAction;
@@ -27,17 +27,19 @@ public class ReadingListPage extends BasePage{
     //private List<WebElement> ReadingListItem;
 
     @FindBy(id = "MarkAsUnread")
-    private List<WebElement> UnreadBtn;
+    public List<WebElement> UnreadBtn;
 
     @FindBy(id = "MarkAsRead")
     public List<WebElement> ReadBtn;
 
+    @FindBy(xpath = "(//*[@name=\"Remove\"])[1]")
+    private WebElement RemoveBtn;
 
     //Actions
 
     public boolean getreadingListItem(String siteAdress) {
         boolean elementIsPresent = false;
-        if(Driver.getInstance().getDriver().findElement(By.xpath("//*[contains(@name, '" + siteAdress + ".org')]")).isEnabled()) {
+        if (Driver.getInstance().getDriver().findElement(By.xpath("//*[contains(@name, '" + siteAdress + ".org')]")).isEnabled()) {
             elementIsPresent = true;
         }
         return elementIsPresent;
@@ -47,7 +49,7 @@ public class ReadingListPage extends BasePage{
         UnreadBtn.get(0).click();
     }
 
-    public void readBtnClick(){
+    public void readBtnClick() {
 
         //WebDriverWait wait = new WebDriverWait(Driver.getInstance().getDriver(), 60);
 
@@ -58,7 +60,32 @@ public class ReadingListPage extends BasePage{
         touchAction.tap(PointOption.point(16, 145)).perform();
     }
 
-    public Integer readBtnsCount(){
+    public void deleteReadingListItemBySwipe() {
+        /*if (ReadBtn.get(0).isDisplayed()) {
+            int x = ReadBtn.get(0).getLocation().getX();
+            int y = ReadBtn.get(0).getLocation().getY();
+
+            touchAction = new TouchAction(Driver.getInstance().getDriver());
+            touchAction.longPress(PointOption.point(x, y)).waitAction().moveTo(PointOption.point(0, y)).release().perform();
+        } else if (UnreadBtn.get(0).isDisplayed()) {
+            int x = UnreadBtn.get(0).getLocation().getX();
+            int y = UnreadBtn.get(0).getLocation().getY();
+
+            touchAction = new TouchAction(Driver.getInstance().getDriver());
+            touchAction.longPress(PointOption.point(x, y)).waitAction().moveTo(PointOption.point(0, y)).release().perform();
+        }*/
+
+        for (int i = 0; readingItemsCount() > 0; i++)
+        {
+            touchAction = new TouchAction(Driver.getInstance().getDriver());
+            touchAction.longPress(PointOption.point(259, 116)).waitAction().moveTo(PointOption.point(91, 116)).release().perform();
+            RemoveBtn.click();
+        }
+
+        //touchAction.tap(PointOption.point(195, 116)).perform();
+    }
+
+    public Integer readBtnsCount() {
         return ReadBtn.size();
     }
 
