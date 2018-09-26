@@ -6,12 +6,12 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadingListTests extends BaseTest{
+public class ReadingListTests extends BaseTest {
 
     private List<String> Urls;
 
     @Test
-    public void addToReadingListTest () {
+    public void addToReadingListTest() {
 
         homePage.enterURL("https://www.goodnet.org/articles/how-to-make-healthy-eating-choices-while-traveling");
         allOtherPages.keyBoardGoBtnClick();
@@ -52,7 +52,17 @@ public class ReadingListTests extends BaseTest{
         }
 
     }
-/*
+
+    @Test
+    public void deleteAllReadingListItems() {
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.readingListBtnClick();
+
+        readingListPage.deleteReadingListItemBySwipe();
+        int y = readingListPage.readingItemsCount();
+        Assert.assertEquals(y, 0);
+    }
+
     @Test
     public void addSeveralReadingListItems() {
         homePage.tabToolbarBtnClick();
@@ -73,7 +83,7 @@ public class ReadingListTests extends BaseTest{
 
             counter = allOtherPages.addToBookingListCount();
             allOtherPages.addToBookingListClick();
-            counter++;
+            ++counter;
         }
 
         homePage.tabToolbarBtnClick();
@@ -81,8 +91,6 @@ public class ReadingListTests extends BaseTest{
         Assert.assertEquals(readingListItemsCount + counter, 2);
 
     }
-
-*/
 
 
 }
