@@ -73,7 +73,7 @@ public class ReadingListTests extends BaseTest {
 
         Urls = new ArrayList<>();
         Urls.add("https://en.wikipedia.org/wiki/Main_Page");
-        Urls.add("https://pl.wikipedia.org/wiki/Wikipedia:Strona_główna");
+        Urls.add("https://it.wikipedia.org/wiki/Pagina_principale");
 
         int counter = 0;
         for (String url : Urls) {
@@ -81,9 +81,10 @@ public class ReadingListTests extends BaseTest {
             allOtherPages.keyBoardGoBtnClick();
             allOtherPages.markAsBookingListItem();
 
-            counter = allOtherPages.addToBookingListCount();
+            counter += allOtherPages.addToBookingListCount();
+            //System.out.println(allOtherPages.addToBookingListCount());
+            //System.out.println(counter);
             allOtherPages.addToBookingListClick();
-            ++counter;
         }
 
         homePage.tabToolbarBtnClick();

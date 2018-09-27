@@ -21,6 +21,9 @@ public class AllOtherPages extends HomePage {
     @FindBy(xpath = "//*[@label = 'Add to Reading List']")
     private WebElement AddToBookingListBtn;
 
+    @FindBy(xpath = "//*[@name=\"ReaderModeBarView.listStatusButton\"]")
+    private WebElement BookAddBtn;
+
     @FindBy(xpath = "//*[@label = 'Remove from Reading List']")
     private WebElement DeleteFromReadingListBtn;
 
@@ -51,7 +54,15 @@ public class AllOtherPages extends HomePage {
     public Integer addToBookingListCount() {
 
         int addCounter = 0;
-        return AddToBookingListBtn.isDisplayed() ? addCounter++ : addCounter;
+        if (AddToBookingListBtn.getAttribute("enabled").equals("true")) {
+            return ++addCounter;
+        }
+        else {
+            return addCounter;
+        }
+        //eturn BookAddBtn.getAttribute("enabled").equals("true") ? addCounter++ : addCounter;
+
+        //System.out.println(k);
 
     }
 
