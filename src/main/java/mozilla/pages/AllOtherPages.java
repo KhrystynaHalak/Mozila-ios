@@ -1,5 +1,8 @@
 package mozilla.pages;
 
+import framework.utility.Driver;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -7,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AllOtherPages extends HomePage {
 
+    TouchAction touchAction;
     //Elements
     @FindBy(xpath = "//*[@name='Go']")
     private WebElement KeyBoardGoBtn;
@@ -21,8 +25,8 @@ public class AllOtherPages extends HomePage {
     @FindBy(xpath = "//*[@label = 'Add to Reading List']")
     private WebElement AddToBookingListBtn;
 
-    @FindBy(xpath = "//*[@name=\"ReaderModeBarView.listStatusButton\"]")
-    private WebElement BookAddBtn;
+    /*@FindBy(xpath = "//*[@name=\"ReaderModeBarView.listStatusButton\"]")
+    private WebElement BookAddBtn;*/
 
     @FindBy(xpath = "//*[@label = 'Remove from Reading List']")
     private WebElement DeleteFromReadingListBtn;
@@ -56,14 +60,18 @@ public class AllOtherPages extends HomePage {
         int addCounter = 0;
         if (AddToBookingListBtn.getAttribute("enabled").equals("true")) {
             return ++addCounter;
-        }
-        else {
+        } else {
             return addCounter;
         }
-        //eturn BookAddBtn.getAttribute("enabled").equals("true") ? addCounter++ : addCounter;
+    }
 
-        //System.out.println(k);
-
+    public void scrollDownAPage() {
+        touchAction = new TouchAction(Driver.getInstance().getDriver());
+        touchAction.press(PointOption.point(15, 77))
+                .moveTo(PointOption.point(15, 486))
+                .waitAction()
+                .release()
+                .perform();
     }
 
 }
