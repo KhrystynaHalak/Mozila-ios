@@ -29,8 +29,11 @@ public class ThreeDotsPage extends BasePage {
     @FindBy(id = "menu-RequestDesktopSite")
     private WebElement RequestDesktopSiteBtn;
 
-    @FindBy(id = "action_pln")
+    @FindBy(id = "action_pin")
     private WebElement PinToTopSitesBtn;
+
+    @FindBy(id = "action_unpin")
+    private WebElement UnPinTopSitesBtn;
 
     @FindBy(id = "PhotonMenu.close")
     private WebElement CloseBtn;
@@ -72,7 +75,15 @@ public class ThreeDotsPage extends BasePage {
     }
 
     public void pinToTopSitesBtnClick() {
-        PinToTopSitesBtn.click();
+
+        try {
+            PinToTopSitesBtn.click();
+        }
+        catch (NoSuchElementException e) { closeBtnClick();}
+    }
+
+    public void unPinTopSitesBtnClick() {
+
     }
 
     public void closeBtnClick() {
