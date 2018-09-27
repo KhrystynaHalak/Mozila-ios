@@ -46,9 +46,9 @@ public class AllOtherPages extends HomePage {
     }
 
     public Integer addToBookingListCount() {
-        int addCounter = 0;
 
-       return AddToBookingListBtn.isDisplayed()? addCounter++ : addCounter;
+        int addCounter = 0;
+        return AddToBookingListBtn.isDisplayed()? addCounter++ : addCounter;
     }
 
 }

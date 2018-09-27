@@ -81,9 +81,8 @@ public class ReadingListTests extends BaseTest {
             allOtherPages.keyBoardGoBtnClick();
             allOtherPages.markAsBookingListItem();
 
-            counter = allOtherPages.addToBookingListCount();
+            counter += allOtherPages.addToBookingListCount();
             allOtherPages.addToBookingListClick();
-            ++counter;
         }
 
         homePage.tabToolbarBtnClick();
