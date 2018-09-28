@@ -9,7 +9,6 @@ import java.util.Map;
 import static org.testng.Assert.assertTrue;
 
 public class ThreeDotsBtnTest extends BaseTest {
-
     @Test
     public void checkSharePageBtnTest() {
         homePage.enterURL("https://www.google.com.ua/");

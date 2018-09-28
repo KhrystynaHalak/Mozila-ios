@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="warn">
     <Properties>
-        <Property name="basePath">/Users/ostap/Desktop/Project/Mozila-ios/src/main/resources</Property>
+        <Property name="basePath">src/main/resources</Property>
     </Properties>
 
     <Appenders>
-        <!--<RollingFile name="fileLogger" fileName="${basePath}/app-info.log" filePattern="${basePath}/app-info-%d{yyyy-MM-dd}.log">
+        <RollingFile name="fileLogger" fileName="${basePath}/app-info.log" filePattern="${basePath}/app-info-%d{yyyy-MM-dd}.log">
             <PatternLayout>
                 <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
             </PatternLayout>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />
             </Policies>
-        </RollingFile>-->
+        </RollingFile>
 
         <Console name="console" target="SYSTEM_OUT">
             <PatternLayout   pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
@@ -24,6 +24,7 @@
         </Logger>-->
         <Root level="debug" additivity="false">
             <appender-ref ref="console" />
+            <appender-ref ref="fileLogger" />
         </Root>
     </Loggers>
 </Configuration>

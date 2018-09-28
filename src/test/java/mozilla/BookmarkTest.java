@@ -47,7 +47,6 @@ public class BookmarkTest extends BaseTest {
         int actual = bookmarksPage.getBookmarksNamesList().size();
         System.out.println(bookmarksPage.getBookmarksNamesList());
         Assert.assertEquals(actual, initialValue + 3);
-
     }
 
     @Test

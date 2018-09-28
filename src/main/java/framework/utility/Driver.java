@@ -1,9 +1,6 @@
 package framework.utility;
 
 import io.appium.java_client.ios.IOSDriver;
-//import org.apache.log4j.helpers.ThreadLocalMap;
-
-import mozilla.pages.SyncPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -12,7 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import static framework.utility.Properties.*;
+import static framework.utility.PropertiesUtil.getProperty;
 
 public class Driver {
 
@@ -28,7 +25,6 @@ public class Driver {
     private static final String DEVICE_NAME = getProperty("device.name");
     private static final boolean NO_RESET = Boolean.valueOf(getProperty("noreset"));
     private static final String AUTOMATION_NAME = getProperty("automation.name");
-
 
     private Driver() {
     }

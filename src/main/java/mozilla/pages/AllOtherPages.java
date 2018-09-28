@@ -18,7 +18,6 @@ public class AllOtherPages extends HomePage {
     @FindBy(id = "TabLocationView.pageOptionsButton")
     private WebElement threeDotsBtn;
 
-
     @FindBy(xpath = "//*[@name=\"TabLocationView.readerModeButton\"]")
     private WebElement BookingListBtn;
 
@@ -30,7 +29,6 @@ public class AllOtherPages extends HomePage {
 
     @FindBy(xpath = "//*[@label = 'Remove from Reading List']")
     private WebElement DeleteFromReadingListBtn;
-
 
     //Actions
     public void keyBoardGoBtnClick() {
