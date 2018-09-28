@@ -82,11 +82,9 @@ public class ReadingListTests extends BaseTest {
             allOtherPages.markAsBookingListItem();
 
             counter += allOtherPages.addToBookingListCount();
-<<<<<<< HEAD
+
             //System.out.println(allOtherPages.addToBookingListCount());
             //System.out.println(counter);
-=======
->>>>>>> master
             allOtherPages.addToBookingListClick();
         }
 
