@@ -19,7 +19,7 @@ public class Driver {
 
     private static final String APPIUM_URL = getProperty("appium.url");
     private static final int TIME_OUT = Integer.valueOf(getProperty("timeout"));
-    private static final String APP_ADDRESS = getProperty("app.address").replace("{user.dir}", System.getProperty("user.dir"));
+    private static final String APP_ADDRESS = getProperty("app.address");
     private static final String PLATFORM_NAME = getProperty("platform.name");
     private static final String PLATFORM_VERSION = getProperty("platform.version");
     private static final String DEVICE_NAME = getProperty("device.name");
