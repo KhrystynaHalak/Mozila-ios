@@ -9,7 +9,6 @@ public class BookmarkTest extends BaseTest {
 
     @Test
     public void Test1() {
-
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
         int initialValue = bookmarksPage.getBookmarksNamesList().size();

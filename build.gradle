@@ -18,5 +18,10 @@ dependencies {
 }
 
 test {
-    useTestNG()
+    useTestNG() {
+        dependsOn cleanTest
+        useDefaultListeners = true
+
+        suites 'src/test/resources/testng.xml'
+    }
 }

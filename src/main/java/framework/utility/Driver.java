@@ -59,7 +59,7 @@ public class Driver {
                     driver = new IOSDriver(new URL(APPIUM_URL), capabilities);
                     driver.manage().timeouts().implicitlyWait(TIME_OUT, TimeUnit.SECONDS);
                 } catch (MalformedURLException e) {
-                    logger.error("Dreiver initialization failure: "+e.getMessage());
+                    logger.error("Driver initialization failure: "+e.getMessage());
                     e.printStackTrace();
                 }
                 logger.info("Driver successfully initialized!");
