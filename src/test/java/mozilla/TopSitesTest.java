@@ -1,11 +1,10 @@
 package mozilla;
 
-import mozilla.pages.BasePage;
 import org.testng.annotations.Test;
 
 public class TopSitesTest extends BaseTest {
 
-    @Test
+    /*@Test
     public void Test1() {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.topSitesBtnClick();
@@ -13,6 +12,6 @@ public class TopSitesTest extends BaseTest {
 
         System.out.println(topSitesPage.getTopSitesList().size());
 
-    }
+    }*/
 
 }
