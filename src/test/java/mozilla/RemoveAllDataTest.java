@@ -1,5 +1,6 @@
 package mozilla;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RemoveAllDataTest extends BaseTest {
@@ -9,8 +10,15 @@ public class RemoveAllDataTest extends BaseTest {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.settingsBtnClick();
 
-        allOtherPages.scrollDownAPage();
+        dataManagementPage.scrollDownAPage();
         dataManagementPage.dataManagementClick();
+
+        dataManagementPage.scrollDownAPage();
         dataManagementPage.removeClick();
+
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.historyBtnClick();
+
+        Assert.assertEquals(historyPage.ItemInHistoryList.size(), 0);
     }
 }
