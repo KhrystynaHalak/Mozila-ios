@@ -49,6 +49,7 @@ public class BaseTest {
         firefoxAccountPage = new FirefoxAccountPage();
         threeDotsPage = new ThreeDotsPage();
         topSitesPage = new TopSitesPage();
+        settingsPage = new SettingsPage();
 
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);
