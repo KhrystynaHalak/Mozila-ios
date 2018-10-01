@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite1" verbose="1">
-    <test name="checkSharePageBtnTest">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MainSuite">
+    <test name="BookmarkTest">
+        <classes>
+            <class name="mozilla.BookmarkTest"/>
+        </classes>
+    </test>
+    <test name="HistoryTest">
+        <classes>
+            <class name="mozilla.HistoryTest"/>
+        </classes>
+    </test>
+    <test name="ReadingListTests">
+        <classes>
+            <class name="mozilla.ReadingListTests"/>
+        </classes>
+    </test>
+    <test name="RemoveAllDataTest">
+        <classes>
+            <class name="mozilla.RemoveAllDataTest"/>
+        </classes>
+    </test>
+    <test name="SignInAndOutTest">
+        <classes>
+            <class name="mozilla.SignInAndOutTest"/>
+        </classes>
+    </test>
+    <test name="TabToolbarTests">
+        <classes>
+            <class name="mozilla.TabToolbarTests"/>
+        </classes>
+    </test>
+    <test name="ThreeDotsBtnTest">
         <classes>
             <class name="mozilla.ThreeDotsBtnTest"/>
         </classes>
