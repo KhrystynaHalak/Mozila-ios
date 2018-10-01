@@ -9,7 +9,6 @@ public class BookmarkTest extends BaseTest {
 
     @Test
     public void Test1() {
-
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.bookmarksBtnClick();
         int initialValue = bookmarksPage.getBookmarksNamesList().size();
@@ -47,7 +46,6 @@ public class BookmarkTest extends BaseTest {
         int actual = bookmarksPage.getBookmarksNamesList().size();
         System.out.println(bookmarksPage.getBookmarksNamesList());
         Assert.assertEquals(actual, initialValue + 3);
-
     }
 
     @Test

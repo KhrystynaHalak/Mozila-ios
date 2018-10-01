@@ -30,7 +30,9 @@ public class BaseTest {
     protected SignInPage signInPage;
     protected FirefoxAccountPage firefoxAccountPage;
     protected ThreeDotsPage threeDotsPage;
+    protected DataManagementPage dataManagementPage;
     protected TopSitesPage topSitesPage;
+
 
     @BeforeClass
     public void beforeClass() {
@@ -48,8 +50,10 @@ public class BaseTest {
         settingsPage = new SettingsPage();
         firefoxAccountPage = new FirefoxAccountPage();
         threeDotsPage = new ThreeDotsPage();
+        dataManagementPage = new DataManagementPage();
         topSitesPage = new TopSitesPage();
         settingsPage = new SettingsPage();
+
 
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);
@@ -60,6 +64,6 @@ public class BaseTest {
     @AfterClass
     public void afterClass() throws IOException {
         //Driver.getInstance().getDriver().resetApp();
-        Driver.getInstance().removeDriver();
+        //Driver.getInstance().removeDriver();
     }
 }

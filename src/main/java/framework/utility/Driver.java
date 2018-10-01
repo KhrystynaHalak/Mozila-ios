@@ -19,7 +19,7 @@ public class Driver {
 
     private static final String APPIUM_URL = getProperty("appium.url");
     private static final int TIME_OUT = Integer.valueOf(getProperty("timeout"));
-    private static final String APP_ADDRESS = getProperty("app.address").replace("{user.dir}", System.getProperty("user.dir"));
+    private static final String APP_ADDRESS = getProperty("app.address");
     private static final String PLATFORM_NAME = getProperty("platform.name");
     private static final String PLATFORM_VERSION = getProperty("platform.version");
     private static final String DEVICE_NAME = getProperty("device.name");
@@ -59,7 +59,7 @@ public class Driver {
                     driver = new IOSDriver(new URL(APPIUM_URL), capabilities);
                     driver.manage().timeouts().implicitlyWait(TIME_OUT, TimeUnit.SECONDS);
                 } catch (MalformedURLException e) {
-                    logger.error("Dreiver initialization failure: "+e.getMessage());
+                    logger.error("Driver initialization failure: "+e.getMessage());
                     e.printStackTrace();
                 }
                 logger.info("Driver successfully initialized!");

@@ -18,6 +18,7 @@ test-output/
 target/
 *.log
 *.exe
+.allure/
 .idea/
 out/
 .gradle/

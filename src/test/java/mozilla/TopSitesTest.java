@@ -47,4 +47,5 @@ public class TopSitesTest extends BaseTest {
         Assert.assertTrue(initialSize < finalSize);
 
     }
+
 }
