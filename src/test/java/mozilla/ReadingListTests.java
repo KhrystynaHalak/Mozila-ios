@@ -1,5 +1,6 @@
 package mozilla;
 
+import org.springframework.core.annotation.Order;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,7 +11,7 @@ public class ReadingListTests extends BaseTest {
 
     private List<String> Urls;
 
-    @Test
+    @Test(groups = "a")
     public void addToReadingListTest() {
 
         homePage.enterURL("https://www.goodnet.org/articles/how-to-make-healthy-eating-choices-while-traveling");
@@ -27,8 +28,8 @@ public class ReadingListTests extends BaseTest {
 
     }
 
-    @Test
-    public void markasRead() {
+    @Test(dependsOnGroups = "a")
+    public void markAsRead() {
 
         homePage.enterURL("https://www.goodnet.org/articles/5-super-easy-fun-games-that-be-played-anytime-anywhere-list");
         allOtherPages.keyBoardGoBtnClick();
@@ -53,7 +54,7 @@ public class ReadingListTests extends BaseTest {
 
     }
 
-    @Test
+    @Test(groups = "b")
     public void deleteAllReadingListItems() {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.readingListBtnClick();
@@ -63,7 +64,7 @@ public class ReadingListTests extends BaseTest {
         Assert.assertEquals(y, 0);
     }
 
-    @Test
+    @Test(dependsOnGroups = "b")
     public void addSeveralReadingListItems() {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.readingListBtnClick();
