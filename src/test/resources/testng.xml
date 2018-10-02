@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="MainSuite">
-    <test name="BookmarkTest">
+    <!--<test name="BookmarkTest">
         <classes>
             <class name="mozilla.BookmarkTest"/>
         </classes>
@@ -30,7 +30,7 @@
         <classes>
             <class name="mozilla.TabToolbarTests"/>
         </classes>
-    </test>
+    </test>-->
     <test name="ThreeDotsBtnTest">
         <classes>
             <class name="mozilla.ThreeDotsBtnTest"/>
