@@ -10,7 +10,7 @@ public class RemoveAllDataTest extends BaseTest {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.settingsBtnClick();
 
-        dataManagementPage.scrollDownAPage();
+        //allOtherPages.scrollDownAPage();
         dataManagementPage.dataManagementClick();
 
         dataManagementPage.scrollDownAPage();

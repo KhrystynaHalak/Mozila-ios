@@ -25,6 +25,7 @@ public class DataManagementPage extends BasePage {
     //Actions
 
     public void dataManagementClick(){
+        scrollDownAPage();
         DataManagementBtn.click();
     }
 
@@ -34,9 +35,9 @@ public class DataManagementPage extends BasePage {
 
     public void scrollDownAPage() {
         touchAction = new TouchAction(Driver.getInstance().getDriver());
-        touchAction.longPress(PointOption.point(1, 100))
+        touchAction.longPress(PointOption.point(20, 50))
                 .waitAction()
-                .moveTo(PointOption.point(40, 500))
+                .moveTo(PointOption.point(40, 486))
                 //.waitAction()
                 .release()
                 .perform();
