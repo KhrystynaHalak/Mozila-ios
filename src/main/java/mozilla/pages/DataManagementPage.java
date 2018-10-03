@@ -36,8 +36,6 @@ public class DataManagementPage extends BasePage {
     @FindBy(id = "AppSettingsTableViewController.navigationItem.leftBarButtonItem")
     private WebElement DoneBtn;
 
-
-
     //Actions
 
     public void dataManagementClick(){
