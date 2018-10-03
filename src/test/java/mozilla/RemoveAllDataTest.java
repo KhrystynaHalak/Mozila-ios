@@ -12,11 +12,8 @@ public class RemoveAllDataTest extends BaseTest {
 
         dataManagementPage.dataManagementClick();
 
-        Thread.sleep(3000);
         dataManagementPage.removeClick();
-        Thread.sleep(3000);
         dataManagementPage.clickOk();
-        Thread.sleep(3000);
         dataManagementPage.backToSettingsBtnClick();
         dataManagementPage.doneBtnClick();
         //dataManagementPage.refresh();
