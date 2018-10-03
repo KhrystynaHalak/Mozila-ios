@@ -2,8 +2,8 @@ package mozilla;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.util.List;
 
+import java.util.List;
 
 public class BookmarkTest extends BaseTest {
 
