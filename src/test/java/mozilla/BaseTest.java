@@ -63,7 +63,7 @@ public class BaseTest {
 
     @AfterClass
     public void afterClass() throws IOException {
-        //Driver.getInstance().getDriver().resetApp();
-        //Driver.getInstance().removeDriver();
+        Driver.getInstance().getDriver().resetApp();
+        Driver.getInstance().removeDriver();
     }
 }
