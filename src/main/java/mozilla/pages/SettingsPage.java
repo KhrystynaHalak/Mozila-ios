@@ -5,8 +5,17 @@ import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.HashMap;
 
 public class SettingsPage extends BasePage {
     private static final String email = "20littlejohnny16@gmail.com";
@@ -16,7 +25,7 @@ public class SettingsPage extends BasePage {
 
     //Elements
     @FindBy(id = "AppSettingsTableViewController.navigationItem.leftBarButtonItem")
-    private WebElement DoneLeftUpCornerBtn;
+    private WebElement doneLeftUpCornerBtn;
 
     @FindBy(xpath = "//XCUIElementTypeCell[@name='Search']")
     private WebElement searchBtn;
@@ -96,8 +105,175 @@ public class SettingsPage extends BasePage {
     @FindBy(id = "Settings")
     private WebElement returnToSettingsBtn;
 
-
     //Accessors
+    HashMap<String, WebElement> accessor = new HashMap<String, WebElement>();
+
+    {
+        getElements();
+    }
+    public void getElements() {
+        accessor.put("SearchBtn", searchBtn);
+        accessor.put("NewTabBtn", newTabBtn);
+        accessor.put("HomePageBtn", homepageBtn);
+        accessor.put("MailAppBtn", mailAppBtn);
+        accessor.put("DisplayBtn", displayBtn);
+        accessor.put("BlockPopUpRdBtn",blockPopUpRdBtn);
+        accessor.put("SaveLoginsRfBtn", saveLoginsRfBtn);
+        accessor.put("OpenCopiedLinksRdBtn", openCopiedLinksRdBtn);
+        accessor.put("LoginBtn", loginBtn);
+        accessor.put("PasscodeForLoginsBtn", passcodeForLoginsBtn);
+        accessor.put("ClearPrivateDataBtn", clearPrivateDataBtn);
+        accessor.put("ClosePrivateTabsRdBtn", closePrivateTabsRdBtn);
+        accessor.put("TrackingProtectionBtn", trackingProtectionBtn);
+        accessor.put("PrivacyPolicyBtn", privacyPolicyBtn);
+        accessor.put("SendFeedbackBtn", sendFeedbackBtn);
+        accessor.put("SendUsageDataRdBtn", sendUsageDataRdBtn);
+        accessor.put("HelpBtn", helpBtn);
+        accessor.put("LicensesBtn", licensesBtn);
+        accessor.put("YourRightsBtn", yourRightsBtn);
+        accessor.put("ToTopBtn", toTopBtn);
+        accessor.put("DoneLeftUpCornerBtn", doneLeftUpCornerBtn);
+        accessor.put("ShowTourBtn", showTourBtn);
+        accessor.put("SignInMoreInfoBtn", signInMoreInfoBtn);
+        accessor.put("UserEmailLbl", userEmailLbl);
+        accessor.put("UserEmailBtn", userEmailBtn);
+    }
+
+    // Actions
+
+    public void searchBtnClick() {
+        searchBtn.click();
+    }
+    public void newTabBtnClick() {
+        newTabBtn.click();
+    }
+    public void homepageBtnClick() {
+        homepageBtn.click();
+    }
+    public void mailAppBtnClick() {
+        mailAppBtn.click();
+    }
+    public void displayBtnClick() {
+        displayBtn.click();
+    }
+    public void blockPopUpRdBtnClick() {
+        blockPopUpRdBtn.click();
+    }
+    public void saveLoginsRdBtnClick() {
+        saveLoginsRfBtn.click();
+    }
+    public void openCopiedLinksRdBtnClick() {
+        openCopiedLinksRdBtn.click();
+    }
+    public void loginBtnClick() {
+        loginBtn.click();
+    }
+    public void passcodeForLoginsBtnClick() {
+        passcodeForLoginsBtn.click();
+    }
+    public void closePrivateTabsRdBtnClick() {
+        closePrivateTabsRdBtn.click();
+    }
+    public void trackingProtectionBtnClick() {
+        trackingProtectionBtn.click();
+    }
+    public void privacyPolicyBtnClick() {
+        privacyPolicyBtn.click();
+    }
+    public void showTourBtnClick() {
+        showTourBtn.click();
+    }
+    public void sendFeedbackBtnClick() {
+        sendFeedbackBtn.click();
+    }
+    public void sendUsageDataRdBtnClick() {
+        sendUsageDataRdBtn.click();
+    }
+    public void helpBtnClick() {
+        helpBtn.click();
+    }
+    public void licensesBtnClick() {
+        licensesBtn.click();
+    }
+    public void yourRightsBtnClick() {
+        yourRightsBtn.click();
+    }
+    public void toTopBtnClick() {
+         toTopBtn.click();
+    }
+    public void doneLeftUpCornerBtnClick() {
+        doneLeftUpCornerBtn.click();
+    }
+    public void signInMoreInfoBtnClick() {
+        signInMoreInfoBtn.click();
+    }
+    public void userEmailLblClick() {
+        userEmailLbl.click();
+    }
+    public void userEmailBtnClick() {
+        userEmailBtn.click();
+    }
+
+    public String getUserEmailLblText() {
+        return userEmailLbl.getText();
+    }
+
+    public static String getEmail() {
+        return email;
+    }
+
+    public String getVersionTxt() {
+        return versionTxt.getText();
+    }
+
+    public void ScrollTo(String element) {
+        toTopBtnClick();
+
+            do {
+                touchAction = new TouchAction(Driver.getInstance().getDriver());
+                touchAction.longPress(PointOption.point(0, 478)).waitAction().moveTo(PointOption.point(0, 350)).release().perform();
+            /*if (yourRightsBtn.isDisplayed() && (!accessor.get(element).isDisplayed())) {
+                toTopBtnClick();
+            }*/
+            } while (!accessor.get(element).isDisplayed());
+        }
+
+
+    public void returnToSettingsBtnClick() {
+        if (returnToSettingsBtn.isDisplayed()) {
+            returnToSettingsBtn.click();
+        }
+        else returnToSettingsBtnClick();
+    }
+
+    public void takeScreenShot(String name) throws IOException {
+        Files.write(Paths.get("/Users/andrew/Desktop/" + name), ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+    }
+
+}
+
+
+
+    /*public WebElement getDoneLeftUpCornerBtn() {
+        return doneLeftUpCornerBtn;
+    }
+
+    public WebElement getSignInMoreInfoBtn() {
+        return signInMoreInfoBtn;
+    }
+
+    public WebElement getUserEmailLbl() {
+        return userEmailLbl;
+    }
+
+    public WebElement getUserEmailBtn() {
+        return userEmailBtn;
+    }
+
+
+    public WebElement getShowTourBtn() {
+        return showTourBtn;
+    }
 
     public WebElement getSearchBtn() {
         return searchBtn;
@@ -177,58 +353,4 @@ public class SettingsPage extends BasePage {
 
     public WebElement getToTopBtn() {
         return toTopBtn;
-    }
-
-
-    public static String getEmail() {
-        return email;
-    }
-
-    public WebElement getDoneLeftUpCornerBtn() {
-        return DoneLeftUpCornerBtn;
-    }
-
-    public WebElement getSignInMoreInfoBtn() {
-        return signInMoreInfoBtn;
-    }
-
-    public WebElement getUserEmailLbl() {
-        return userEmailLbl;
-    }
-
-    public WebElement getUserEmailBtn() {
-        return userEmailBtn;
-    }
-
-    public WebElement getVersionTxt() {
-        return versionTxt;
-    }
-
-    public WebElement getShowTourBtn() {
-        return showTourBtn;
-    }
-
-
-    // Actions
-
-    public void doneLeftUpCornerBtnClick() {
-        DoneLeftUpCornerBtn.click();
-    }
-
-    public void showTourBtnClick() {
-        showTourBtn.click();
-    }
-
-    public void ScrollTo(WebElement element) {
-
-        toTopBtn.click();
-        do {
-            touchAction = new TouchAction(Driver.getInstance().getDriver());
-            touchAction.longPress(PointOption.point(0, 478)).waitAction().moveTo(PointOption.point(0, 350)).release().perform();
-        } while (!element.isDisplayed());
-    }
-
-    public void returnToSettingsBtnClick() {
-        returnToSettingsBtn.click();
-    }
-}
+    }*/

@@ -2,38 +2,42 @@ package mozilla;
 
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class SettingsTest extends BaseTest {
 
     @Test
-    public void ScrollingTest() throws InterruptedException {
+    public void ScrollingTest() throws InterruptedException, IOException {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.settingsBtnClick();
 
-        settingsPage.ScrollTo(settingsPage.getPasscodeForLoginsBtn());
+        settingsPage.ScrollTo("PasscodeForLoginsBtn");
 
         //Passcode for Logins
-        settingsPage.getPasscodeForLoginsBtn().click();
-        Thread.sleep(2000);
+        settingsPage.passcodeForLoginsBtnClick();
+        settingsPage.takeScreenShot("Passcode");
         settingsPage.returnToSettingsBtnClick();
 
-        settingsPage.ScrollTo(settingsPage.getNewTabBtn());
+        settingsPage.ScrollTo("NewTabBtn");
 
-        //New Tab
-        settingsPage.getNewTabBtn().click();
-        Thread.sleep(2000);
+       /* //New Tab
+        settingsPage.newTabBtnClick();
         settingsPage.returnToSettingsBtnClick();
+        settingsPage.ScrollTo("TrackingProtectionBtn");
+*/
+/*        //Tracking Protection
+        settingsPage.trackingProtectionBtnClick();
+        settingsPage.returnToSettingsBtnClick();*/
 
-        settingsPage.ScrollTo(settingsPage.getTrackingProtectionBtn());
-
-        //Tracking Protection
-        settingsPage.getTrackingProtectionBtn().click();
-        Thread.sleep(2000);
+        //Search
+        settingsPage.ScrollTo("SearchBtn");
+        settingsPage.searchBtnClick();
+        settingsPage.takeScreenShot("SearchBtn");
         settingsPage.returnToSettingsBtnClick();
 
         //Show Tour
-        settingsPage.ScrollTo(settingsPage.getShowTourBtn());
-        settingsPage.getShowTourBtn().click();
-        Thread.sleep(5000);
+        settingsPage.ScrollTo("ShowTourBtn");
+        settingsPage.showTourBtnClick();
         /*settingsPage.getSearchBtn().click();
         settingsPage.returnToSettingsBtnClick();
         settingsPage.getNewTabBtn().click();
@@ -58,10 +62,10 @@ public class SettingsTest extends BaseTest {
     }
 
     @Test
-    public void Test2() {
+    public void Test2() throws InterruptedException {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.settingsBtnClick();
-        settingsPage.ScrollTo(settingsPage.getVersionTxt());
+        settingsPage.ScrollTo("ShowTourBtn");
         settingsPage.showTourBtnClick();
     }
 }
