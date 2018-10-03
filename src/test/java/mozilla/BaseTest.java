@@ -52,6 +52,7 @@ public class BaseTest {
         threeDotsPage = new ThreeDotsPage();
         dataManagementPage = new DataManagementPage();
         topSitesPage = new TopSitesPage();
+        settingsPage = new SettingsPage();
 
 
         IOSDriver driver = Driver.getInstance().getDriver();
@@ -62,7 +63,7 @@ public class BaseTest {
 
     @AfterClass
     public void afterClass() throws IOException {
-        //Driver.getInstance().getDriver().resetApp();
+        Driver.getInstance().getDriver().resetApp();
         Driver.getInstance().removeDriver();
     }
 }
