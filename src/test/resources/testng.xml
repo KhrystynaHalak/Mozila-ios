@@ -21,6 +21,11 @@
             <class name="mozilla.RemoveAllDataTest"/>
         </classes>
     </test>
+    <test name="SettingsTest">
+        <classes>
+            <class name="mozilla.SettingsTest"/>
+        </classes>
+    </test>
     <test name="SignInAndOutTest">
         <classes>
             <class name="mozilla.SignInAndOutTest"/>
