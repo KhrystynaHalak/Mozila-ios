@@ -15,10 +15,10 @@ public class SettingsTest extends BaseTest {
 
         //Passcode for Logins
         settingsPage.passcodeForLoginsBtnClick();
-        settingsPage.takeScreenShot("Passcode");
+        settingsPage.takeScreenShot("Passcode.jpg");
         settingsPage.returnToSettingsBtnClick();
 
-        settingsPage.ScrollTo("NewTabBtn");
+        //settingsPage.ScrollTo("NewTabBtn");
 
        /* //New Tab
         settingsPage.newTabBtnClick();
@@ -30,9 +30,9 @@ public class SettingsTest extends BaseTest {
         settingsPage.returnToSettingsBtnClick();*/
 
         //Search
-        settingsPage.ScrollTo("SearchBtn");
-        settingsPage.searchBtnClick();
-        settingsPage.takeScreenShot("SearchBtn");
+        settingsPage.ScrollTo("NewTabBtn");
+        settingsPage.newTabBtnClick();
+        settingsPage.takeScreenShot("NewTabBtn.jpg");
         settingsPage.returnToSettingsBtnClick();
 
         //Show Tour
@@ -62,7 +62,7 @@ public class SettingsTest extends BaseTest {
     }
 
     @Test
-    public void Test2() throws InterruptedException {
+    public void Test2() {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.settingsBtnClick();
         settingsPage.ScrollTo("ShowTourBtn");

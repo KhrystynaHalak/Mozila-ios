@@ -2,6 +2,7 @@ package mozilla.pages;
 
 import framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -19,7 +20,7 @@ public class BasePage {
     protected Wait<IOSDriver> wait;
 
     public BasePage() {
-        PageFactory.initElements(Driver.getInstance().getDriver(), this);
+        PageFactory.initElements(new AppiumFieldDecorator(Driver.getInstance().getDriver()), this);
     }
 
     public void waitElementToClick(WebElement webElement) {
