@@ -57,37 +57,36 @@ public class DownloadsPage extends BasePage {
         touchAction = new TouchAction(Driver.getInstance().getDriver());
         listTwo = new ArrayList<>();
 
+        try {
+            for (int k = 0; k <= listTwo.size(); k++) {
+                int i = k + 1;
+                listTwo.add(Driver.getInstance().getDriver().findElementByXPath("//*[@name=\"DownloadsTable\"]/XCUIElementTypeCell[" + i + "]"));
 
-        for (int k = 0; k <= listTwo.size(); k++) {
-            int i = k + 1;
-            listTwo.add(Driver.getInstance().getDriver().findElementByXPath("//*[@name=\"DownloadsTable\"]/XCUIElementTypeCell["+ i +"]"));
+                if (i % 7 == 0) {
+                    touchAction.longPress(PointOption.point(50, 100))
+                            .waitAction()
+                            .moveTo(PointOption.point(50, 400))
+                            .release()
+                            .perform();
 
-            if(i%7 == 0) {
-                touchAction.longPress(PointOption.point(50, 100))
-                        .waitAction()
-                        .moveTo(PointOption.point(50, 400))
-                        .release()
-                        .perform();
-                try {
                     listTwo.add(Driver.getInstance().getDriver().findElementByXPath("//*[@name=\"DownloadsTable\"]/XCUIElementTypeCell[" + i + "]"));
-                }
-                catch (NoSuchElementException e) {
-                    System.out.println("hello");
                 }
             }
         }
+        catch (Exception e) {
+                    System.out.println("Hello");
+                }
+
         return listTwo;
-
-
-
     }
+
     public int downloadedItemsCount() {
         //return downloadedItems.size();
 
         return getListOne().size();
     }
 
-    public void downloadAppearingBtnClick(){
+    public void downloadAppearingBtnClick() {
         DownloadAppearingBtn.click();
     }
 
