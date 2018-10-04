@@ -30,8 +30,12 @@ public class SettingsPage extends BasePage {
     WebDriverWait wait;
 
     //Elements
+
     @FindBy(id = "AppSettingsTableViewController.navigationItem.leftBarButtonItem")
     private WebElement doneLeftUpCornerBtn;
+
+    @FindBy(xpath = "//XCUIElementTypeNavigationBar/XCUIElementTypeOther")
+    private WebElement menuNameHeader;
 
     @FindBy(xpath = "//XCUIElementTypeCell[@name='Search']")
     private WebElement searchBtn;
@@ -105,9 +109,6 @@ public class SettingsPage extends BasePage {
     @FindBy(xpath = "(//XCUIElementTypeButton[@name='More Info'])[1]")
     private WebElement userEmailBtn;
 
-    @FindBy(xpath = "//XCUIElementTypeTable[@name='AppSettingsTableViewController.tableView']/XCUIElementTypeCell[13]")
-    private WebElement toTopBtn;
-
     @FindBy(id = "Settings")
     private WebElement returnToSettingsBtn;
 
@@ -137,7 +138,6 @@ public class SettingsPage extends BasePage {
         accessor.put("HelpBtn", helpBtn);
         accessor.put("LicensesBtn", licensesBtn);
         accessor.put("YourRightsBtn", yourRightsBtn);
-        accessor.put("ToTopBtn", toTopBtn);
         accessor.put("DoneLeftUpCornerBtn", doneLeftUpCornerBtn);
         accessor.put("ShowTourBtn", showTourBtn);
         accessor.put("SignInMoreInfoBtn", signInMoreInfoBtn);
@@ -146,6 +146,7 @@ public class SettingsPage extends BasePage {
     }
 
     // Actions
+    public String getMenuNameHeaderText() { return menuNameHeader.getAttribute("name"); }
 
     public void searchBtnClick() {
         searchBtn.click();
@@ -221,10 +222,6 @@ public class SettingsPage extends BasePage {
         yourRightsBtn.click();
     }
 
-    public void toTopBtnClick() {
-        toTopBtn.click();
-    }
-
     public void doneLeftUpCornerBtnClick() {
         doneLeftUpCornerBtn.click();
     }
@@ -258,12 +255,8 @@ public class SettingsPage extends BasePage {
         driver.executeScript("mobile:scroll", scrollObject);
         }
 
-
     public void returnToSettingsBtnClick() {
-        if (returnToSettingsBtn.isDisplayed()) {
-            returnToSettingsBtn.click();
-        }
-        else returnToSettingsBtnClick();
+        returnToSettingsBtn.click();
     }
 
     public void takeScreenShot(String name) throws IOException {

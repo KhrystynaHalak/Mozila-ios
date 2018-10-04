@@ -16,7 +16,6 @@ public class ShareWithPage extends HomePage {
     @FindBy(xpath = "(//XCUIElementTypeButton[@name=\"More\"])[1]")
     private WebElement moreBtn;
 
-
     @FindBy(id = "Copy")
     private WebElement copyBtn;
 

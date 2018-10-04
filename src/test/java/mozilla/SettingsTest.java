@@ -1,5 +1,6 @@
 package mozilla;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -15,7 +16,8 @@ public class SettingsTest extends BaseTest {
 
         //Passcode for Logins
         settingsPage.passcodeForLoginsBtnClick();
-        settingsPage.takeScreenShot("Passcode.jpg");
+        String currentMenu = settingsPage.getMenuNameHeaderText();
+        Assert.assertEquals(currentMenu, "Passcode For Logins");
         settingsPage.returnToSettingsBtnClick();
 
         //settingsPage.ScrollTo("NewTabBtn");
@@ -32,8 +34,10 @@ public class SettingsTest extends BaseTest {
         //Search
         settingsPage.ScrollTo("NewTabBtn");
         settingsPage.newTabBtnClick();
-        settingsPage.takeScreenShot("NewTabBtn.jpg");
+        currentMenu = settingsPage.getMenuNameHeaderText();
+        Assert.assertEquals(currentMenu, "New Tab");
         settingsPage.returnToSettingsBtnClick();
+
 
         //Show Tour
         settingsPage.ScrollTo("ShowTourBtn");
