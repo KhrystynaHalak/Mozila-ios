@@ -19,6 +19,8 @@ target/
 *.log
 *.exe
 .allure/
+allure-results/
+.DS_Store
 .idea/
 out/
 .gradle/
