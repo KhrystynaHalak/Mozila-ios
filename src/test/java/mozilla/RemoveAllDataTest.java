@@ -17,15 +17,14 @@ public class RemoveAllDataTest extends BaseTest {
         dataManagementPage.clickOk();
         dataManagementPage.backToSettingsBtnClick();
         dataManagementPage.doneBtnClick();
-        //dataManagementPage.refresh();
 
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.historyBtnClick();
 
-        for(int i = 0; i < historyPage.ItemInHistoryList.size(); i++){
-            System.out.println(historyPage.ItemInHistoryList.get(i));
+        for(int i = 0; i < historyPage.ItemInHistoryList().size(); i++){
+            System.out.println(historyPage.ItemInHistoryList().get(i));
         }
-        Assert.assertEquals(historyPage.ItemInHistoryList.size(), 0);
+        Assert.assertEquals(historyPage.ItemInHistoryList().size(), 0);
     }
 
     @Test

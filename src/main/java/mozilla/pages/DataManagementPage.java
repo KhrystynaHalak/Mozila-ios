@@ -25,11 +25,9 @@ public class DataManagementPage extends BasePage {
     HashMap<String, WebElement> hashMap;
     //Elements
 
-    //@FindBy(id = "Data Management")
     @FindBy(id = "Data Management")
     private WebElement DataManagementBtn;
 
-    //@FindBy (xpath = "(//*[@name=\"Clear Private Data\"])[2]")
     @FindBy(id = "ClearPrivateData")
     private WebElement RemoveBtn;
 
@@ -57,16 +55,6 @@ public class DataManagementPage extends BasePage {
     }
 
     public void scrollDownAPageTwo() {
-        /*touchAction = new TouchAction(Driver.getInstance().getDriver());
-        touchAction.longPress(PointOption.point(20, 50))
-                .waitAction()
-                .moveTo(PointOption.point(40, 300))
-                //.waitAction()
-                .release()
-                .perform();*/
-
-        //Driver.getInstance().getDriver().executeScript("arguments[0].scrollIntoView();", DataManagementBtn);
-
         RemoteWebElement elem = (RemoteWebElement)RemoveBtn;
         String elementID = elem.getId();
         HashMap<String, String> scrollObject = new HashMap<>();
@@ -79,7 +67,6 @@ public class DataManagementPage extends BasePage {
     public void clickOk() {
         alert = Driver.getInstance().getDriver().switchTo().alert();
         alert.accept();
-        //OKbtn.click();
     }
 
     public void backToSettingsBtnClick(){
