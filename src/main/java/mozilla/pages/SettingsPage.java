@@ -67,6 +67,9 @@ public class SettingsPage extends BasePage {
     @FindBy(id = "TouchIDPasscode")
     private WebElement passcodeForLoginsBtn;
 
+    @FindBy(id = "Data Management")
+    private WebElement dataManagmentBtn;
+
     @FindBy(id = "ClearPrivateData")
     private WebElement clearPrivateDataBtn;
 
@@ -129,6 +132,7 @@ public class SettingsPage extends BasePage {
         accessor.put("OpenCopiedLinksRdBtn", openCopiedLinksRdBtn);
         accessor.put("LoginBtn", loginBtn);
         accessor.put("PasscodeForLoginsBtn", passcodeForLoginsBtn);
+        accessor.put("DataManagmentBtn", dataManagmentBtn);
         accessor.put("ClearPrivateDataBtn", clearPrivateDataBtn);
         accessor.put("ClosePrivateTabsRdBtn", closePrivateTabsRdBtn);
         accessor.put("TrackingProtectionBtn", trackingProtectionBtn);
@@ -185,6 +189,8 @@ public class SettingsPage extends BasePage {
     }
 
     public void passcodeForLoginsBtnClick() { passcodeForLoginsBtn.click(); }
+
+    public void dataManagmentBtnClick() { dataManagmentBtn.click(); }
 
     public void closePrivateTabsRdBtnClick() {
         closePrivateTabsRdBtn.click();
