@@ -65,8 +65,8 @@ public class AllOtherPages extends HomePage {
 
     public void scrollDownAPage() {
         touchAction = new TouchAction(Driver.getInstance().getDriver());
-        touchAction.longPress(PointOption.point(15, 77))
-                .moveTo(PointOption.point(15, 486))
+        touchAction.longPress(PointOption.point(1, 486))
+                .moveTo(PointOption.point(40, 100))
                 .waitAction()
                 .release()
                 .perform();

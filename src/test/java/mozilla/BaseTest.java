@@ -32,7 +32,7 @@ public class BaseTest {
     protected ThreeDotsPage threeDotsPage;
     protected DataManagementPage dataManagementPage;
     protected TopSitesPage topSitesPage;
-
+    protected DownloadsPage downloadsPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -53,7 +53,7 @@ public class BaseTest {
         dataManagementPage = new DataManagementPage();
         topSitesPage = new TopSitesPage();
         settingsPage = new SettingsPage();
-
+        downloadsPage = new DownloadsPage();
 
         IOSDriver driver = Driver.getInstance().getDriver();
         driver.manage().timeouts().implicitlyWait(implicitTimeOut, TimeUnit.SECONDS);
@@ -63,7 +63,7 @@ public class BaseTest {
 
     @AfterClass
     public void afterClass() throws IOException {
-        //Driver.getInstance().getDriver().resetApp();
-        //Driver.getInstance().removeDriver();
+        Driver.getInstance().getDriver().resetApp();
+        Driver.getInstance().removeDriver();
     }
 }
