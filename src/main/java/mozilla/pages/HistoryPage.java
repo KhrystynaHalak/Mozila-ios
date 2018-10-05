@@ -12,6 +12,7 @@ public class HistoryPage extends BasePage {
 
     TouchAction touchAction;
 
+
     //Elements
 
     @FindBy(xpath = "//*[@name='HistoryPanel.recentlyClosedCell']")
@@ -25,6 +26,7 @@ public class HistoryPage extends BasePage {
 
     @FindBy(xpath = "(//*[@name='Delete'])[1]")
     public WebElement deleteBtn;
+
 
     //Actions
 

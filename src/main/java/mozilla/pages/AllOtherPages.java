@@ -11,7 +11,10 @@ import org.openqa.selenium.support.FindBy;
 public class AllOtherPages extends HomePage {
 
     TouchAction touchAction;
+
+
     //Elements
+
     @FindBy(xpath = "//*[@name='Go']")
     private WebElement keyBoardGoBtn;
 
@@ -27,7 +30,9 @@ public class AllOtherPages extends HomePage {
     @FindBy(xpath = "//*[@label = 'Remove from Reading List']")
     private WebElement deleteFromReadingListBtn;
 
+
     //Actions
+
     public void clickKeyBoardGoBtn() {
         keyBoardGoBtn.click();
     }
