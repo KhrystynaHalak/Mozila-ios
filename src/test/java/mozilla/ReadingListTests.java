@@ -44,13 +44,7 @@ public class ReadingListTests extends BaseTest {
         tabToolbarMenuPage.clickReadingListBtn();
         int currentReadBtnsCount = readingListPage.readBtnsCount();
 
-        try {
-            Assert.assertEquals(currentReadBtnsCount, previousReadBtnsCount - 1);
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
+        Assert.assertEquals(currentReadBtnsCount, previousReadBtnsCount - 1);
     }
 
     @Test(groups = "b")
@@ -83,8 +77,6 @@ public class ReadingListTests extends BaseTest {
 
             counter += allOtherPages.addToBookingListCount();
 
-            //System.out.println(allOtherPages.addToBookingListCount());
-            //System.out.println(counter);
             allOtherPages.clickAddToBookingList();
         }
 

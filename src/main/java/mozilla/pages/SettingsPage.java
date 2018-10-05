@@ -258,7 +258,7 @@ public class SettingsPage extends BasePage {
     }
 
     public void takeScreenShot(String name) throws IOException {
-        Files.write(Paths.get("/Users/andrew/Desktop/" + name), ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+        Files.write(Paths.get("/Users/khrystyna/Desktop/" + name), ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
     }
 
 }

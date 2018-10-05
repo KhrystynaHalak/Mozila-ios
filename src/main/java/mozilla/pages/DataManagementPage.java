@@ -14,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static framework.utility.Driver.*;
@@ -26,6 +27,7 @@ public class DataManagementPage extends BasePage {
     Alert alert;
     HashMap<String, WebElement> hashMap;
     //Elements
+
 
     //@FindBy(id = "Data Management")
     @FindBy(id = "Data Management")
@@ -45,6 +47,9 @@ public class DataManagementPage extends BasePage {
     @FindBy(id = "AppSettingsTableViewController.navigationItem.leftBarButtonItem")
     private WebElement DoneBtn;
 
+    @FindBy(xpath = "//XCUIElementTypeCell/XCUIElementTypeSwitch")
+    private List<WebElement> SwitchBtns;
+
     //Actions
 
     public void dataManagementClick(){
@@ -58,15 +63,6 @@ public class DataManagementPage extends BasePage {
     }
 
     public void scrollDownAPageTwo() {
-        /*touchAction = new TouchAction(Driver.getInstance().getDriver());
-        touchAction.longPress(PointOption.point(20, 50))
-                .waitAction()
-                .moveTo(PointOption.point(40, 300))
-                //.waitAction()
-                .release()
-                .perform();*/
-
-        //Driver.getInstance().getDriver().executeScript("arguments[0].scrollIntoView();", DataManagementBtn);
 
         RemoteWebElement element = (RemoteWebElement)RemoveBtn;
         String elementID = element.getId();
@@ -80,7 +76,6 @@ public class DataManagementPage extends BasePage {
     public void clickOk() {
         alert = Driver.getInstance().getDriver().switchTo().alert();
         alert.accept();
-        //OKbtn.click();
     }
 
     public void backToSettingsBtnClick(){
@@ -91,19 +86,17 @@ public class DataManagementPage extends BasePage {
         DoneBtn.click();
     }
 
-    @FindBy(xpath = "//*[@label=\"Browsing History\"]")
-    private WebElement el;
-
     public HashMap<String, WebElement> getHashMapDataManagement() {
 
         hashMap = new HashMap<>();
 
-        hashMap.put("Browsing History", el);
-        hashMap.put("Cache", Driver.getInstance().getDriver().findElement(By.xpath("//XCUIElementTypeSwitch[@name=\"Cache\"]")));
-        hashMap.put("Cookies", Driver.getInstance().getDriver().findElement(By.xpath("//*[@name=\"Cookies\"]")));
-        hashMap.put("Offline Website Data", Driver.getInstance().getDriver().findElement(By.xpath("//*[@name=\"Offline Website Data\"]")));
-        hashMap.put("Tracking Protection", Driver.getInstance().getDriver().findElement(By.xpath("//*[@name=\"Tracking Protection\"]")));
-        hashMap.put("Downloaded Files", Driver.getInstance().getDriver().findElement(By.xpath("//*[@name=\"Downloaded Files\"]")));
+        hashMap.put("Browsing History", SwitchBtns.get(0));
+        hashMap.put("Cache", SwitchBtns.get(1));
+        hashMap.put("Cookies", SwitchBtns.get(2));
+        hashMap.put("Offline Website Data", SwitchBtns.get(3));
+        hashMap.put("Tracking Protection", SwitchBtns.get(4));
+        hashMap.put("Downloaded Files", SwitchBtns.get(5));
+
 
         return hashMap;
     }
@@ -135,6 +128,7 @@ public class DataManagementPage extends BasePage {
         if (hashMap.get("Downloaded Files").getAttribute("value").equals("0")) {
             hashMap.get("Downloaded Files").click();
         }
+
     }
 
     public boolean checkIfAllEnabled(){
