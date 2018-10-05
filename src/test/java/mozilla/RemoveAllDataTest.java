@@ -10,6 +10,7 @@ public class RemoveAllDataTest extends BaseTest {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.settingsBtnClick();
 
+        settingsPage.ScrollTo("DataManagmentBtn");
         dataManagementPage.dataManagementClick();
 
         dataManagementPage.removeClick();
@@ -26,5 +27,19 @@ public class RemoveAllDataTest extends BaseTest {
         }
         //System.out.println(historyPage.ItemInHistoryList.size());
         Assert.assertEquals(historyPage.ItemInHistoryList.size(), 0);
+    }
+
+    @Test
+    public void removeDataWithAllOptionsEnabled() {
+
+        homePage.tabToolbarBtnClick();
+        tabToolbarMenuPage.settingsBtnClick();
+
+        settingsPage.ScrollTo("DataManagmentBtn");
+        dataManagementPage.dataManagementClick();
+        dataManagementPage.selectAllRadioBtns();
+
+        Assert.assertTrue(dataManagementPage.checkIfAllEnabled());
+
     }
 }
