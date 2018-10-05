@@ -16,37 +16,40 @@ import java.util.List;
 public class DownloadsPage extends BasePage {
 
     TouchAction touchAction;
+
+
     //Elements
 
     @FindBy(id = "Microsoft Word Document icon test.docx")
-    private WebElement DocToDownload;
+    private WebElement docToDownload;
 
     @FindBy(id = "linkContextMenu.download")
-    private WebElement DownloadLinkBtn;
+    private WebElement downloadLinkBtn;
 
     @FindBy(id = "download")
-    private WebElement DownloadNowBtn;
+    private WebElement downloadNowBtn;
 
-    @FindBy(xpath = "//*[@name=\"DownloadsTable\"]/XCUIElementTypeCell")
+    @FindBy(xpath = "//*[@name='DownloadsTable']/XCUIElementTypeCell")
     private List<WebElement> downloadedItems;
 
     @FindBy(id = "Downloads")
-    private WebElement DownloadAppearingBtn;
+    private WebElement downloadAppearingBtn;
+
 
     //Actions
 
-    public void docToDownloadClick() {
+    public void clickDocToDownload() {
         touchAction = new TouchAction(Driver.getInstance().getDriver());
         touchAction.longPress(PointOption.point(13, 280)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(3000))).release().perform();
     }
 
-    public void downloadLinkBtnClick() {
-        docToDownloadClick();
-        DownloadLinkBtn.click();
+    public void clickDownloadLinkBtn() {
+        clickDocToDownload();
+        downloadLinkBtn.click();
     }
 
-    public void downloadNowBtnClick() {
-        DownloadNowBtn.click();
+    public void clickDownloadNowBtn() {
+        downloadNowBtn.click();
     }
 
     List<WebElement> listTwo;
@@ -78,14 +81,14 @@ public class DownloadsPage extends BasePage {
         return listTwo;
     }
 
-    public int downloadedItemsCount() {
+    public int countDownloadedItems() {
         //return downloadedItems.size();
 
         return getListOne().size();
     }
 
-    public void downloadAppearingBtnClick() {
-        DownloadAppearingBtn.click();
+    public void clickDownloadAppearingBtn() {
+        downloadAppearingBtn.click();
     }
 
 }

@@ -11,37 +11,37 @@ public class HomePage extends BasePage {
     //Elements
 
     @FindBy(id = "url")
-    private WebElement URLField;
+    private WebElement urlField;
 
     @FindBy(id = "HomePanels.TopSites")
-    private WebElement TopSitesBtn;
+    private WebElement topSitesBtn;
 
     @FindBy(id = "HomePanels.Bookmarks")
-    private WebElement FauvoritesBtn;
+    private WebElement fauvoritesBtn;
 
     @FindBy(id = "HomePanels.History")
-    private WebElement HistoryBtn;
+    private WebElement historyBtn;
 
     @FindBy(id = "HomePanels.ReadingList")
-    private WebElement ReadingListBtn;
+    private WebElement readingListBtn;
 
     @FindBy(id = "HomePanels.Downloads")
-    private WebElement DownloadsBtn;
+    private WebElement downloadsBtn;
 
     @FindBy(id = "TabToolbar.tabsButton")
-    private WebElement TabsBtn;
+    private WebElement tabsBtn;
 
     @FindBy(id = "TabToolbar.menuButton")
-    private WebElement TabToolbarBtn;
+    private WebElement tabToolbarBtn;
 
     //Actions
 
     public void enterURL(String URL) {
-        URLField.sendKeys(URL);
+        urlField.sendKeys(URL);
     }
 
     public void cleanURL(){
-        URLField.clear();
+        urlField.clear();
     }
 
     public void pressGobutton(){
@@ -52,38 +52,38 @@ public class HomePage extends BasePage {
         iosDriver.context("NATIVE_APP_INSTRUMENTED");
     }
 
-    public void topSitesBtnClick() {
-        TopSitesBtn.click();
+    public void clickTopSitesBtn() {
+        topSitesBtn.click();
     }
 
-    public void fauvoritesBtnClick() {
-        FauvoritesBtn.click();
+    public void clickFauvoritesBtn() {
+        fauvoritesBtn.click();
     }
 
-    public void historyBtnClick() {
-        HistoryBtn.click();
+    public void clickHistoryBtn() {
+        historyBtn.click();
     }
 
-    public void readingListBtnClick() {
-        ReadingListBtn.click();
+    public void clickReadingListBtn() {
+        readingListBtn.click();
     }
 
-    public void downloadsBtnClick() {
-        DownloadsBtn.click();
+    public void clickDownloadsBtn() {
+        downloadsBtn.click();
     }
 
-    public void tabsBtnClick() {
-        TabsBtn.click();
+    public void clickTabsBtn() {
+        tabsBtn.click();
     }
 
     public void tabToolbarBtnClick() {
-        TabToolbarBtn.click();
+        tabToolbarBtn.click();
     }
 
     public String getMainSiteAdress() {
 
         try {
-            String fullURL = URLField.getText();
+            String fullURL = urlField.getText();
             String[] arrSplitOne = fullURL.split("/");
             String[] arrSplitTwo = arrSplitOne[0].split("[.]");
             return arrSplitTwo[1];

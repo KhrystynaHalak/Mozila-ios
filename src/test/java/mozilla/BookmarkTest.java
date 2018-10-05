@@ -10,39 +10,39 @@ public class BookmarkTest extends BaseTest {
     @Test
     public void Test1() {
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.bookmarksBtnClick();
+        tabToolbarMenuPage.clickBookmarksBtn();
         int initialValue = bookmarksPage.getBookmarksNamesList().size();
         List<String> initialListOfBookmarks = bookmarksPage.getBookmarksNamesList();
         System.out.println(initialListOfBookmarks);
         homePage.enterURL("ex.ua");
         //homePage.pressGobutton();
-        allOtherPages.keyBoardGoBtnClick();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.bookmarkThisPageBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
+        allOtherPages.clickThreeDotsBtn();
+        threeDotsPage.clickBookmarkThisPageBtn();
         String currentBookmarkName = "This Connection is Untrusted";
         if (initialListOfBookmarks.contains(currentBookmarkName)) {
             initialValue -= 1;
         }
         homePage.enterURL("github.com");
         //homePage.pressGobutton();
-        allOtherPages.keyBoardGoBtnClick();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.bookmarkThisPageBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
+        allOtherPages.clickThreeDotsBtn();
+        threeDotsPage.clickBookmarkThisPageBtn();
         currentBookmarkName = "The world’s leading software development platform · GitHub";
         if (initialListOfBookmarks.contains(currentBookmarkName)) {
             initialValue -= 1;
         }
         homePage.enterURL("youtube.com");
         //homePage.pressGobutton();
-        allOtherPages.keyBoardGoBtnClick();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.bookmarkThisPageBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
+        allOtherPages.clickThreeDotsBtn();
+        threeDotsPage.clickBookmarkThisPageBtn();
         currentBookmarkName = "Home - YouTube";
         if (initialListOfBookmarks.contains(currentBookmarkName)) {
             initialValue -= 1;
         }
         allOtherPages.tabToolbarBtnClick();
-        tabToolbarMenuPage.bookmarksBtnClick();
+        tabToolbarMenuPage.clickBookmarksBtn();
         int actual = bookmarksPage.getBookmarksNamesList().size();
         System.out.println(bookmarksPage.getBookmarksNamesList());
         Assert.assertEquals(actual, initialValue + 3);
@@ -52,7 +52,7 @@ public class BookmarkTest extends BaseTest {
     public void Test2() {
         String expectedBookmarkName = "Apple";
         allOtherPages.tabToolbarBtnClick();
-        tabToolbarMenuPage.bookmarksBtnClick();
+        tabToolbarMenuPage.clickBookmarksBtn();
         int initialSize = bookmarksPage.getBookmarksNamesList().size();
         int bookmarkPosition = 0;
         if (bookmarksPage.getBookmarksNamesList().contains(expectedBookmarkName)) {
@@ -60,13 +60,13 @@ public class BookmarkTest extends BaseTest {
         }
         else {
             homePage.enterURL("apple.com");
-            allOtherPages.keyBoardGoBtnClick();
-            allOtherPages.threeDotsBtnClick();
-            threeDotsPage.bookmarkThisPageBtnClick();
+            allOtherPages.clickKeyBoardGoBtn();
+            allOtherPages.clickThreeDotsBtn();
+            threeDotsPage.clickBookmarkThisPageBtn();
             bookmarkPosition = initialSize;
         }
         allOtherPages.tabToolbarBtnClick();
-        tabToolbarMenuPage.bookmarksBtnClick();
+        tabToolbarMenuPage.clickBookmarksBtn();
         String actualBookmarkName = bookmarksPage.getBookmarksNamesList().get(bookmarkPosition);
 
         Assert.assertEquals(actualBookmarkName, expectedBookmarkName);
@@ -75,7 +75,7 @@ public class BookmarkTest extends BaseTest {
     @Test
     public void Test3() {
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.bookmarksBtnClick();
+        tabToolbarMenuPage.clickBookmarksBtn();
         int bookmarksQty = bookmarksPage.getBookmarksNamesList().size();
         if (bookmarksQty > 0) {
             for (int i = 0; i < bookmarksQty; i++) {
@@ -86,50 +86,6 @@ public class BookmarkTest extends BaseTest {
         Assert.assertEquals(actual, 0);
 
     }
-        /*
-        homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.topSitesBtnClick();
-        homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.downloadsBtnClick();
-        homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.historyBtnClick();
-        homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.bookmarksBtnClick();
-        homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.readingListBtnClick();
-        homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.settingsBtnClick();
-        settingsPage.doneLeftUpCornerBtnClick();
-        homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.syncBtnClick();
-        syncPage.doneLeftUpCornerBtnClick();
-
-        homePage.downloadsBtnClick();
-        homePage.fauvoritesBtnClick();
-        homePage.historyBtnClick();
-        homePage.readingListBtnClick();
-        homePage.topSitesBtnClick();
-        homePage.enterURL("rp5.ua");
-        allOtherPages.keyBoardGoBtnClick();
-        navigationButtons.moveBackBtnClick();
-        navigationButtons.moveForwardBtnClick();
-        navigationButtons.refreshBtnClick();
-        navigationButtons.tabsBtnClick();
-        tabsPage.privateBrowsingBtn();
-        tabsPage.addNewTabBtnClick();
-        homePage.enterURL("github.com");
-        allOtherPages.keyBoardGoBtnClick();
-        navigationButtons.tabsBtnClick();
-        tabsPage.privateBrowsingBtn();
-        tabsPage.deleteTabBtnClick();
-        tabsPage.closeAllTabsBtn();
-        navigationButtons.tabsBtnClick();
-        tabsPage.privateBrowsingBtn();
-        tabsPage.deleteTabBtnClick();
-        tabsPage.closeAllTabsBtn();
-
-
-*/
 }
 
 

@@ -12,9 +12,9 @@ public class ThreeDotsBtnTest extends BaseTest {
     @Test
     public void checkSharePageBtnTest() {
         homePage.enterURL("https://www.google.com.ua/");
-        allOtherPages.keyBoardGoBtnClick();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.sharePageWithBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
+        allOtherPages.clickThreeDotsBtn();
+        threeDotsPage.clickSharePageWithBtn();
         assertTrue(shareWithPage.getPage().isDisplayed());
         assertTrue(shareWithPage.getRemindersBtn().isDisplayed());
         assertTrue(shareWithPage.getMoreBtn().isDisplayed());
@@ -30,11 +30,11 @@ public class ThreeDotsBtnTest extends BaseTest {
     public void addAndRemoveBookmarkTest() {
         boolean success = false;
         homePage.enterURL("https://www.google.com.ua/");
-        allOtherPages.keyBoardGoBtnClick();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.bookmarkThisPageBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
+        allOtherPages.clickThreeDotsBtn();
+        threeDotsPage.clickBookmarkThisPageBtn();
         navigationButtons.toolbarMenuBtnClick();
-        tabToolbarMenuPage.bookmarksBtnClick();
+        tabToolbarMenuPage.clickBookmarksBtn();
         for(Map.Entry<String, WebElement> entry: bookmarksPage.getBookmarksElementsWithXpath().entrySet()) {
            if(entry.getValue().getAttribute("name").equals("Google")) {
                bookmarksPage.deleteElementByXpath(entry.getKey());

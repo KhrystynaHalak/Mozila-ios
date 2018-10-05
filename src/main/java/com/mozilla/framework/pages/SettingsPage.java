@@ -17,10 +17,7 @@ import java.util.HashMap;
 
 public class SettingsPage extends BasePage {
     private static final String email = "20littlejohnny16@gmail.com";
-
     private IOSDriver driver = Driver.getInstance().getDriver();
-    TouchAction touchAction;
-    WebDriverWait wait;
 
     //Elements
 
@@ -108,9 +105,10 @@ public class SettingsPage extends BasePage {
     @FindBy(id = "Settings")
     private WebElement returnToSettingsBtn;
 
-    //Accessors
-    HashMap<String, WebElement> accessor = new HashMap<String, WebElement>();
 
+    //Accessors
+
+    HashMap<String, WebElement> accessor = new HashMap<String, WebElement>();
     {
         getElements();
     }
@@ -142,96 +140,98 @@ public class SettingsPage extends BasePage {
         accessor.put("UserEmailBtn", userEmailBtn);
     }
 
+
     // Actions
+
     public String getMenuNameHeaderText() { return menuNameHeader.getAttribute("name"); }
 
-    public void searchBtnClick() {
+    public void clickSearchBtn() {
         searchBtn.click();
     }
 
-    public void newTabBtnClick() {
+    public void clickNewTabBtn() {
         newTabBtn.click();
     }
 
-    public void homepageBtnClick() {
+    public void clickHomepageBtn() {
         homepageBtn.click();
     }
 
-    public void mailAppBtnClick() {
+    public void clickMailAppBtn() {
         mailAppBtn.click();
     }
 
-    public void displayBtnClick() {
+    public void clickDisplayBtn() {
         displayBtn.click();
     }
 
-    public void blockPopUpRdBtnClick() {
+    public void clickBlockPopUpRdBtn() {
         blockPopUpRdBtn.click();
     }
 
-    public void saveLoginsRdBtnClick() {
+    public void clickSaveLoginsRdBtn() {
         saveLoginsRfBtn.click();
     }
 
-    public void openCopiedLinksRdBtnClick() {
+    public void clickOpenCopiedLinksRdBtn() {
         openCopiedLinksRdBtn.click();
     }
 
-    public void loginBtnClick() {
+    public void clickLoginBtn() {
         loginBtn.click();
     }
 
-    public void passcodeForLoginsBtnClick() { passcodeForLoginsBtn.click(); }
+    public void clickPasscodeForLoginsBtn() { passcodeForLoginsBtn.click(); }
 
-    public void dataManagmentBtnClick() { dataManagmentBtn.click(); }
+    public void clickDataManagmentBtn() { dataManagmentBtn.click(); }
 
-    public void closePrivateTabsRdBtnClick() {
+    public void clickClosePrivateTabsRdBtn() {
         closePrivateTabsRdBtn.click();
     }
 
-    public void trackingProtectionBtnClick() {
+    public void clickTrackingProtectionBtn() {
         trackingProtectionBtn.click();
     }
 
-    public void privacyPolicyBtnClick() {
+    public void clickPrivacyPolicyBtn() {
         privacyPolicyBtn.click();
     }
 
-    public void showTourBtnClick() {
+    public void clickShowTourBtn() {
         showTourBtn.click();
     }
 
-    public void sendFeedbackBtnClick() {
+    public void clickSendFeedbackBtn() {
         sendFeedbackBtn.click();
     }
 
-    public void sendUsageDataRdBtnClick() {
+    public void clickSendUsageDataRdBtn() {
         sendUsageDataRdBtn.click();
     }
 
-    public void helpBtnClick() {
+    public void clickHelpBtn() {
         helpBtn.click();
     }
 
-    public void licensesBtnClick() {
+    public void clickLicensesBtn() {
         licensesBtn.click();
     }
 
-    public void yourRightsBtnClick() {
+    public void clickYourRightsBtn() {
         yourRightsBtn.click();
     }
 
-    public void doneLeftUpCornerBtnClick() {
+    public void clickDoneLeftUpCornerBtn() {
         doneLeftUpCornerBtn.click();
     }
 
-    public void signInMoreInfoBtnClick() { signInMoreInfoBtn.click(); }
+    public void clickSignInMoreInfoBtn() { signInMoreInfoBtn.click(); }
 
-    public void userEmailLblClick() {
+    public void clickUserEmailLbl() {
         userEmailLbl.click();
     }
 
-    public void userEmailBtnClick() {
+    public void clickUserEmailBtn() {
         userEmailBtn.click();
     }
 

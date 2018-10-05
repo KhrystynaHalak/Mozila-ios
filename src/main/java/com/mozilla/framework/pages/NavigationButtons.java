@@ -6,36 +6,39 @@ import org.openqa.selenium.support.FindBy;
 public class NavigationButtons extends BasePage {
 
     //Elements
+
     @FindBy(id = "TabToolbar.backButton")
-    private WebElement MoveBackBtn;
+    private WebElement moveBackBtn;
 
     @FindBy(id = "TabToolbar.forwardButton")
-    private WebElement MoveForwardBtn;
+    private WebElement moveForwardBtn;
 
     @FindBy(id = "TabToolbar.stopReloadButton")
-    private WebElement RefreshBtn;
+    private WebElement refreshBtn;
 
     @FindBy(id = "TabToolbar.tabsButton")
-    private WebElement TabsBtn;
+    private WebElement tabsBtn;
 
     @FindBy(id = "TabToolbar.menuButton")
     private WebElement toolbarMenu;
 
+
     //Actions
-    public void moveBackBtnClick() {
-        MoveBackBtn.click();
+
+    public void clickMoveBackBtn() {
+        moveBackBtn.click();
     }
 
-    public void moveForwardBtnClick() {
-        MoveForwardBtn.click();
+    public void clickMoveForwardBtn() {
+        moveForwardBtn.click();
     }
 
-    public void refreshBtnClick() {
-        RefreshBtn.click();
+    public void clickRefreshBtn() {
+        refreshBtn.click();
     }
 
-    public void tabsBtnClick() {
-        TabsBtn.click();
+    public void cloclTabsBtn() {
+        tabsBtn.click();
     }
 
     public void toolbarMenuBtnClick() {

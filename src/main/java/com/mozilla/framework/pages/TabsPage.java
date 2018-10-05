@@ -7,39 +7,39 @@ public class TabsPage extends BasePage {
 
     //Elements
     @FindBy(id = "TabTrayController.removeTabsButton")
-    private WebElement DeleteTabBtn;
+    private WebElement deleteTabBtn;
 
     @FindBy(id = "TabTrayController.addTabButton")
-    private WebElement AddNewTabBtn;
+    private WebElement addNewTabBtn;
 
     @FindBy(id = "TabTrayController.maskButton")
-    private WebElement PrivateBrowsingBtn;
+    private WebElement privateBrowsingBtn;
 
     @FindBy(id = "TabTrayController.deleteButton.closeAll")
-    private WebElement CloseAllTabsBtn;
+    private WebElement closeAllTabsBtn;
 
     @FindBy(xpath = "//XCUIElementTypeApplication[@name='Fennec (andrew)']/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeSheet/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther")
-    private WebElement CancelBtn;
+    private WebElement cancelBtn;
 
     //Actions
-    public void deleteTabBtnClick() {
-        DeleteTabBtn.click();
+    public void clickDeleteTabBtn() {
+        deleteTabBtn.click();
     }
 
-    public void addNewTabBtnClick() {
-        AddNewTabBtn.click();
+    public void clickAddNewTabBtn() {
+        addNewTabBtn.click();
     }
 
-    public void privateBrowsingBtn() {
-        PrivateBrowsingBtn.click();
+    public void clickPrivateBrowsingBtn() {
+        privateBrowsingBtn.click();
     }
 
-    public void closeAllTabsBtn() {
-        CloseAllTabsBtn.click();
+    public void clickCloseAllTabsBtn() {
+        closeAllTabsBtn.click();
     }
 
-    public void cancelBtnClick() {
-        CancelBtn.click();
+    public void clickCancelBtn() {
+        cancelBtn.click();
     }
 
 }

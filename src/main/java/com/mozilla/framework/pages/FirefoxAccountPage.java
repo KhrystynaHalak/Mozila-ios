@@ -7,31 +7,31 @@ public class FirefoxAccountPage extends BasePage{
 
     //Elements
 
-    @FindBy(id = "Manage"/*, xpath = "//XCUIElementTypeCell[@name=\"Manage\"]"*/)
+    @FindBy(id = "Manage")
     private WebElement manageBtn;
 
-    @FindBy(id = "sync.engine.bookmarks.enabled"/*, xpath = "//XCUIElementTypeSwitch[@name=\"sync.engine.bookmarks.enabled\"]"*/)
+    @FindBy(id = "sync.engine.bookmarks.enabled")
     private WebElement bookmarksChBox;
 
-    @FindBy(id = "sync.engine.history.enabled"/*, xpath = "//XCUIElementTypeSwitch[@name=\"sync.engine.history.enabled\"]"*/)
+    @FindBy(id = "sync.engine.history.enabled")
     private WebElement historyChBox;
 
-    @FindBy(id = "sync.engine.tabs.enabled"/*, xpath = "//XCUIElementTypeSwitch[@name=\"sync.engine.tabs.enabled\"]"*/)
+    @FindBy(id = "sync.engine.tabs.enabled")
     private WebElement openTabsChBox;
 
-    @FindBy(id = "sync.engine.passwords.enabled"/*, xpath = "//XCUIElementTypeSwitch[@name=\"sync.engine.passwords.enabled\"]"*/)
+    @FindBy(id = "sync.engine.passwords.enabled")
     private WebElement loginsChBox;
 
-    @FindBy(id = "DeviceNameSettingTextField"/*, xpath = "//XCUIElementTypeTextField[@name=\"DeviceNameSettingTextField\"]"*/)
+    @FindBy(id = "DeviceNameSettingTextField")
     private WebElement deviceNameTxtField;
 
-    @FindBy(/*id = "SignOut", */xpath = "//XCUIElementTypeCell[@name=\"SignOut\"]")
+    @FindBy(/*id = "SignOut", */xpath = "//XCUIElementTypeCell[@name='SignOut']")
     private WebElement singOutBtn;
 
-    @FindBy(id = "Cancel"/*, xpath = "//XCUIElementTypeButton[@name=\"Cancel\"]"*/)
+    @FindBy(id = "Cancel")
     private WebElement cancelBtn;
 
-    @FindBy(id = "Disconnect"/*, xpath = "//XCUIElementTypeButton[@name=\"Disconnect\"]"*/)
+    @FindBy(id = "Disconnect")
     private WebElement disconnectBtn;
 
     //Actions

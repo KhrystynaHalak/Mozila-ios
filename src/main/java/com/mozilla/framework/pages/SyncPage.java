@@ -7,9 +7,9 @@ public class SyncPage extends BasePage {
 
     //Elements
     @FindBy(id = "Done")
-    private WebElement DoneLeftUpCornerBtn;
+    private WebElement doneLeftUpCornerBtn;
 
-    public void doneLeftUpCornerBtnClick() {
-        DoneLeftUpCornerBtn.click();
+    public void clickDoneLeftUpCornerBtn() {
+        doneLeftUpCornerBtn.click();
     }
 }

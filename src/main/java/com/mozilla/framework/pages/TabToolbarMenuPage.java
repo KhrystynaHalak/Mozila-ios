@@ -8,158 +8,147 @@ public class TabToolbarMenuPage extends BasePage {
     //Elements
 
     @FindBy(id = "menu-sync")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-sync']")
-    private WebElement SyncBtn;
+    private WebElement syncBtn;
 
     @FindBy(id = "menu-panel-TopSites")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-TopSites']")
-    private WebElement TopSitesBtn;
+    private WebElement topSitesBtn;
 
     @FindBy(id = "menu-panel-Bookmarks")
-    //@FindBy(xpath = "//*[@name='Bookmarks']")
-    private WebElement BookmarksBtn;
+    private WebElement bookmarksBtn;
 
     @FindBy(id = "menu-panel-ReadingList")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-ReadingList']")
-    private WebElement ReadingListBtn;
+    private WebElement readingListBtn;
 
     @FindBy(id = "menu-panel-History")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-History']")
-    private WebElement HistoryBtn;
+    private WebElement historyBtn;
 
     @FindBy(id = "menu-panel-Downloads")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-panel-Downloads']")
-    private WebElement DownloadsBtn;
+    private WebElement downloadsBtn;
 
     @FindBy(id = "menu-TrackingProtection")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-TrackingProtection']")
-    private WebElement TrackProtectionBtn;
+    private WebElement trackProtectionBtn;
 
     @FindBy(xpath = "//XCUIElementTypeCell[@name='menu-TrackingProtection']/XCUIElementTypeImage")
-    private WebElement TrackProtectionRDBtn;
+    private WebElement trackProtectionRdBtn;
 
     @FindBy(id = "menu-NoImageMode")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NoImageMode']")
-    private WebElement HideImgBtn;
+    private WebElement hideImgBtn;
 
     @FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NoImageMode']/XCUIElementTypeImage")
-    private WebElement HideImgRDBtn;
+    private WebElement hideImgRdBtn;
 
     @FindBy(id = "menu-NightMode")
-    //@FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NightMode']")
-    private WebElement NightModeBtn;
+    private WebElement nightModeBtn;
 
     @FindBy(xpath = "//XCUIElementTypeCell[@name='menu-NightMode']/XCUIElementTypeImage")
-    private WebElement NightModeRDBtn;
+    private WebElement nightModeRdBtn;
 
     @FindBy(id = "Settings")
-    //@FindBy(xpath = "//XCUIElementTypeStaticText[@name='Settings']")
-    private WebElement SettingsBtn;
+    private WebElement settingsBtn;
 
     @FindBy(id = "PhotonMenu.close")
-    //@FindBy(xpath = "//XCUIElementTypeButton[@name='PhotonMenu.close']")
-    private WebElement CloseBtn;
+    private WebElement closeBtn;
 
     //Actions
 
-    public void syncBtnClick() {
-        SyncBtn.click();
+    public void clickSyncBtn() {
+        syncBtn.click();
     }
 
-    public void topSitesBtnClick() {
-        TopSitesBtn.click();
+    public void clickTopSitesBtn() {
+        topSitesBtn.click();
     }
 
-    public void bookmarksBtnClick() {
-        BookmarksBtn.click();
+    public void clickBookmarksBtn() {
+        bookmarksBtn.click();
     }
 
-    public void readingListBtnClick() {
-        ReadingListBtn.click();
+    public void clickReadingListBtn() {
+        readingListBtn.click();
     }
 
-    public void historyBtnClick() {
-        HistoryBtn.click();
+    public void clickHistoryBtn() {
+        historyBtn.click();
     }
 
-    public void downloadsBtnClick() {
-        DownloadsBtn.click();
+    public void clickDownloadsBtn() {
+        downloadsBtn.click();
     }
 
-    public void trackProtectionBtnClick() {
-        TrackProtectionBtn.click();
+    public void clickTrackProtectionBtn() {
+        trackProtectionBtn.click();
     }
 
-    public void hideImgBtnClick() {
-        HideImgBtn.click();
+    public void clickHideImgBtn() {
+        hideImgBtn.click();
     }
 
-    public void nightModeBtnClick() {
-        NightModeBtn.click();
+    public void clickNightModeBtn() {
+        nightModeBtn.click();
     }
 
-    public void settingsBtnClick() {
-        SettingsBtn.click();
+    public void clickSettingsBtn() {
+        settingsBtn.click();
     }
 
     public void enableTrackingProtection() {
-        if (TrackProtectionRDBtn.getAttribute("name").equals("enabled")) {
+        if (trackProtectionRdBtn.getAttribute("name").equals("enabled")) {
             return;
         }
-        else TrackProtectionBtn.click();
+        else trackProtectionBtn.click();
     }
 
     public void disableTrackingProtection() {
-        if(TrackProtectionRDBtn.getAttribute("name").equals("disabled")) {
+        if(trackProtectionRdBtn.getAttribute("name").equals("disabled")) {
             return;
         }
-        else TrackProtectionBtn.click();
+        else trackProtectionBtn.click();
     }
 
     public String getTrackingProtectionStatus() {
-        return TrackProtectionRDBtn.getAttribute("name");
+        return trackProtectionRdBtn.getAttribute("name");
     }
 
     public void enableHideImg() {
-        if (HideImgRDBtn.getAttribute("name").equals("enabled")) {
+        if (hideImgRdBtn.getAttribute("name").equals("enabled")) {
             return;
         }
-        else HideImgBtn.click();
+        else hideImgBtn.click();
     }
 
     public void disableHideImg() {
-        if(HideImgRDBtn.getAttribute("name").equals("disabled")) {
+        if(hideImgRdBtn.getAttribute("name").equals("disabled")) {
             return;
         }
-        else HideImgBtn.click();
+        else hideImgBtn.click();
     }
 
     public String getHideImgStatus() {
 
-        return HideImgRDBtn.getAttribute("name");
+        return hideImgRdBtn.getAttribute("name");
     }
 
     public void enableNightMode() {
-        if (NightModeRDBtn.getAttribute("name").equals("enabled")) {
+        if (nightModeRdBtn.getAttribute("name").equals("enabled")) {
             return;
         }
-        else NightModeBtn.click();
+        else nightModeBtn.click();
     }
 
     public void disableNightMode() {
-        if(NightModeRDBtn.getAttribute("name").equals("disabled")) {
+        if(nightModeRdBtn.getAttribute("name").equals("disabled")) {
             return;
         }
-        else NightModeBtn.click();
+        else nightModeBtn.click();
     }
 
     public String getNightModeStatus() {
 
-        return NightModeRDBtn.getAttribute("name");
+        return nightModeRdBtn.getAttribute("name");
     }
 
     public void closeBtnClick() {
-        CloseBtn.click();
+        closeBtn.click();
     }
 
 }
