@@ -71,9 +71,7 @@ public class TabToolbarMenuPage extends BasePage {
         historyBtn.click();
     }
 
-    public void clickDownloadsBtn() {
-        downloadsBtn.click();
-    }
+    public void clickDownloadsBtn() { downloadsBtn.click(); }
 
     public void clickTrackProtectionBtn() {
         trackProtectionBtn.click();
@@ -94,15 +92,13 @@ public class TabToolbarMenuPage extends BasePage {
     public void enableTrackingProtection() {
         if (trackProtectionRdBtn.getAttribute("name").equals("enabled")) {
             return;
-        }
-        else trackProtectionBtn.click();
+        } else trackProtectionBtn.click();
     }
 
     public void disableTrackingProtection() {
-        if(trackProtectionRdBtn.getAttribute("name").equals("disabled")) {
+        if (trackProtectionRdBtn.getAttribute("name").equals("disabled")) {
             return;
-        }
-        else trackProtectionBtn.click();
+        } else trackProtectionBtn.click();
     }
 
     public String getTrackingProtectionStatus() {
@@ -112,15 +108,13 @@ public class TabToolbarMenuPage extends BasePage {
     public void enableHideImg() {
         if (hideImgRdBtn.getAttribute("name").equals("enabled")) {
             return;
-        }
-        else hideImgBtn.click();
+        } else hideImgBtn.click();
     }
 
     public void disableHideImg() {
-        if(hideImgRdBtn.getAttribute("name").equals("disabled")) {
+        if (hideImgRdBtn.getAttribute("name").equals("disabled")) {
             return;
-        }
-        else hideImgBtn.click();
+        } else hideImgBtn.click();
     }
 
     public String getHideImgStatus() {
@@ -131,15 +125,13 @@ public class TabToolbarMenuPage extends BasePage {
     public void enableNightMode() {
         if (nightModeRdBtn.getAttribute("name").equals("enabled")) {
             return;
-        }
-        else nightModeBtn.click();
+        } else nightModeBtn.click();
     }
 
     public void disableNightMode() {
-        if(nightModeRdBtn.getAttribute("name").equals("disabled")) {
+        if (nightModeRdBtn.getAttribute("name").equals("disabled")) {
             return;
-        }
-        else nightModeBtn.click();
+        } else nightModeBtn.click();
     }
 
     public String getNightModeStatus() {

@@ -15,7 +15,7 @@ public class ReadingListTests extends BaseTest {
 
         homePage.enterURL("https://www.goodnet.org/articles/how-to-make-healthy-eating-choices-while-traveling");
         allOtherPages.clickKeyBoardGoBtn();
-        String url1 = homePage.getMainSiteAdress();
+        String url1 = homePage.getMainSiteAddress();
 
         allOtherPages.markAsBookingListItem();
         allOtherPages.clickAddToBookingList();
@@ -68,7 +68,7 @@ public class ReadingListTests extends BaseTest {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.clickReadingListBtn();
 
-        String url2 = homePage.getMainSiteAdress();
+        String url2 = homePage.getMainSiteAddress();
         int readingListItemsCount = readingListPage.readingItemsCount();
 
         Urls = new ArrayList<>();
