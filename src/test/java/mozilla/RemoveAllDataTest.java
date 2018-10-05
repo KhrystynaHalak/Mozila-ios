@@ -25,7 +25,6 @@ public class RemoveAllDataTest extends BaseTest {
         for(int i = 0; i < historyPage.ItemInHistoryList.size(); i++){
             System.out.println(historyPage.ItemInHistoryList.get(i));
         }
-        //System.out.println(historyPage.ItemInHistoryList.size());
         Assert.assertEquals(historyPage.ItemInHistoryList.size(), 0);
     }
 
@@ -37,9 +36,9 @@ public class RemoveAllDataTest extends BaseTest {
 
         settingsPage.ScrollTo("DataManagmentBtn");
         dataManagementPage.dataManagementClick();
+
         dataManagementPage.selectAllRadioBtns();
 
         Assert.assertTrue(dataManagementPage.checkIfAllEnabled());
-
     }
 }

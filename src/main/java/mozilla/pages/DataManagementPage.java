@@ -13,6 +13,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static framework.utility.Driver.*;
@@ -29,8 +30,7 @@ public class DataManagementPage extends BasePage {
     private WebElement DataManagementBtn;
 
     //@FindBy (xpath = "(//*[@name=\"Clear Private Data\"])[2]")
-    //@FindBy(id = "ClearPrivateData")
-    @FindBy(xpath = "//*[@name=\"ClearPrivateData\"]/XCUIElementTypeStaticText[1]")
+    @FindBy(id = "ClearPrivateData")
     private WebElement RemoveBtn;
 
     @FindBy(id = "OK")
@@ -41,6 +41,9 @@ public class DataManagementPage extends BasePage {
 
     @FindBy(id = "AppSettingsTableViewController.navigationItem.leftBarButtonItem")
     private WebElement DoneBtn;
+
+    @FindBy(xpath = "//XCUIElementTypeCell/XCUIElementTypeSwitch")
+    private List<WebElement> SwitchBtns;
 
     //Actions
 
@@ -65,7 +68,11 @@ public class DataManagementPage extends BasePage {
         //Driver.getInstance().getDriver().executeScript("arguments[0].scrollIntoView();", DataManagementBtn);
 
         RemoteWebElement elem = (RemoteWebElement)RemoveBtn;
-        Driver.getInstance().getDriver().executeScript("mobile:scroll", elem);
+        String elementID = elem.getId();
+        HashMap<String, String> scrollObject = new HashMap<>();
+        scrollObject.put("element", elementID);
+        scrollObject.put("toVisible", "not an empty string");
+        Driver.getInstance().getDriver().executeScript("mobile:scroll", scrollObject);
 
     }
 
@@ -83,19 +90,16 @@ public class DataManagementPage extends BasePage {
         DoneBtn.click();
     }
 
-    @FindBy(xpath = "//*[@label=\"Browsing History\"]")
-    private WebElement el;
-
     public HashMap<String, WebElement> getHashMapDataManagement() {
 
         hashMap = new HashMap<>();
 
-        hashMap.put("Browsing History", el);
-        hashMap.put("Cache", Driver.getInstance().getDriver().findElement(By.xpath("//XCUIElementTypeSwitch[@name=\"Cache\"]")));
-        hashMap.put("Cookies", Driver.getInstance().getDriver().findElement(By.xpath("//*[@name=\"Cookies\"]")));
-        hashMap.put("Offline Website Data", Driver.getInstance().getDriver().findElement(By.xpath("//*[@name=\"Offline Website Data\"]")));
-        hashMap.put("Tracking Protection", Driver.getInstance().getDriver().findElement(By.xpath("//*[@name=\"Tracking Protection\"]")));
-        hashMap.put("Downloaded Files", Driver.getInstance().getDriver().findElement(By.xpath("//*[@name=\"Downloaded Files\"]")));
+        hashMap.put("Browsing History", SwitchBtns.get(0));
+        hashMap.put("Cache", SwitchBtns.get(1));
+        hashMap.put("Cookies", SwitchBtns.get(2));
+        hashMap.put("Offline Website Data", SwitchBtns.get(3));
+        hashMap.put("Tracking Protection", SwitchBtns.get(4));
+        hashMap.put("Downloaded Files", SwitchBtns.get(5));
 
         return hashMap;
     }
