@@ -13,7 +13,7 @@ import static com.mozilla.framework.utility.PropertiesUtil.getProperty;
 
 public class Driver {
 
-    private static Logger logger = LogManager.getLogger(Driver.class);
+    private static final Logger logger = LogManager.getLogger(Driver.class);
 
     private static final String APPIUM_URL = getProperty("appium.url");
     private static final int TIME_OUT = Integer.valueOf(getProperty("timeout"));
