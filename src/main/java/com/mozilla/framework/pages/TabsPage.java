@@ -22,9 +22,7 @@ public class TabsPage extends BasePage {
     private WebElement cancelBtn;
 
     //Actions
-    public void clickDeleteTabBtn() {
-        deleteTabBtn.click();
-    }
+    public void clickDeleteTabBtn() { deleteTabBtn.click(); }
 
     public void clickAddNewTabBtn() {
         addNewTabBtn.click();

@@ -15,7 +15,7 @@ public class ReadingListTests extends BaseTest {
 
         homePage.enterURL("https://www.goodnet.org/articles/how-to-make-healthy-eating-choices-while-traveling");
         allOtherPages.clickKeyBoardGoBtn();
-        String url1 = homePage.getMainSiteAdress();
+        String url1 = homePage.getMainSiteAddress();
 
         allOtherPages.markAsBookingListItem();
         allOtherPages.clickAddToBookingList();
@@ -37,12 +37,12 @@ public class ReadingListTests extends BaseTest {
 
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.clickReadingListBtn();
-        int previousReadBtnsCount = readingListPage.readBtnsCount();
+        int previousReadBtnsCount = readingListPage.countReadBtns();
 
-        readingListPage.readBtnClick();
+        readingListPage.clickReadBtn();
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.clickReadingListBtn();
-        int currentReadBtnsCount = readingListPage.readBtnsCount();
+        int currentReadBtnsCount = readingListPage.countReadBtns();
 
         try {
             Assert.assertEquals(currentReadBtnsCount, previousReadBtnsCount - 1);
@@ -59,7 +59,7 @@ public class ReadingListTests extends BaseTest {
         tabToolbarMenuPage.clickReadingListBtn();
 
         readingListPage.deleteReadingListItemBySwipe();
-        int y = readingListPage.readingItemsCount();
+        int y = readingListPage.countReadingItems();
         Assert.assertEquals(y, 0);
     }
 
@@ -68,8 +68,8 @@ public class ReadingListTests extends BaseTest {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.clickReadingListBtn();
 
-        String url2 = homePage.getMainSiteAdress();
-        int readingListItemsCount = readingListPage.readingItemsCount();
+        String url2 = homePage.getMainSiteAddress();
+        int readingListItemsCount = readingListPage.countReadingItems();
 
         Urls = new ArrayList<>();
         Urls.add("https://en.wikipedia.org/wiki/Main_Page");

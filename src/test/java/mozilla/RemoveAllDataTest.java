@@ -10,12 +10,12 @@ public class RemoveAllDataTest extends BaseTest {
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.clickSettingsBtn();
 
-        dataManagementPage.dataManagementClick();
+        dataManagementPage.clickDataManagement();
 
-        dataManagementPage.removeClick();
+        dataManagementPage.clickRemove();
         dataManagementPage.clickOk();
-        dataManagementPage.backToSettingsBtnClick();
-        dataManagementPage.doneBtnClick();
+        dataManagementPage.clickBackToSettingsBtn();
+        dataManagementPage.clickDoneBtn();
         //dataManagementPage.refresh();
 
         homePage.tabToolbarBtnClick();
