@@ -9,22 +9,22 @@ public class DownloadTest extends BaseTest {
     public void downloadTest(){
 
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.downloadsBtnClick();
-        int prevousSize = downloadsPage.downloadedItemsCount();
+        tabToolbarMenuPage.clickDownloadsBtn();
+        int prevousSize = downloadsPage.countDownloadedItems();
 
         homePage.enterURL("https://www2.le.ac.uk/Members/davidwickins/old/test.docx/view");
-        allOtherPages.keyBoardGoBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
 
-        downloadsPage.docToDownloadClick();
-        downloadsPage.downloadLinkBtnClick();
+        downloadsPage.clickDocToDownload();
+        downloadsPage.clickDownloadLinkBtn();
 
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.downloadsBtnClick();
+        tabToolbarMenuPage.clickDownloadsBtn();
 
-        downloadsPage.downloadNowBtnClick();
-        downloadsPage.downloadAppearingBtnClick();
+        downloadsPage.clickDownloadNowBtn();
+        downloadsPage.clickDownloadAppearingBtn();
 
-        int currentSize = downloadsPage.downloadedItemsCount();
+        int currentSize = downloadsPage.countDownloadedItems();
 
         Assert.assertEquals(currentSize, prevousSize + 1);
     }

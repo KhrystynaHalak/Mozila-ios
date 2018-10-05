@@ -12,8 +12,8 @@ public class SignInAndOutTest extends BaseTest {
     @Test
     public void signInAndOutTest() {
         navigationButtons.toolbarMenuBtnClick();
-        tabToolbarMenuPage.settingsBtnClick();
-        settingsPage.signInMoreInfoBtnClick();
+        tabToolbarMenuPage.clickSettingsBtn();
+        settingsPage.clickSignInMoreInfoBtn();
         try {
             signInPage.getEmailField().sendKeys(email);
         } catch (NoSuchElementException e) {
@@ -22,7 +22,7 @@ public class SignInAndOutTest extends BaseTest {
         signInPage.getPaswwordField().sendKeys(password);
         signInPage.getSubmitBtn().click();
         Assert.assertEquals(settingsPage.getUserEmailLblText(), email);
-        settingsPage.signInMoreInfoBtnClick();
+        settingsPage.clickSignInMoreInfoBtn();
         firefoxAccountPage.getSingOutBtn().click();
         firefoxAccountPage.getDisconnectBtn().click();
     }

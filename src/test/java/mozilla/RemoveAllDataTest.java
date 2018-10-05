@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 public class RemoveAllDataTest extends BaseTest {
 
     @Test
-    public void deleteData() throws InterruptedException {
+    public void deleteData() {
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.settingsBtnClick();
+        tabToolbarMenuPage.clickSettingsBtn();
 
         dataManagementPage.dataManagementClick();
 
@@ -19,7 +19,7 @@ public class RemoveAllDataTest extends BaseTest {
         //dataManagementPage.refresh();
 
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.historyBtnClick();
+        tabToolbarMenuPage.clickHistoryBtn();
 
         for(int i = 0; i < historyPage.ItemInHistoryList.size(); i++){
             System.out.println(historyPage.ItemInHistoryList.get(i));

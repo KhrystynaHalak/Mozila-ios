@@ -22,7 +22,6 @@ public class BookmarksPage extends BasePage {
     //Elements
 
     @FindBy(xpath = "//*[@name='Bookmarks List']/XCUIElementTypeCell")
-
     private List<WebElement> bookmarksList;
 
 

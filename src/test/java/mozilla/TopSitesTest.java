@@ -9,7 +9,7 @@ public class TopSitesTest extends BaseTest {
     @Test
     public void RemovingFromTopSitesTest() {
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.topSitesBtnClick();
+        tabToolbarMenuPage.clickTopSitesBtn();
         List<String> initialNamesList = topSitesPage.getTopSitesNamesList();
         int initialSize = initialNamesList.size();
         System.out.println(initialNamesList);
@@ -27,20 +27,20 @@ public class TopSitesTest extends BaseTest {
     @Test
     public void AddToTopSitesTest() {
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.topSitesBtnClick();
+        tabToolbarMenuPage.clickTopSitesBtn();
         List<String> initialNamesList = topSitesPage.getTopSitesNamesList();
         int initialSize = initialNamesList.size();
         System.out.println(initialNamesList);
         homePage.enterURL("rp5.ua");
-        allOtherPages.keyBoardGoBtnClick();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.pinToTopSitesBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
+        allOtherPages.clickThreeDotsBtn();
+        threeDotsPage.clickPinToTopSitesBtn();
         allOtherPages.enterURL("apple.com");
-        allOtherPages.keyBoardGoBtnClick();
-        allOtherPages.threeDotsBtnClick();
-        threeDotsPage.pinToTopSitesBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
+        allOtherPages.clickThreeDotsBtn();
+        threeDotsPage.clickPinToTopSitesBtn();
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.topSitesBtnClick();
+        tabToolbarMenuPage.clickTopSitesBtn();
         List<String> finalNamesList = topSitesPage.getTopSitesNamesList();
         int finalSize = finalNamesList.size();
         System.out.println(finalNamesList);

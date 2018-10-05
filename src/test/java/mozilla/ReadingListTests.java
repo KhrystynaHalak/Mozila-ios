@@ -1,6 +1,5 @@
 package mozilla;
 
-import org.springframework.core.annotation.Order;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,14 +14,14 @@ public class ReadingListTests extends BaseTest {
     public void addToReadingListTest() {
 
         homePage.enterURL("https://www.goodnet.org/articles/how-to-make-healthy-eating-choices-while-traveling");
-        allOtherPages.keyBoardGoBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
         String url1 = homePage.getMainSiteAdress();
 
         allOtherPages.markAsBookingListItem();
-        allOtherPages.addToBookingListClick();
+        allOtherPages.clickAddToBookingList();
 
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.readingListBtnClick();
+        tabToolbarMenuPage.clickReadingListBtn();
 
         Assert.assertTrue(readingListPage.getreadingListItem(url1));
 
@@ -32,17 +31,17 @@ public class ReadingListTests extends BaseTest {
     public void markAsRead() {
 
         homePage.enterURL("https://www.goodnet.org/articles/5-super-easy-fun-games-that-be-played-anytime-anywhere-list");
-        allOtherPages.keyBoardGoBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
         allOtherPages.markAsBookingListItem();
-        allOtherPages.addToBookingListClick();
+        allOtherPages.clickAddToBookingList();
 
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.readingListBtnClick();
+        tabToolbarMenuPage.clickReadingListBtn();
         int previousReadBtnsCount = readingListPage.readBtnsCount();
 
         readingListPage.readBtnClick();
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.readingListBtnClick();
+        tabToolbarMenuPage.clickReadingListBtn();
         int currentReadBtnsCount = readingListPage.readBtnsCount();
 
         try {
@@ -57,7 +56,7 @@ public class ReadingListTests extends BaseTest {
     @Test(groups = "b")
     public void deleteAllReadingListItems() {
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.readingListBtnClick();
+        tabToolbarMenuPage.clickReadingListBtn();
 
         readingListPage.deleteReadingListItemBySwipe();
         int y = readingListPage.readingItemsCount();
@@ -67,7 +66,7 @@ public class ReadingListTests extends BaseTest {
     @Test(dependsOnGroups = "b")
     public void addSeveralReadingListItems() {
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.readingListBtnClick();
+        tabToolbarMenuPage.clickReadingListBtn();
 
         String url2 = homePage.getMainSiteAdress();
         int readingListItemsCount = readingListPage.readingItemsCount();
@@ -79,18 +78,18 @@ public class ReadingListTests extends BaseTest {
         int counter = 0;
         for (String url : Urls) {
             homePage.enterURL(url);
-            allOtherPages.keyBoardGoBtnClick();
+            allOtherPages.clickKeyBoardGoBtn();
             allOtherPages.markAsBookingListItem();
 
             counter += allOtherPages.addToBookingListCount();
 
             //System.out.println(allOtherPages.addToBookingListCount());
             //System.out.println(counter);
-            allOtherPages.addToBookingListClick();
+            allOtherPages.clickAddToBookingList();
         }
 
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.readingListBtnClick();
+        tabToolbarMenuPage.clickReadingListBtn();
         Assert.assertEquals(readingListItemsCount + counter, 2);
 
     }

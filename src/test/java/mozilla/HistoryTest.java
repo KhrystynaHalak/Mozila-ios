@@ -8,12 +8,12 @@ public class HistoryTest extends BaseTest {
     @Test
     public void deleteHistoryItem() {
         homePage.enterURL("https://github.com/");
-        allOtherPages.keyBoardGoBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
         homePage.cleanURL();
         homePage.enterURL("https://www.google.com.ua/");
-        allOtherPages.keyBoardGoBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.historyBtnClick();
+        tabToolbarMenuPage.clickHistoryBtn();
         int previousItemsCount = historyPage.ItemInHistoryList.size();
 
         historyPage.removeHistoryItem();
@@ -26,18 +26,18 @@ public class HistoryTest extends BaseTest {
     @Test
     public void addHistoryItem() {
         homePage.enterURL("https://github.com/");
-        allOtherPages.keyBoardGoBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
         homePage.cleanURL();
         homePage.enterURL("https://www.google.com.ua/");
-        allOtherPages.keyBoardGoBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.historyBtnClick();
+        tabToolbarMenuPage.clickHistoryBtn();
 
         int previousItemsCount = historyPage.ItemInHistoryList.size();
         homePage.enterURL("https://9gag.com");
-        allOtherPages.keyBoardGoBtnClick();
+        allOtherPages.clickKeyBoardGoBtn();
         homePage.tabToolbarBtnClick();
-        tabToolbarMenuPage.historyBtnClick();
+        tabToolbarMenuPage.clickHistoryBtn();
 
         int currentItemsCount = historyPage.ItemInHistoryList.size();
         Assert.assertEquals(currentItemsCount - 1, previousItemsCount);

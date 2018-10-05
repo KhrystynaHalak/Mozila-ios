@@ -16,7 +16,6 @@ import java.util.concurrent.TimeUnit;
 
 public class BasePage {
 
-    //protected Logger log = Logger.getLogger("WD: ");
     protected Wait<IOSDriver> wait;
 
     public BasePage() {

@@ -14,26 +14,26 @@ public class HistoryPage extends BasePage {
 
     //Elements
 
-    @FindBy(xpath = "//*[@name=\"HistoryPanel.recentlyClosedCell\"]")
-    public WebElement RecentlyClosedLabel;
+    @FindBy(xpath = "//*[@name='HistoryPanel.recentlyClosedCell']")
+    public WebElement recentlyClosedLabel;
 
-    @FindBy(xpath = "//*[@name=\"HistoryPanel.syncedDevicesCell\"]")
-    public WebElement SyncedDevicesLabel;
+    @FindBy(xpath = "//*[@name='HistoryPanel.syncedDevicesCell']")
+    public WebElement syncedDevicesLabel;
 
-    @FindBy(xpath = "//*[@name=\"History List\"]/XCUIElementTypeCell")
+    @FindBy(xpath = "//*[@name='History List']/XCUIElementTypeCell")
     public List<WebElement> ItemInHistoryList;
 
-    @FindBy(xpath = "(//*[@name=\"Delete\"])[1]")
-    public WebElement deleteBBtn;
+    @FindBy(xpath = "(//*[@name='Delete'])[1]")
+    public WebElement deleteBtn;
 
     //Actions
 
-    public String recentlyClosedText() {
-        return RecentlyClosedLabel.getText();
+    public String getRecentlyClosedText() {
+        return recentlyClosedLabel.getText();
     }
 
-    public String synedDeviceText() {
-        return SyncedDevicesLabel.getText();
+    public String getSyncedDeviceText() {
+        return syncedDevicesLabel.getText();
     }
 
     public void removeHistoryItem() {
@@ -43,7 +43,7 @@ public class HistoryPage extends BasePage {
         //touchAction.press(PointOption.point(61, 242)).waitAction().moveTo(PointOption.point(16, 243)).release().perform();
         touchAction.longPress(PointOption.point(61, 242)).waitAction().moveTo(PointOption.point(25, 243)).release().perform();
 
-        deleteBBtn.click();
+        deleteBtn.click();
 
 
     }

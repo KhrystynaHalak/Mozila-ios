@@ -22,10 +22,10 @@ public class ShareWithPage extends HomePage {
     @FindBy(id = "Print")
     private WebElement printBtn;
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Create PDF\"]")
+    @FindBy(xpath = "//XCUIElementTypeButton[@name='Create PDF']")
     private WebElement createBtn;
 
-    @FindBy(xpath = "(//XCUIElementTypeButton[@name=\"More\"])[2]")
+    @FindBy(xpath = "(//XCUIElementTypeButton[@name='More'])[2]")
     private WebElement moreBtn2;
 
     @FindBy(id = "Cancel")

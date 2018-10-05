@@ -13,40 +13,37 @@ public class AllOtherPages extends HomePage {
     TouchAction touchAction;
     //Elements
     @FindBy(xpath = "//*[@name='Go']")
-    private WebElement KeyBoardGoBtn;
+    private WebElement keyBoardGoBtn;
 
     @FindBy(id = "TabLocationView.pageOptionsButton")
     private WebElement threeDotsBtn;
 
-    @FindBy(xpath = "//*[@name=\"TabLocationView.readerModeButton\"]")
-    private WebElement BookingListBtn;
+    @FindBy(xpath = "//*[@name='TabLocationView.readerModeButton']")
+    private WebElement bookingListBtn;
 
     @FindBy(xpath = "//*[@label = 'Add to Reading List']")
-    private WebElement AddToBookingListBtn;
-
-    /*@FindBy(xpath = "//*[@name=\"ReaderModeBarView.listStatusButton\"]")
-    private WebElement BookAddBtn;*/
+    private WebElement addToBookingListBtn;
 
     @FindBy(xpath = "//*[@label = 'Remove from Reading List']")
-    private WebElement DeleteFromReadingListBtn;
+    private WebElement deleteFromReadingListBtn;
 
     //Actions
-    public void keyBoardGoBtnClick() {
-        KeyBoardGoBtn.click();
+    public void clickKeyBoardGoBtn() {
+        keyBoardGoBtn.click();
     }
 
-    public void threeDotsBtnClick() {
+    public void clickThreeDotsBtn() {
         threeDotsBtn.click();
     }
 
     public void markAsBookingListItem() {
-        BookingListBtn.click();
+        bookingListBtn.click();
     }
 
-    public void addToBookingListClick() {
+    public void clickAddToBookingList() {
         try {
-            if (AddToBookingListBtn.isDisplayed()) {
-                AddToBookingListBtn.click();
+            if (addToBookingListBtn.isDisplayed()) {
+                addToBookingListBtn.click();
             }
         } catch (NoSuchElementException | StaleElementReferenceException e) {
             System.out.println("Add to booking list button is not present, script continues to execute");
@@ -56,7 +53,7 @@ public class AllOtherPages extends HomePage {
     public Integer addToBookingListCount() {
 
         int addCounter = 0;
-        if (AddToBookingListBtn.getAttribute("enabled").equals("true")) {
+        if (addToBookingListBtn.getAttribute("enabled").equals("true")) {
             return ++addCounter;
         } else {
             return addCounter;
