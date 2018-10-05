@@ -26,4 +26,6 @@ public class SignInAndOutTest extends BaseTest {
         firefoxAccountPage.getSingOutBtn().click();
         firefoxAccountPage.getDisconnectBtn().click();
     }
+
+
 }

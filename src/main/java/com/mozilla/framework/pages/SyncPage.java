@@ -1,6 +1,5 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
-import org.glassfish.grizzly.compression.lzma.impl.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

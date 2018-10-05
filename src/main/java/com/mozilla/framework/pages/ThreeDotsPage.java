@@ -1,4 +1,4 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
 import lombok.Getter;
 import org.openqa.selenium.NoSuchElementException;

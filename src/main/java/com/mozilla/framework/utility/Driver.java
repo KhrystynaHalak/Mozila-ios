@@ -1,4 +1,4 @@
-package framework.utility;
+package com.mozilla.framework.utility;
 
 import io.appium.java_client.ios.IOSDriver;
 import org.apache.logging.log4j.LogManager;
@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import static framework.utility.PropertiesUtil.getProperty;
+import static com.mozilla.framework.utility.PropertiesUtil.getProperty;
 
 public class Driver {
 
