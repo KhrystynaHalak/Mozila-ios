@@ -1,12 +1,14 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
-import framework.utility.Driver;
+import com.mozilla.framework.utility.Driver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +16,6 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 
 public class SettingsPage extends BasePage {
-
     private static final String email = "20littlejohnny16@gmail.com";
     private IOSDriver driver = Driver.getInstance().getDriver();
 

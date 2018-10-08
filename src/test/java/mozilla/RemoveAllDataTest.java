@@ -11,12 +11,12 @@ public class RemoveAllDataTest extends BaseTest {
         tabToolbarMenuPage.clickSettingsBtn();
 
         settingsPage.ScrollTo("DataManagmentBtn");
-        dataManagementPage.dataManagementClick();
+        dataManagementPage.clickDataManagement();
 
-        dataManagementPage.removeClick();
+        dataManagementPage.clickRemove();
         dataManagementPage.clickOk();
-        dataManagementPage.backToSettingsBtnClick();
-        dataManagementPage.doneBtnClick();
+        dataManagementPage.clickBackToSettingsBtn();
+        dataManagementPage.clickDoneBtn();
 
         homePage.tabToolbarBtnClick();
         tabToolbarMenuPage.clickHistoryBtn();
@@ -34,7 +34,7 @@ public class RemoveAllDataTest extends BaseTest {
         tabToolbarMenuPage.clickSettingsBtn();
 
         settingsPage.ScrollTo("DataManagmentBtn");
-        dataManagementPage.dataManagementClick();
+        dataManagementPage.clickDataManagement();
 
         dataManagementPage.selectAllRadioBtns();
 

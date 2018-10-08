@@ -1,8 +1,8 @@
 package mozilla;
 
-import framework.utility.Driver;
+import com.mozilla.framework.pages.*;
+import com.mozilla.framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
-import mozilla.pages.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 

@@ -1,23 +1,17 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
-import framework.utility.Driver;
+import com.mozilla.framework.utility.Driver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.touch.offset.PointOption;
-import org.apache.logging.log4j.core.util.KeyValuePair;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static framework.utility.Driver.*;
 
 public class DataManagementPage extends BasePage {
 
@@ -26,45 +20,43 @@ public class DataManagementPage extends BasePage {
     TouchAction touchAction;
     Alert alert;
     HashMap<String, WebElement> hashMap;
+
+
     //Elements
 
-
-    //@FindBy(id = "Data Management")
     @FindBy(id = "Data Management")
-    private WebElement DataManagementBtn;
+    private WebElement dataManagementBtn;
 
-    //@FindBy (xpath = "(//*[@name=\"Clear Private Data\"])[2]")
     @FindBy(id = "ClearPrivateData")
-    //@FindBy(xpath = "//*[@name=\"ClearPrivateData\"]/XCUIElementTypeStaticText[1]")
-    private WebElement RemoveBtn;
+    private WebElement removeBtn;
 
     @FindBy(id = "OK")
-    private WebElement OKbtn;
+    private WebElement okBtn;
 
     @FindBy(id = "Settings")
-    private WebElement BackToSettingsBtn;
+    private WebElement backToSettingsBtn;
 
     @FindBy(id = "AppSettingsTableViewController.navigationItem.leftBarButtonItem")
-    private WebElement DoneBtn;
+    private WebElement doneBtn;
 
     @FindBy(xpath = "//XCUIElementTypeCell/XCUIElementTypeSwitch")
     private List<WebElement> SwitchBtns;
 
     //Actions
 
-    public void dataManagementClick(){
-        DataManagementBtn.click();
+    public void clickDataManagement(){
+        dataManagementBtn.click();
     }
 
-    public void removeClick() {
+    public void clickRemove() {
         scrollDownAPageTwo();
-        RemoveBtn.click();
+        removeBtn.click();
 
     }
 
     public void scrollDownAPageTwo() {
 
-        RemoteWebElement element = (RemoteWebElement)RemoveBtn;
+        RemoteWebElement element = (RemoteWebElement) removeBtn;
         String elementID = element.getId();
         HashMap<String, String> scrollObject = new HashMap<>();
         scrollObject.put("element", elementID);
@@ -78,13 +70,16 @@ public class DataManagementPage extends BasePage {
         alert.accept();
     }
 
-    public void backToSettingsBtnClick(){
-        BackToSettingsBtn.click();
+    public void clickBackToSettingsBtn(){
+        backToSettingsBtn.click();
     }
 
-    public void doneBtnClick(){
-        DoneBtn.click();
+    public void clickDoneBtn(){
+        doneBtn.click();
     }
+
+    @FindBy(xpath = "//*[@label='Browsing History']")
+    private WebElement el;
 
     public HashMap<String, WebElement> getHashMapDataManagement() {
 

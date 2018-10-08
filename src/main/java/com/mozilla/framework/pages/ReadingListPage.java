@@ -1,16 +1,12 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
-import framework.utility.Driver;
+import com.mozilla.framework.utility.Driver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 public class ReadingListPage extends BasePage {
@@ -18,14 +14,18 @@ public class ReadingListPage extends BasePage {
     HomePage homePage = new HomePage();
     TouchAction touchAction;
 
+
+    //Elements
+
     @FindBy(id = "MarkAsUnread")
     public List<WebElement> UnreadBtn;
 
     @FindBy(id = "MarkAsRead")
     public List<WebElement> ReadBtn;
 
-    @FindBy(xpath = "(//*[@name=\"Remove\"])[1]")
-    private WebElement RemoveBtn;
+    @FindBy(xpath = "(//*[@name='Remove'])[1]")
+    private WebElement removeBtn;
+
 
     //Actions
 
@@ -37,11 +37,11 @@ public class ReadingListPage extends BasePage {
         return elementIsPresent;
     }
 
-    public void unreadBtnClick() {
+    public void clickUnreadBtn() {
         UnreadBtn.get(0).click();
     }
 
-    public void readBtnClick() {
+    public void clickReadBtn() {
 
         touchAction = new TouchAction(Driver.getInstance().getDriver());
         touchAction.tap(PointOption.point(16, 145)).perform();
@@ -49,19 +49,19 @@ public class ReadingListPage extends BasePage {
 
     public void deleteReadingListItemBySwipe() {
 
-        for (int i = 0; readingItemsCount() > 0; i++)
+        for (int i = 0; countReadingItems() > 0; i++)
         {
             touchAction = new TouchAction(Driver.getInstance().getDriver());
             touchAction.longPress(PointOption.point(259, 116)).waitAction().moveTo(PointOption.point(91, 116)).release().perform();
-            RemoveBtn.click();
+            removeBtn.click();
         }
     }
 
-    public Integer readBtnsCount() {
+    public Integer countReadBtns() {
         return ReadBtn.size();
     }
 
-    public Integer readingItemsCount() {
+    public Integer countReadingItems() {
         return ReadBtn.size() + UnreadBtn.size();
     }
 }

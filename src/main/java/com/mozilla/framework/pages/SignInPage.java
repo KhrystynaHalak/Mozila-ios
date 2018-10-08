@@ -1,10 +1,13 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 public class SignInPage extends BasePage{
+
+    //Elements
+
     @FindBy(xpath = "(//XCUIElementTypeOther[@name='Sign in to continue to Firefox Sync'])[1]/XCUIElementTypeTextField")
     private WebElement emailField;
 
@@ -14,6 +17,7 @@ public class SignInPage extends BasePage{
 
     @FindBy(xpath = "//XCUIElementTypeButton[@name='Sign in']")
     private WebElement submitBtn;
+
 
     public WebElement getEmailField() {
         return emailField;

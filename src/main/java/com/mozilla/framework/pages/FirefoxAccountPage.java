@@ -1,9 +1,10 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class FirefoxAccountPage extends BasePage{
+
 
     //Elements
 
@@ -33,6 +34,7 @@ public class FirefoxAccountPage extends BasePage{
 
     @FindBy(id = "Disconnect")
     private WebElement disconnectBtn;
+
 
     //Actions
 

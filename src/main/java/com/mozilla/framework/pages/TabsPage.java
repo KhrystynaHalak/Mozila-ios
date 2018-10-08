@@ -1,4 +1,4 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,9 +22,7 @@ public class TabsPage extends BasePage {
     private WebElement cancelBtn;
 
     //Actions
-    public void clickDeleteTabBtn() {
-        deleteTabBtn.click();
-    }
+    public void clickDeleteTabBtn() { deleteTabBtn.click(); }
 
     public void clickAddNewTabBtn() {
         addNewTabBtn.click();

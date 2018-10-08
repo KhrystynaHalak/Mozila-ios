@@ -1,4 +1,4 @@
-package framework.utility;
+package com.mozilla.framework.utility;
 
 import java.io.IOException;
 import java.util.Properties;

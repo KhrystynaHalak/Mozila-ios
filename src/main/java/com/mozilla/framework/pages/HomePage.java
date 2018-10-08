@@ -1,6 +1,6 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
-import framework.utility.Driver;
+import com.mozilla.framework.utility.Driver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -48,7 +48,6 @@ public class HomePage extends BasePage {
         IOSDriver iosDriver= Driver.getInstance().getDriver();
         iosDriver.context("NATIVE_APP");
         iosDriver.getKeyboard().sendKeys(Keys.ENTER);
-        //Driver.getInstance().getDriver().hideKeyboard("PRESS_KEY", "Done");
         iosDriver.context("NATIVE_APP_INSTRUMENTED");
     }
 
@@ -80,7 +79,7 @@ public class HomePage extends BasePage {
         tabToolbarBtn.click();
     }
 
-    public String getMainSiteAdress() {
+    public String getMainSiteAddress() {
 
         try {
             String fullURL = urlField.getText();

@@ -1,6 +1,6 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
-import framework.utility.Driver;
+import com.mozilla.framework.utility.Driver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,7 +11,10 @@ import org.openqa.selenium.support.FindBy;
 public class AllOtherPages extends HomePage {
 
     TouchAction touchAction;
+
+
     //Elements
+
     @FindBy(xpath = "//*[@name='Go']")
     private WebElement keyBoardGoBtn;
 
@@ -27,7 +30,9 @@ public class AllOtherPages extends HomePage {
     @FindBy(xpath = "//*[@label = 'Remove from Reading List']")
     private WebElement deleteFromReadingListBtn;
 
+
     //Actions
+
     public void clickKeyBoardGoBtn() {
         keyBoardGoBtn.click();
     }

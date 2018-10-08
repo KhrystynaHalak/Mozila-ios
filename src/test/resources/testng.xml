@@ -6,6 +6,16 @@
             <class name="mozilla.BookmarkTest"/>
         </classes>
     </test>
+    <test name="DownloadTest">
+        <classes>
+            <class name="mozilla.DownloadTest"/>
+        </classes>
+    </test>
+    <test name="FirefoxAccountPageTest">
+        <classes>
+            <class name="mozilla.FirefoxAccountPageTest"/>
+        </classes>
+    </test>
     <test name="HistoryTest">
         <classes>
             <class name="mozilla.HistoryTest"/>

@@ -1,4 +1,4 @@
-package mozilla.pages;
+package com.mozilla.framework.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,13 +7,13 @@ public class ShareWithPage extends HomePage {
 
     //Elements
 
-    @FindBy(xpath = "//XCUIElementTypeOther[@name=\"ActivityListView\"]/XCUIElementTypeOther")
+    @FindBy(xpath = "//XCUIElementTypeOther[@name='ActivityListView']/XCUIElementTypeOther")
     private WebElement page;
 
-    @FindBy(xpath = "//XCUIElementTypeButton[@name=\"Reminders\"]")
+    @FindBy(xpath = "//XCUIElementTypeButton[@name='Reminders']")
     private WebElement remindersBtn;
 
-    @FindBy(xpath = "(//XCUIElementTypeButton[@name=\"More\"])[1]")
+    @FindBy(xpath = "(//XCUIElementTypeButton[@name='More'])[1]")
     private WebElement moreBtn;
 
     @FindBy(id = "Copy")
