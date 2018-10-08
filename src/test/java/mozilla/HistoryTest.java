@@ -1,8 +1,11 @@
 package mozilla;
 
+import com.mozilla.framework.utility.ScreenshotListener;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(value = ScreenshotListener.class)
 public class HistoryTest extends BaseTest {
 
     @Test
